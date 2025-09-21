@@ -58,12 +58,15 @@
         \begin{remark}
             For a Lie algebra $\g$ weighed by $\h$, we have that $\g_0 \cong \h$ if $\h$ acts by inner derivations.
         \end{remark}
-        
+
+        \begin{convention}
+            If $\a$ is a Lie algebra, then the 
+        \end{convention}
         \begin{definition}[Triangular-decomposable Lie algebras] \label{def: triangular_decomposable_lie_algebras}
             A \textbf{triangular-decomposable Lie algebra} is a weighed Lie algebra $(\g, \h)$ satisfying the following additional conditions.
             \begin{itemize}
                 \item There exists non-zero Lie subalgebras $\n^{\pm} \subset \g$ such that $\g \cong \n^- \oplus \h \oplus \n^+$ as Lie algebras.
-                \item There exists an anti-involution $\omega: \g \xrightarrow[]{\cong} -\g$ (commonly called the \textbf{Chevalley involution}) such that $\omega(\n^{\pm}) = -\n^{\mp}$ and $\omega|_{\h} = \id_{\h}$.
+                \item There exists an involution $\omega: \g \xrightarrow[]{\cong} -\g$ (commonly called the \textbf{Chevalley involution}) such that $\omega(\n^{\pm}) = -\n^{\mp}$ and $\omega|_{\h} = \id_{\h}$.
                 \item $\n^{\pm}$ are $\h$-submodules of $\g$, i.e. $[\h, \n^{\pm}] \subseteq \n^{\pm}$. The Lie subalgebras $\n^{\pm}$ thus admit the induced weight space decompositions $\n^{\pm} = \bigoplus_{\alpha \in \weight(\g)} \n^{\pm} \cap \g_{\alpha}$, and let us require furthermore that:
                     $$\rootlattice^{\pm}(\g) := \{ \alpha \in \weight(\g) \setminus \{0\} \mid \n^{\pm} \cap \g_{\alpha} \not = 0 \}$$
                 are free (additive) sub-semigroups of $\rootlattice(\g) := \Z\weight(\g)$.
@@ -77,17 +80,36 @@
             Note that by requiring that $0 \not \in \rootlattice^{\pm}(\g)$, we have that:
                 $$\rootlattice^-(\g) \cap \rootlattice^+(\g) = \varnothing$$
         \end{remark}
-        
-        \begin{definition}[Automorphisms of types I and II] \label{def: automorphisms_of_types_I_and_II}
-            Given a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, let us consider a Lie algebra automorphism $\vartheta \in \Aut_{\Lie\Alg}(\g)$. 
-            \begin{itemize}
-                \item 
-                \item 
-            \end{itemize}
+        \begin{example}
+            By their very construction (e.g. as explained in \cite[Chapter 1]{kac_infinite_dimensional_lie_algebras}), Kac-Moody algebras are triangular-decomposable. Finite-dimensional but non-Kac-Moody examples include reductive Lie algebras, while infinite-dimensional non-Kac-Moody examples include Heisenberg algebras and Virasoro algebras, extended affine Lie algebras (EALAs) in the sense of \cite{neher_lectures_on_EALAs}, as well as the higher-nullity analogues of the Heisenberg and Virasoro algebras that arise via EALAs. Triangular-decomposable Lie algebras form a very large class.
+
+            On the other hand, solvable Lie algebras for instance - and thus also the Lie algebras that are nilpotent, and especially the abelian ones - are \textit{not} triangular decomposable.
+        \end{example}
+
+        \begin{definition}[Integrable modules] \label{def: integrable_modules_over_triangular_decomposable_lie_algebras}
+            Consider a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. A $\g$-module given by $\pi: \g \to \End(V)$ is said to be \textbf{integrable} if for any $\alpha \in \rootlattice^+(\g)$ and for any corresponding weight vector $e_{\alpha} \in \g_{\alpha}$, the operator $\pi(e_{\alpha}) \in \End(V)$ is locally nilpotent, which is to say that for all $v \in V$, there exists some $N_v > 0$ such that $\pi(e_{\alpha})^n \cdot v = 0$ for all $n \geq N_v$. More succinctly, we say that $V$ is integrable if $\n^+$ acts locally nilpotently on it.
         \end{definition}
-        \begin{remark}[Borel subalgebras]
-            Given a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, it is typical to refer to the subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ as the \textbf{positive/negative Borel subalgebras} of $\g$. 
-        \end{remark}
+        In the Kac-Moody case, this notion reduces to the same notion by the same name, as defined in \cite[Chapter 3]{kac_infinite_dimensional_lie_algebras}.
+
+        Given a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, it is typical to refer to the subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ as the \textbf{positive/negative Borel subalgebras} of $\g$. More generally, Borel subalgebras of an arbitrary Lie algebra are those Lie subalgebras which are maximal amongst the solvable ones.
+            
+        As an interlude, let us consider a Kac-Moody algebra $\g$, which is triangular-decomposable by construction (see \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}). When $\g$ either of finite or affine type, there is an associated \say{Kac-Moody group}:
+            $$\frakG$$
+        whose construction we recall now, following the presentation from \cite{perrin_kac_moody_algebras}.
+        \todo[inline]{Recall the construction of Kac-Moody groups for context.}
+        
+        By a result of Kac and Peterson from \cite{kac_peterson_infinite_flag_varieties_and_conjugacy_of_cartan_subalgebras} (cf. also \cite{chernousov_egorov_gille_pianzola_cohomological_proof_of_peterson_kac_theorem} and \cite{chernousov_neher_pianzola_conjugacy_of_cartan_subalgebras_in_EALAs_with_non_fgc_centreless_cores}), which builds upon a classical result of Borel, we know that when $\g$ either of finite or affine type, all Borel subalgebras are $\frakG$-conjugate.
+
+        Inspired by what has been recalled just now, let us now propose the following crude classification of automorphisms of weighed Lie algebras. From now on, we fix triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. Let us write $\frakG$ for the associated pro-group, and $\Ad: \frakG \to \Aut_{\Lie\Alg}(\g)$ for the adjoint action; per the construction of $\frakG$, this action is faithful. Consider a Lie algebra automorphism:
+            $$\vartheta \in \Aut_{\Lie\Alg}(\g)$$
+        under which $\h$ is stable, i.e. it is such that:
+            $$\vartheta|_{\hbar} \in \Aut_{\Lie\Alg}(\h)$$
+        In such a situation, we write:
+            $$\vartheta \in \Aut(\g, \h)$$
+        and say that this is an automorphism of $\g$ \textbf{weighed} by $\h$. Note that $\omega \in \Aut(\g, \h)$ by definition.
+        \begin{definition}[Automorphisms of types I and II] \label{def: automorphisms_of_types_I_and_II}
+            
+        \end{definition}
 
     \subsection{Twisted Manin triples and Lie coideals}
 
