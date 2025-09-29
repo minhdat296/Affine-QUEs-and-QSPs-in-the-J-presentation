@@ -1,0 +1,35 @@
+Let us recall the following definition from \cite[Subsection 2.6]{appel_laredo_2_categorical_etingof_kazhdan_quantisation} (see also \cite[Subsection 7.4]{etingof_kazhdan_quantisation_1}).
+\begin{definition}[Manin triples] \label{def: manin_triples}
+    A \textbf{Manin triple} is a triple of Lie algebras $(\a, \a^+, \a^-)$ such that $\a = \a^- \oplus \a^+$, along with a non-degenerate invariant pairing $(\cdot, \cdot) \in \Hom( \Sym^2(\a)^{\a}, \bbC )$, which are to satisfy the following conditions.
+    \begin{itemize}
+        \item With respect to $(\cdot, \cdot)$, the Lie subalgebras $\a^{\pm} \subset \a$ are to be isotropic. 
+        \item The non-degenerate pairing $(\cdot, \cdot)$ induces an isomorphism of topological vector spaces $\a^- \xrightarrow[]{\cong} (\a^+)^*$, with $\a^+$ equipped with the discrete topology and $(\a^+)^*$ equipped with the weak topology.
+        \item The commutator on $\a = \a^- \oplus \a^+$ is continuous with respect to the topologies chosen above. 
+    \end{itemize}
+\end{definition}
+Now, if $(\a, \a^+, \a^-)$ is a Manin triple, then we can construct a Lie bialgebra structure on $\a = \a^+ \oplus \a^-$ in the following manner. Let $\calr \in \a^+ \tensor \a^- \subset \a \tensor \a$ is the canonical element, corresponding to $\id_{\a}$ via the non-degenerate pairing on $\a$. Then, one can check that the following construction defines a topological Lie cobracket $\delta: \a \to \a \hattensor \a$:
+    \begin{equation}
+        \delta(x) := [\Box(x), \calr] \quad, \quad x \in \a
+    \end{equation}
+wherein $\Box(x) := x \tensor 1 + 1 \tensor x$. This is compatible with the Lie bracket on $\a$ in such a manner that $\a$ is a Lie bialgebra. Also, it can be shown that:
+    $$\pm \delta^{\pm} := \delta|_{\a^{\pm}}: \a^{\pm} \to \a^{\pm} \tensor \a^{\pm}$$
+are well-defined Lie sub-bialgebra structures, which are such that each of the Lie cobrackets $\delta^{\pm}$ is dual to the Lie bracket on $\a^{\pm}$, respectively. Additionally, $(\a, \delta)$ is isomorphic to Drinfeld's classical double of either $(\a^{\pm}, \delta^{\pm})$ (more on this shortly); indeed, these doubles are isomorphic to one another.
+\begin{remark}
+    It can be checked that $\calr$ satisfies the \say{classical Yang-Baxter equation}:
+        \begin{equation} \label{equation: CYBE}
+            [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] = 0
+        \end{equation}
+    and for this reason, Lie bialgebras that arise in this manner are known as being \say{quasi-triangular}.
+\end{remark}
+
+Conversely, given a topological Lie bialgebra structure $\delta^+: \a^+ \to \a^+ \hattensor \a^+$, one can construct a Manin triple $(\a, \a^+, \a^-)$ with $\a^- := (\a^+)^*, \a := \a^+ \oplus \a^-$, and the non-degenerate and invariant pairing on $\a$ is the canonical one between $\a^+$ and $\a^-$, given by:
+    $$(x, \varphi) := \varphi(x) \quad, \quad x \in \a^+, \varphi \in \a^-$$
+Moreover, $\a^-$ automatically carries an induced Lie bialgebra structure $\delta^-$ given by dualising the (continuous) Lie bracket on $\a^+$; there is thus also a Lie bialgebra structure on $\a$ given by $\delta := \delta^+ \oplus (-\delta^-)$. As such, the Manin triple constructed above is in fact a triple of Lie bialgebras; the procedure above that outputs the Lie bialgebra $(\a, \delta)$ from the Lie sub-bialgebra $(\a^+, \delta^+)$ is commonly known as Drinfeld's \textbf{classical double} construction, and we write:
+    $$\a \cong \Dr(\a^+)$$
+It is also easy to see that $\a \cong \Dr(\a^-)$.
+
+In short, the procedure described above yields us a bijective correspondence:
+    \begin{equation} \label{equation: manin_triple_lie_bialgebra_correspondence}
+        \left\{ \text{Manin triples $(\a, \a^+, \a^-)$} \right\} \leftrightarrows \left\{ \text{Lie bialgebra structures $(\a^+, \delta^+)$} \right\}
+    \end{equation}
+wherein the forward map is given by $\delta^+ := [\Box, \calr]|_{\a^+}$ while the backward map sends $(\a^+, \delta^+)$ to $(\Dr(\a^+) := \a^+ \oplus (\a^+)^*, \a^+, (\a^+)^*)$.

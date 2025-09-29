@@ -1,141 +1,69 @@
-\section{Twisted Manin triples}
-    \subsection{Recollections about Manin triples}
-        Let us recall the following definition from \cite[Subsection 2.6]{appel_laredo_2_categorical_etingof_kazhdan_quantisation} (see also \cite[Subsection 7.4]{etingof_kazhdan_quantisation_1}).
-        \begin{definition}[Manin triples] \label{def: manin_triples}
-            A \textbf{Manin triple} is a triple of Lie algebras $(\a, \a^+, \a^-)$ such that $\a = \a^- \oplus \a^+$, along with a non-degenerate invariant pairing $(\cdot, \cdot) \in \Hom( \Sym^2(\a)^{\a}, \bbC )$, which are to satisfy the following conditions.
+\section{Twisted Manin triples and quantisation of Lie coideals}
+    \subsection{Twisted Manin triples and Lie coideals}
+        For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notations therein.
+    
+        \begin{definition}[Twisted Manin triple] \label{def: twisted_manin_triples}
+            Suppose that $(\g, \h)$ is a weighted Lie algebra, that $(\g, \g^+, \g^-)$ is a Manin triple, and consider some pseudo-involution\footnote{In principle, definition \ref{def: twisted_manin_triples} can be written down without the automorphism $\vartheta$ being pseudo-involutive, but such scenarios are beyond the scope of our purposes.} $\vartheta \in \PseudoInv(\g, \h)$. Also, denote the bilinear form associated to the Manin triple above by $(\cdot, \cdot)_{\g}$.
             \begin{itemize}
-                \item With respect to $(\cdot, \cdot)$, the Lie subalgebras $\a^{\pm} \subset \a$ are to be isotropic. 
-                \item The non-degenerate pairing $(\cdot, \cdot)$ induces an isomorphism of topological vector spaces $\a^- \xrightarrow[]{\cong} (\a^+)^*$, with $\a^+$ equipped with the discrete topology and $(\a^+)^*$ equipped with the weak topology.
-                \item The commutator on $\a = \a^- \oplus \a^+$ is continuous with respect to the topologies chosen above. 
+                \item Said pseudo-involution $\vartheta$ is then said to \textbf{twist} the aforementioned Manin triple if either $\vartheta(\g^{\pm}) = \g^{\pm}$ or $\vartheta(\g^{\pm}) = -\g^{\mp}$.
+                \item The $\vartheta$-twisting above is said to be \textbf{invariant} (respectively, \textbf{anti-invariant}) if $( \vartheta(x), y )_{\g} = ( x, \vartheta(y) )_{\g}$ (respectively, if $( \vartheta(x), y )_{\g} = -( x, \vartheta(y) )_{\g}$).
             \end{itemize}
         \end{definition}
-        Now, if $(\a, \a^+, \a^-)$ is a Manin triple, then we can construct a Lie bialgebra structure on $\a = \a^+ \oplus \a^-$ in the following manner. Let $\calr \in \a^+ \tensor \a^- \subset \a \tensor \a$ is the canonical element, corresponding to $\id_{\a}$ via the non-degenerate pairing on $\a$. Then, one can check that the following construction defines a topological Lie cobracket $\delta: \a \to \a \hattensor \a$:
-            \begin{equation}
-                \delta(x) := [\Box(x), \calr] \quad, \quad x \in \a
-            \end{equation}
-        wherein $\Box(x) := x \tensor 1 + 1 \tensor x$. This is compatible with the Lie bracket on $\a$ in such a manner that $\a$ is a Lie bialgebra. Also, it can be shown that:
-            $$\pm \delta^{\pm} := \delta|_{\a^{\pm}}: \a^{\pm} \to \a^{\pm} \tensor \a^{\pm}$$
-        are well-defined Lie sub-bialgebra structures, which are such that each of the Lie cobrackets $\delta^{\pm}$ is dual to the Lie bracket on $\a^{\pm}$, respectively. Additionally, $(\a, \delta)$ is isomorphic to Drinfeld's classical double of either $(\a^{\pm}, \delta^{\pm})$ (more on this shortly); indeed, these doubles are isomorphic to one another.
+
+        \begin{theorem}[Lie bialgebras and coideals from invariantly twisted Manin triples] \label{theorem: lie_bialgebras_from_invariantly_twisted_manin_triples}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, that $(\g, \g^+, \g^-)$ is a Manin triple twisted by some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$; also, let us write $\delta^{\pm}$ for the Lie bialgebra structures on $\g^{\pm}$. Next, let:
+                $$\k$$
+            be the $\vartheta$-pseudo-fixed-point subalgebra of $\g$ constructed in proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}, and let:
+                $$\k^{\pm} := \k \cap \g^{\pm}$$
+            \begin{enumerate}
+                \item There is a topological Lie bialgebra structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \k^+$, given by $\delta_{\k^+} := [\cdot, \cdot]_{\k^-}^*$, if and only if the $\vartheta$-twisting is \textit{invariant}. This is \textit{not} a Lie sub-bialgebra of $(\g^+, \delta^+)$.
+                \item The restriction $\delta_{\k^+} := \delta^+|_{\k^+}$ is a Lie right-coideal structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \g^+$ if and only if the $\vartheta$-twisting is \textit{anti-invariant}.
+            \end{enumerate}
+        \end{theorem}
         \begin{remark}
-            It can be checked that $\calr$ satisfies the \say{classical Yang-Baxter equation}:
-                \begin{equation} \label{equation: CYBE}
-                    [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] = 0
+            Before we begin the proof, let us remark that we are forced to work with a root-decomposable Lie algebra instead of a general weighted one because so that we can make use of the pseudo-fixed-point subalgebra $\vartheta$ from proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}. It would be interesting to know if this assumption can be relaxed, or indeed, even done away with entirely.
+        \end{remark}
+            \begin{proof}
+                Let $\g^{\pm} := \k^{\pm} \oplus \m^{\pm}$ be a splitting of vector spaces.
+                \begin{enumerate}
+                    \item 
+                    \item 
+                \end{enumerate}
+            \end{proof}
+
+        \begin{lemma}[Root-decomposable Lie bialgebras] \label{lemma: root_decomposable_lie_bialgebras}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, and consider the Borel subalgebras $\b^{\pm} := \h \oplus \n^{\mp}$. Next, let us form the Lie algebra:
+                $$\a := \b^+ \oplus \b^-$$
+            into which $\b^{\pm}$ embed by means of the maps $\eta^{\pm}: \b^{\pm} \hookrightarrow \a$ given by:
+                \begin{equation} \label{equation: root_decomposable_borel_subalgebra_embeddings}
+                    \eta^{\pm}(x) := x \oplus ( \pm x_{\h} ) \quad, \quad x \in \b^{\pm}
                 \end{equation}
-            and for this reason, Lie bialgebras that arise in this manner are known as being \say{quasi-triangular}.
-        \end{remark}
-        
-        Conversely, given a topological Lie bialgebra structure $\delta^+: \a^+ \to \a^+ \hattensor \a^+$, one can construct a Manin triple $(\a, \a^+, \a^-)$ with $\a^- := (\a^+)^*, \a := \a^+ \oplus \a^-$, and the non-degenerate and invariant pairing on $\a$ is the canonical one between $\a^+$ and $\a^-$, given by:
-            $$(x, \varphi) := \varphi(x) \quad, \quad x \in \a^+, \varphi \in \a^-$$
-        Moreover, $\a^-$ automatically carries an induced Lie bialgebra structure $\delta^-$ given by dualising the (continuous) Lie bracket on $\a^+$; there is thus also a Lie bialgebra structure on $\a$ given by $\delta := \delta^+ \oplus (-\delta^-)$. As such, the Manin triple constructed above is in fact a triple of Lie bialgebras; the procedure above that outputs the Lie bialgebra $(\a, \delta)$ from the Lie sub-bialgebra $(\a^+, \delta^+)$ is commonly known as Drinfeld's \textbf{classical double} construction, and we write:
-            $$\a \cong \Dr(\a^+)$$
-        It is also easy to see that $\a \cong \Dr(\a^-)$.
-
-        In short, the procedure described above yields us a bijective correspondence:
-            \begin{equation} \label{equation: manin_triple_lie_bialgebra_correspondence}
-                \left\{ \text{Manin triples $(\a, \a^+, \a^-)$} \right\} \leftrightarrows \left\{ \text{Lie bialgebra structures $(\a^+, \delta^+)$} \right\}
-            \end{equation}
-        wherein the forward map is given by $\delta^+ := [\Box, \calr]|_{\a^+}$ while the backward map sends $(\a^+, \delta^+)$ to $(\Dr(\a^+) := \a^+ \oplus (\a^+)^*, \a^+, (\a^+)^*)$.
-
-    \subsection{Twisted Manin triples and Lie coideals}
-
-    \subsection{Example: twistings of the standard Kac-Moody Manin triple}
-        To begin, let us recall some basic features of Kac-Moody algebras. The canonical reference is the book \cite{kac_infinite_dimensional_lie_algebras}.
-        
-        Following \cite[Chapter 1]{kac_infinite_dimensional_lie_algebras}, let $C := ( C_{i, j} )_{1 \leq i, j \leq n}$ be a (generalised) Cartan matrix and choose for it a realisation $(\h, \simpleroots, \simpleroots^{\vee})$, i.e. a vector space $\h$ of dimension $l := 2n - \rank C$ along with linearly independent subsets $\simpleroots^{\vee} := \{ \alpha_i^{\vee} \}_{1 \leq i \leq n} \subset \h$ and $\simpleroots := \{ \alpha_i \}_{1 \leq i \leq n} \subset \h^*$, whose elements are known as \say{simple coroots} and \say{simple roots}, and are such that:
-            \begin{equation} \label{equation: cartan_matrix_entries}
-                \alpha_i( \alpha_j^{\vee} ) = C_{i, j}
-            \end{equation}
-
-        We can then define a Lie algebra $\tilde{\g}$ to be the one generated by the set:
-            \begin{equation} \label{equation: kac_moody_generators}
-                \h \cup \{ e_i^{\pm} \}_{1 \leq i \leq n}
-            \end{equation}
-        whose elements are subjected to the following relations:
-            \begin{equation} \label{equation: extended_kac_moody_relations}
-                \begin{gathered}
-                    [h, h'] = 0 \quad, \quad h, h' \in \h
-                    \\
-                    [h, e_i^{\pm}] = \pm \alpha_i(h) e_i^{\pm} \quad, \quad [e_i^+, e_j^-] = \delta_{i, j} \alpha_i^{\vee} \quad, \quad h \in \h, 1 \leq i \leq n
-                \end{gathered}
-            \end{equation}
-        It can be shown (see e.g. \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) that $\tilde{\g}$ admits a \say{triangular decomposition}:
-            $$\tilde{\g} \cong \tilde{\n}^- \oplus \h \oplus \tilde{\n}^+$$
-        wherein $\tilde{\n}^{\pm}$ are the free Lie algebras generated by the sets $\{ e_i^{\pm} \}_{1 \leq i \leq n}$.
+            (cf. equation \eqref{equation: borel_lie_sub_bialgebra_embeddings}), wherein $x_{\h}$ is the image of $x \in \b^{\pm}$ under the canonical quotient map $\b^{\pm} \to \b^{\pm}/\n^{\pm} \cong \h$. Moreover, this larger Lie algebra shall be equipped with the symmetric, non-degenerate, and invariant bilinear form given by:
+                \begin{equation} \label{equation: extended_root_decomposable_pairings}
+                    (\cdot, \cdot)_{\a} := (\cdot, \cdot)_{\g} - (\cdot, \cdot)_{\h}
+                \end{equation}
+            Then, with respect to the bilinear form above, we have that:
+                \begin{equation} \label{equation: root_decomposable_manin_triples}
+                    (\a, \eta^+(\b^+), \eta^-(\b^-))
+                \end{equation}
+            is a Manin triple.
+        \end{lemma}
+            \begin{proof}
+                First of all, via lemma \ref{lemma: direct_sums_of_weighted_lie_algebras}, we see that $\a$ is weighted by the abelian Lie subalgebra $\eta^+(\h) \oplus \eta^-(\h)$. Next, from remark \ref{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}, it is clear that the Lie subalgebras $\eta^{\pm}(\b^{\pm}) \subset \a$ are isotropic with respect to $(\cdot, \cdot)_{\a}$. The rest follows from the construction of the triple $(\a, \eta^+(\b^+), \eta^-(\b^-))$.
+            \end{proof}
+        \begin{proposition}[Twisted Manin triples of types I and II] \label{prop: twisted_manin_triples_of_types_I_and_II}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a symmetrisable Kac-Moody algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Suppose also that the Manin triple \eqref{equation: root_decomposable_manin_triples} is twisted by $\vartheta$, invariantly or anti-invariantly. Then:
+            \begin{enumerate}
+                \item $\vartheta(\n^{\pm}) = \n^{\pm}$ if and only if $\vartheta$ is of type I.
+                \item $\vartheta(\n^{\pm}) = -\n^{\mp}$ if and only if $\vartheta$ is of type II.
+            \end{enumerate}
+        \end{proposition}
+            \begin{proof}
+                First of all, by definition \ref{def: weighted_automorphisms_of_weighted_lie_algebras}, we know that $\vartheta|_{\h} \in \Inv_{\Lie\Alg}(\h)$. The map $\vartheta|_{\h}$ thus extends to an involution on the weighing subalgebra $\eta^+(\h) \oplus \eta^-(\h) \subset \a$, and hence a pseudo-involution on $\a$, which we denote by the same symbol $\vartheta$.
             
-        Next, if we let $\r \subset \tilde{\g}$ be the Lie ideal that is the sum of all ideals with zero intersection with the Lie ideal $\h \subset \tilde{\g}$, then we shall obtain the \say{Kac-Moody algebra} $\g$ associated to the previously fixed Cartan matrix as the quotient:
-            $$\g := \tilde{\g}/\r$$
-        \textit{A priori} - and this is a somewhat non-trivial fact (see \cite[Theorem 9.11]{kac_infinite_dimensional_lie_algebras}) - the Lie algebra $\g$ is generated by the same set \eqref{equation: kac_moody_generators}\footnote{Even though it is technically an abuse of notations, we shall use the same symbols to denote the elements of \eqref{equation: kac_moody_generators} and their images under the quotient map $\tilde{\g} \to \g$.}, and in addition to the relations \eqref{equation: extended_kac_moody_relations}, the generators now satisfy also the so-called \say{Serre relations}, which take the following form in the adjoint representation of $\g$:
-            \begin{equation} \label{equation: kac_moody_serre_relations}
-                ( \ad( e_i^{\pm} ) )^{1 - C_{i, j}} \cdot e_j \quad, \quad 0 \leq i \not = j \leq l
-            \end{equation}
-        or in other words, $\r$ is generated by such relations. This leads to a triangular decomposition:
-            $$\g \cong \n^- \oplus \h \oplus \n^+$$
-        wherein $\n^{\pm} := \tilde{\n}^{\pm}/( \tilde{\n}^{\pm} \cap \r )$
+                Let $\frakG$ be the minimal pro-algebraic group associated to $(\g, \h, \n^{\pm}, \omega)$, which exists because this Lie algebra is integrable. Since $(\cdot, \cdot)_{\g}$ is $\g$-invariant, it is also $\frakG$-invariant, i.e. $(\Ad(g) \cdot x, y)_{\g} = (x, \Ad(g) \cdot y)$ for all $x, y \in \g$ and all $g \in \frakG$. This means that for all $g \in \frakG$, we have in the $\vartheta$-invariant case that $( \Ad(g) \cdot \vartheta(x), y )_{\g} = ( x, \Ad(g) \cdot \vartheta(y) )_{\g}$ as a result of the fact that $( \vartheta(x), y )_{\g} = ( x, \vartheta(y) )_{\g}$ (cf. definition \ref{def: twisted_manin_triples}), and similarly in the anti-invariant case. By definition, $\vartheta$ is of type II if and only if we can choose $g \in \frakG$ such that $\omega = \Ad(g) \cdot \vartheta$.  As the bilinear form $(\cdot, \cdot)_{\g}$ is $\omega$-invariant by definition \ref{def: root_decomposable_lie_algebras}, and as $\omega(\n^{\pm}) = -\n^{\mp}$ by definition \ref{def: triangular_decomposable_lie_algebras}, we are done.
+            \end{proof}
 
-        Due to the relations $[h, e_i^{\pm}] = \pm \alpha_i(h) e_i^{\pm}$, the Lie algebra $\tilde{\g}$ has a canonical \say{root grading} by the abelian group $\rootlattice := \Z \simpleroots$ (commonly called the \say{root lattice}), taking the form of a \say{root space decomposition}:
-            $$\tilde{\g} \cong \bigoplus_{\alpha \in \rootlattice} \tilde{\g}_{\alpha}$$
-        wherein $\tilde{\g}_{\alpha} := \{ x \in \tilde{\g} \mid \forall h \in \h: [h, x] = \alpha(h) x \}$ are the \say{root spaces}. Any lattice element $\alpha := \sum_{1 \leq i \leq n} a_i \alpha_i \in \rootlattice$ has a \say{height} $\height(\alpha) := \sum_{1 \leq i \leq n} a_i$, which allows us to define $\deg x_{\alpha} := \height(\alpha)$ for all $x_{\alpha} \in \tilde{\g}_{\alpha}$. In particular, the degrees of the generators \eqref{equation: kac_moody_generators} are $\deg e_i^{\pm} = \pm 1$ and $\deg h = 0$ (for all $h \in \h$). Through the relations \eqref{equation: kac_moody_serre_relations}, one can also see that the graded components are all finite-dimensional.
+    \subsection{Deformation quantisation}
 
-        Henceforth, let us assume moreover that the Cartan matrix $C$ is symmetrisable, i.e. that there exists an invertible diagonal $n \x n$ matrix $D$ and a symmetric $n \x n$ matrix $A$ (called the symmetrisation of $C$) such that:
-            $$C := DA$$
-        This allows us to define a symmetric and non-degenerate bilinear form $(\cdot, \cdot)_{\h} \in \Hom( \Sym^2(\h), \bbC )$ given by:
-            \begin{equation} \label{equation: kac_moody_pairing_on_cartan_subalgebras}
-                ( \alpha_i^{\vee}, h ) := \delta_{i, j} D_{i, i}^{-1} \alpha_i(h) \quad, \quad h \in \h, 1 \leq i \leq n
-            \end{equation}
-        As an aside, we note that equations \eqref{equation: kac_moody_pairing_on_cartan_subalgebras} and \eqref{equation: cartan_matrix_entries} together imply that:
-            $$A_{i, j} = (\alpha_i^{\vee}, \alpha_j^{\vee}) = \delta_{i, j} D_{i, i}^{-1} \alpha_i( \alpha_j^{\vee} ) = \delta_{i, j} D_{i, i}^{-1} C_{i, j}$$
-        Anyhow, the bilinear form $(\cdot, \cdot)_{\h}$ constructed above induces, via an induction process\footnote{For a less \textit{ad hoc} construction of $(\cdot, \cdot)_{\g}$, we refer the reader to \cite{neher_pianzola_prelat_sepp_invariant_bilinear_forms_via_fppf_descent}.}, a symmetric, non-degenerate, and \textit{invariant} bilinear form $(\cdot, \cdot)_{\g} \in \Hom( \Sym^2(\g)^{\g}, \bbC )$ given by:
-            \begin{equation} \label{equation: kac_moody_pairing}
-                ( e_i^-, e_j^+ )_{\g} = \delta_{i, j} D_{i, i}^{-1}
-            \end{equation}
-        and is uniquely determined by $(\cdot, \cdot)_{\h}$. Moreover, the bilinear form $(\cdot, \cdot)_{\g}$ extends to $\tilde{\g}$; this extension is a degenerate bilinear form whose radical is precisely $\r \subset \tilde{\g}$. Additionally, and this is a rather important fact for us, the bilinear form $(\cdot, \cdot)_{\g}$ is of total degree $0$ with respect to the $\rootlattice$-grading on $\Hom( \Sym^2(\g)^{\g}, \bbC )$ induced by the one on $\g$ (and this is one reason why the root spaces $\g_{\alpha} \subset \g$ being finite-dimensional is important).
-        \begin{convention}
-            For brevity, let us refer to symmetric (and often also non-degenerate) and invariant bilinear forms as \say{invariant pairings}.
-        \end{convention}
-
-        Now, let $\b^{\pm} := \n^{\pm} \oplus \h$ be the \say{Borel subalgebras} of the Kac-Moody algebra $\g$. It is clear that these Lie subalgebras of $\g$ are not isotropic with respect to the Kac-Moody pairing $(\cdot, \cdot)_{\g}$ given by equation \eqref{equation: kac_moody_pairing}. However, one can consider instead the larger Lie algebra $\a := \b^+ \oplus \b^-$, into which $\b^{\pm}$ embed by means of the maps $\eta^{\pm}: \b^{\pm} \hookrightarrow \a$ given by:
-            \begin{equation} \label{equation: borel_lie_sub_bialgebra_embeddings}
-                \eta^{\pm}(x) := x \oplus ( \pm x_{\h} ) \quad, \quad x \in \b^{\pm}
-            \end{equation}
-        wherein $x_{\h}$ is the image of $x \in \b^{\pm}$ under the canonical quotient map $\b^{\pm} \to \b^{\pm}/\n^{\pm} \cong \h$. This larger Lie algebra shall be equipped with the non-degenerate and invariant pairing given by:
-            $$(\cdot, \cdot)_{\a} := (\cdot, \cdot)_{\g} - (\cdot, \cdot)_{\h}$$
-        in which the Lie subalgebras $\eta^{\pm}(\b^{\pm})$ are clearly isotropic with respect to $(\cdot, \cdot)_{\a}$. As such, there is a Manin triple:
-            $$(\a, \eta^+(\b^+), \eta^-(\b^-))$$
-        from which arises the topological Lie bialgebra structures $\delta^{\pm}: \eta^{\pm}(\b^{\pm}) \to \eta^{\pm}(\b^{\pm}) \hattensor \eta^{\pm}(\b^{\pm})$ given by:
-            $$\delta^{\pm} = [\Box, \calr]$$
-        wherein $\calr$ is the Casimir tensor. On generators, these Lie cobrackets are given by:
-            \begin{equation} \label{equation: standard_kac_moody_lie_bialgebra_structure}
-                \begin{gathered}
-                    \delta^{\pm}(h) = 0 \quad, \quad h \in \h
-                    \\
-                    \delta^{\pm}(e_i^{\pm}) = \frac12 D_{i, i} e_i^{\pm} \wedge \alpha_i^{\vee} \quad, \quad 1 \leq i \leq n
-                \end{gathered}
-            \end{equation}
-        \begin{remark}
-            Note also, that by construction, we have that:
-                $$\a \cong \Dr( \eta^{\pm}( \b^{\pm} ) )$$
-            as Lie bialgebras.
-        \end{remark}
-            
-        As a consequence of this construction, the Lie subalgebra $\h \subset \a$ is a Lie coideal on top of being a Lie ideal (this is trivial, for it is abelian), and hence the quotient:
-            $$\g \cong \a/\h$$
-        carries a Lie bialgebra structure given by the same formulae as in \eqref{equation: standard_kac_moody_lie_bialgebra_structure}.
-        \begin{remark}
-            In fact, it is well-known that the formulae in \eqref{equation: standard_kac_moody_lie_bialgebra_structure} lift to topological Lie bialgebra structures $\tilde{\delta}^{\pm}: \tilde{\b}^{\pm} \to \tilde{\b}^{\pm} \hattensor \tilde{\b}^{\pm}$ on the Borel subalgebras $\tilde{\b}^{\pm} := \h \oplus \tilde{\n}^{\pm}$, and hence also on the extended Kac-Moody algebra $\tilde{\g}$. This is a \textit{post hoc} construction, inspired by the construction of the Lie bialgebra structures on $\b^{\pm}$ described above, and it can also be shown, without much difficulty, that the Lie algebra $\tilde{\a} := \tilde{\b}^+ \oplus \tilde{\b}^-$ with the Lie cobracket given by $\tilde{\delta} := \tilde{\delta}^+ \oplus (-\tilde{\delta}^-)$ is isomorphic to the classical doubles $\Dr(\tilde{\b}^{\pm})$; note that the embeddings of $\tilde{\b}^{\pm}$ into this larger Lie bialgebra are given by the same formulae as in \eqref{equation: borel_lie_sub_bialgebra_embeddings}. 
-
-            That said, the existence of such a Lie bialgebra structure on the extended Kac-Moody algebra $\tilde{\g}$ is very useful for formulating a quantisation of $\g$, as we shall explain later. 
-        \end{remark}
-
-        Now that we have recalled the construction of the standard Lie biaglebra structure on Kac-Moody algebras, let us construct Lie coideal subalgebras thereof that arise via so-called the \say{pseudo-involutions}, first conceptualised in \cite[Definition 1.1]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. As remarked earlier, the notion in \textit{loc. cit.} coincides with the one described in our definition \ref{def: weighted_automorphisms_of_weighted_lie_algebras}, and also as we mentioned, let us now discuss the properties of pseudo-involutions in the case where the weighted Lie algebra at play is a Kac-Moody algebra of either a finite or affine type.
-        
-        Recall that given a vector space $V$ and two vector subspaces $V_1, V_2 \subset V$ thereof, those two subspaces are \textbf{commensurable} if:
-            \begin{equation} \label{equation: commensurability}
-                \codim(V_1 \cap V_2, V_1 + V_2) < +\infty
-            \end{equation}
-        We say that a Lie algebra automorphism:
-            $$\vartheta \in \Aut_{\Lie\Alg}(\g)$$
-        is of \textbf{type I} (respectively, of \textbf{type II}) if $\vartheta(\b^+)$ is commensurable with $\b^+$ (respectively, with $\b^-$) inside $\g$. \textit{A priori}, if $\vartheta$ is of type II, then up to conjugation of $\vartheta$ by some inner automorphism of $\g$, we have that:
-            $$\vartheta(\h) = \h$$
-        and moreover, any $\vartheta$-stable root space is in fact fixed by $\vartheta$. When $\vartheta$ itself possesses these properties, we shall write:
-            $$\vartheta \in \Aut_{\Lie\Alg}(\g, \h)$$
-        or merely $\vartheta \in \Aut(\g, \h)$. We note that this is a natural notion, seeing that the Cartan involution, given by $\vartheta(e_i^{\pm}) := -e_i^{\mp}$ and $\vartheta(h_i) := -h_i$, is an example of an automorphism of type II. 
+    \subsection{Twisted classical r-matrices, classical k-matrices, and their quantisations}

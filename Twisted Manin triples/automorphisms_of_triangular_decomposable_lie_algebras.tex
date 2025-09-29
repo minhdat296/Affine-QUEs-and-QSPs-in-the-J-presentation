@@ -1,8 +1,8 @@
 \section{Triangular-decomposable Lie algebras and their automorphisms}
-    \subsection{Weighted Lie algebras and (pre)triangular-decomposable Lie algebras}
-        Ideally, we would like to develop a theory of Manin triples $(\a, \a^+, \a^-)$ that are somehow twisted by general Lie algebra automorphisms $\vartheta \in \Aut_{\Lie\Alg}(\a)$, but at present, we are unfortunately at a loss for how to write down a description of such twisted Manin triples. Guided by the theory of quantum symmetric pairs (QSPs) that arise from so-called \say{pseudo-involutions} on affine Kac-Moody algebras (see e.g. \cite{regelskis_vlaar_reflection_matrices_coideal_subalgebras}, \cite{kolb_kac_moody_QSPs}, and references therein), we have chosen to restrict our consideration down to the class of Lie algebras that admit so-called \say{triangular decompositions}. The structure and representation theory of this class of Lie algebras has been studied extensively, notably in \cite{moody_pianzola_lie_algebras_with_triangular_decompositions}, and thanks to the fact that they admit triangular decompositions, one can speak of Borel subalgebras; the automorphisms that we shall consider shall be the ones that either stabilise or permute pairs of Borel subalgebras.
+    \subsection{Weighted Lie algebras and triangular-decomposable Lie algebras}
+        Ideally, we would like to develop a theory of Manin triples $(\a, \a^+, \a^-)$ that are somehow twisted by general Lie algebra automorphisms $\vartheta \in \Aut_{\Lie\Alg}(\a)$, but at present, we are unfortunately at a loss for how to write down a description of such twisted Manin triples. Guided by the theory of quantum symmetric pairs that arise from so-called \say{pseudo-involutions} on affine Kac-Moody algebras (see e.g. \cite{regelskis_vlaar_reflection_matrices_coideal_subalgebras}, \cite{kolb_kac_moody_QSPs}, and references therein), we have chosen to restrict our consideration down to the class of Lie algebras that admit so-called \say{triangular decompositions}. The structure and representation theory of this class of Lie algebras has been studied extensively, notably in \cite{moody_pianzola_lie_algebras_with_triangular_decompositions}, and thanks to the fact that they admit triangular decompositions, one can speak of Borel subalgebras; the automorphisms that we shall consider shall be the ones that either stabilise or permute pairs of Borel subalgebras.
         
-        Let us begin by recalling the construction of (pre)triangular-decomposable\footnote{In \textit{loc. cit.}, such Lie algebras are called \say{Lie algebras admitting triangular decompositions}, but we find the terminology somewhat cumbersome.} Lie algebras from \cite[Section 2.1]{moody_pianzola_lie_algebras_with_triangular_decompositions}. Their construction starts with what we shall refer to as their \say{weighing subalgebras}: this is a pair:
+        Let us begin by recalling the construction of triangular-decomposable\footnote{In \textit{loc. cit.}, such Lie algebras are called \say{Lie algebras admitting triangular decompositions}, but we find the terminology somewhat cumbersome.} Lie algebras from \cite[Section 2.1]{moody_pianzola_lie_algebras_with_triangular_decompositions}. Their construction starts with what we shall refer to as their \say{weighing subalgebras}: this is a pair:
             $$(\h, V)$$
         consisting of a non-zero abelian Lie algebra $\h \not = 0$ and a choice of a representation $\h \to \gl(V)$. Then, for any linear functional $\lambda \in \h^*$, a \say{weight vector} of weight $\lambda$ shall be an element $v \in V$ that is a simultaneous eigenvector of all the scalars in the set $\{ \lambda(h) \}_{h \in \h}$, i.e.:
             $$h \cdot v = \lambda(h) v \quad, \quad h \in \h$$
@@ -10,20 +10,34 @@
             $$V_{\lambda} := \{ v \in V \mid \forall h \in \h: h \cdot v = \lambda(h) v \}$$
         is called the \say{subspace of weight $\lambda$}. If $V = \sum_{\lambda \in \h^*} V_{\lambda}$ as vector subspaces of $V$, then we shall say that $V$ admits a \say{weight space decomposition} with respect to $\h$; \textit{a priori}, this sum is necessarily direct if it exists, i.e.:
             $$V = \bigoplus_{\lambda \in \h^*} V_{\lambda}$$
-        (see \cite[Section 2.1, Proposition 1]{moody_pianzola_lie_algebras_with_triangular_decompositions}). In order to avoid redundancy, let us refer to only the functionals $\lambda \in \h^*$ such that $V_{\lambda} \not = 0$ as \say{weights} of $V$, and the subset of $\h^*$ consisting of weights of $V$ is denoted by $\weight(V, \h)$.
+        (see \cite[Section 2.1, Proposition 1]{moody_pianzola_lie_algebras_with_triangular_decompositions}). In order to avoid redundancy, let us refer to only the functionals $\lambda \in \h^*$ such that $V_{\lambda} \not = 0$ as \say{weights} of $V$, and the subset of $\h^*$ consisting of weights of $V$ is denoted by\footnote{$\Pi$ for \say{poid}.} $\weight(V, \h)$.
 
         Next, consider another Lie algebra $\g$, on which our weighing algebra $\h$ acts via derivations, i.e. there exists a Lie algebra homomorphism $\h \to \der(\g)$, such that there exists a weight space decomposition:
             $$\g = \bigoplus_{\alpha \in \h^*} \g_{\alpha}$$
         It is then possible to show that:
-            $$[\g_{\alpha}, \g_{\beta}] = \g_{\alpha + \beta} \quad, \quad \alpha, \beta \in \h^*$$
-        and consequently, the Lie algebra $\g$ is graded by the abelian group $\rootlattice(\g, \h) := \Z\weight(\g, \h)$. Conversely, it is also possible to show that if there exists a set of weights $P \subset \weight(\g, \h)$ and a set of weight vectors $\{ e_{\alpha} \}_{\alpha \in P}$ such that $\g$ is generated as a Lie algebra by $\h \cup \{ e_{\alpha} \}_{\alpha \in P}$, then $\g = \bigoplus_{\alpha \in \h^*} \g_{\alpha}$ wherein $e_{\alpha} \in \g_{\alpha}$ for all $\alpha \in P$. For details on these facts, see \cite[Subsection 2.1, Proposition 2]{moody_pianzola_lie_algebras_with_triangular_decompositions}. Therefore, it makes sense to refer to a Lie algebra $\g$ generated by weight vectors and together with a weighing algebra $\h$ in the manner above as a Lie algebra \say{weighted} by $\h$. For compactness, let us denote such a \textbf{weighted Lie algebra} as a pair:
-            $$(\g, \h)$$
+            $$[\g_{\alpha}, \g_{\beta}] \subseteq \g_{\alpha + \beta} \quad, \quad \alpha, \beta \in \h^*$$
+        and consequently, the Lie algebra $\g$ is graded by the abelian group:
+            $$\rootlattice(\g, \h) := \Z\weight(\g, \h)$$
+        commonly called the \say{root lattice} of $\g$. Conversely, it is also possible to show that if there exists a set of weights $P \subset \weight(\g, \h)$ and a set of weight vectors $\{ e_{\alpha} \}_{\alpha \in P}$ such that $\g$ is generated as a Lie algebra by $\h \cup \{ e_{\alpha} \}_{\alpha \in P}$, then $\g = \bigoplus_{\alpha \in \h^*} \g_{\alpha}$ wherein $e_{\alpha} \in \g_{\alpha}$ for all $\alpha \in P$. For details on these facts, see \cite[Subsection 2.1, Proposition 2]{moody_pianzola_lie_algebras_with_triangular_decompositions}. Therefore, it makes sense to refer to a Lie algebra $\g$ generated by weight vectors and together with a weighing algebra $\h$ in the manner above as a Lie algebra \say{weighted} by $\h$. Let us record this.
+        \begin{definition}[Weighted Lie algebras] \label{def: weighted_lie_algebras}
+            A \textbf{weighted Lie algebra} is a pair:
+                $$(\g, \h)$$
+            consisting of a Lie algebra $\g$ and an abelian Lie algebra $\h$, which acts semi-simply on $\g$ by derivations.
+        \end{definition}
         \begin{remark}
-            For a Lie algebra $\g$ weighted by $\h$, we have that $\g_0 \cong \h$ if $\h$ acts by inner derivations.
+            For a Lie algebra $\g$ weighted by $\h$, we have that:
+                $$\h \subseteq \g_0$$
+            if $\h$ acts by inner derivations. Equality occurs if $\h$ is maximal amongst the abelian Lie subalgebras of $\g$ whose adjoint actions on $\g$ is semi-simple.
         \end{remark}
+        \begin{lemma}[Direct sums of weighted Lie algebras] \label{lemma: direct_sums_of_weighted_lie_algebras}
+            Let $(\g_1, \h_1)$ and $(\g_2, \h_2)$ be weighted Lie algebras via $\rho_1: \h_1 \to \der(\g_1)$ and $\rho_2: \h_2 \to \der(\g_2)$ respectively. Then, $(\g_1 \oplus \g_2, \h_1 \oplus \h_2)$ will also be a weighted Lie algebra, namely via $\rho_1 \oplus \rho_2: \h_1 \oplus \h_2 \to \der(\g_1 \oplus \g_2)$.
+        \end{lemma}
+            \begin{proof}
+                Clear as stated.
+            \end{proof}
 
-        \begin{definition}[(Pre)triangular-decomposable Lie algebras] \label{def: (pre)triangular_decomposable_lie_algebras}
-            A \textbf{pretriangular-decomposable Lie algebra} is a weighted Lie algebra $(\g, \h)$ satisfying the following additional conditions.
+        \begin{definition}[Triangular-decomposable Lie algebras] \label{def: triangular_decomposable_lie_algebras}
+            A \textbf{triangular-decomposable Lie algebra} is a weighted Lie algebra $(\g, \h)$ satisfying the following additional conditions.
             \begin{itemize}
                 \item There exists non-zero Lie subalgebras $\n^{\pm} \subset \g$ such that $\g \cong \n^- \oplus \h \oplus \n^+$ as Lie algebras.
                 \item There exists an involution $\omega: \g \xrightarrow[]{\cong} -\g$ (commonly called the \textbf{Cartan involution}) such that $\omega(\n^{\pm}) = -\n^{\mp}$ and $\omega|_{\h} = \id_{\h}$.
@@ -32,26 +46,29 @@
                 are free (additive) sub-semigroups of $\rootlattice(\g, \h) := \Z\weight(\g, \h)$.
                 \item Finally, we require that there is a semi-group basis\footnote{... which exists because we are pre-supposing that $\rootlattice^+(\g, \h)$ is free.} $\{\alpha_i\}_{i \in \simpleroots} \subset \rootlattice^+(\g, \h)$.
             \end{itemize}
-            A pretriangular-decomposable Lie algebra as above shall be denoted as a quintuple:
+            A triangular-decomposable Lie algebra as above shall be denoted as a quintuple:
                 $$(\g, \h, \n^+, \n^-, \omega)$$
             (though we shall usually abbreviate the signs and write $(\g, \h, \n^{\pm}, \omega)$ instead).
-
-            If the subalgebras $\n^{\pm} \subset \g$ are nilpotent, then $(\g, \h, \n^{\pm}, \omega)$ will be called a \textbf{triangular-decomposable} Lie algebra.
         \end{definition}
+        \begin{convention}
+            It is common to abbreviate:
+                $$\rootsystem(\g, \h) := \weight(\g, \h) \setminus \{0\}$$
+        \end{convention}
         \begin{remark}
             Note that by requiring that $0 \not \in \rootlattice^{\pm}(\g)$, we have that:
                 $$\rootlattice^-(\g, \h) \cap \rootlattice^+(\g, \h) = \varnothing$$
-                
-            Also, we should point out that the \say{upper/lower-triangular} subalgebras $\n^{\pm} \subset \g$ of a general pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$ are \textit{not} necessarily even locally nilpotent, let alone nilpotent! In more combinatorial terms, in this general of a setting, it is entirely possible for the so-called \say{root strings} to be infinitely long. This is the reason for singling out the triangular-decomposable Lie algebras from the larger class of pretriangular-decomposable ones.
 
-            Lastly, there is no guarantee in general that the weight spaces $\g_{\alpha} \subset \g$ are finite-dimensional. Pretriangular-decomposable Lie algebras with this property are said to be \textbf{regular}. Note that this property needs not imply that the Lie subalgebras $\n^{\pm}$ are nilpotent: for instance, extended Kac-Moody algebras (given by \eqref{equation: extended_kac_moody_relations}; cf. also \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) are regular in the above sense, but because their generators are not subjected to the Serre relations, those algebras are not triangular-decomposable, only pretriangular-decomposable. 
+            Also, there is no guarantee in general that the weight spaces $\g_{\alpha} \subset \g$ are finite-dimensional. Triangular-decomposable Lie algebras with this property are said to be \textbf{regular}. Note that this property needs not imply that the Lie subalgebras $\n^{\pm}$ are nilpotent: for instance, extended Kac-Moody algebras (given by \eqref{equation: extended_kac_moody_relations}; cf. also \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) are regular in the above sense, but their generators are not subjected to the Serre relations.
         \end{remark}
         \begin{example}
-            By their very construction (e.g. as explained in \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}), Kac-Moody algebras are pretriangular-decomposable. Via the Serre relations, one sees also that symmetrisable Kac-Moody algebras are actually triangular-decomposable.
+            By their very construction (e.g. as explained in \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}), Kac-Moody algebras are triangular-decomposable. Via the Serre relations, one sees also that symmetrisable Kac-Moody algebras are actually triangular-decomposable.
             
-            Finite-dimensional but non-Kac-Moody examples of pretriangular-decomposable Lie algebras include reductive Lie algebras, while infinite-dimensional non-Kac-Moody examples include Heisenberg algebras and Virasoro algebras, extended affine Lie algebras (EALAs) in the sense of \cite{neher_lectures_on_EALAs}, as well as the higher-nullity analogues of the Heisenberg and Virasoro algebras that arise via EALAs. Triangular-decomposable Lie algebras form a very large class.
+            Finite-dimensional but non-Kac-Moody examples of triangular-decomposable Lie algebras include reductive Lie algebras, while infinite-dimensional non-Kac-Moody examples include Heisenberg algebras and Virasoro algebras, extended affine Lie algebras (EALAs) in the sense of \cite{neher_lectures_on_EALAs}, as well as the higher-nullity analogues of the Heisenberg and Virasoro algebras that arise via EALAs. Triangular-decomposable Lie algebras form a very large class.
 
-            On the other hand, solvable Lie algebras for instance - and thus also the Lie algebras that are nilpotent, and especially the abelian ones - are \textit{not} pretriangular decomposable.
+            On the other hand, solvable Lie algebras for instance - and thus also the Lie algebras that are nilpotent, and especially the abelian ones - are \textit{not} triangular decomposable.
+        \end{example}
+        \begin{example}
+            Weighted Lie algebras need not be triangular-decomposable, even when the weighing algebra acts by inner derivations. For instance, if $(\g, \h, \n^{\pm}, \omega)$ is triangular-decomposable Lie algebra, then by definition \ref{def: triangular_decomposable_lie_algebras} the two Borel subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ are weighted by the adjoint action of $\h$, but they are not triangular-decomposable with respect to the same $\h$-action.
         \end{example}
 
     \subsection{Pseudo-involutions}
@@ -64,9 +81,47 @@
             $$\Aut(\g, \h) \quad \supset \quad \PseudoInv(\g, \h) \quad \supset \quad \Inv(\g, \h) \quad \subset \quad \Inv_{\Lie\Alg}(\g)$$
         and we note that $\Inv(\g, \h) := \Inv_{\Lie\Alg}(\g) \cap \Aut(\g, \h)$ just by definition.
         \begin{remark}
-            The notion of pseudo-involution above coincides with \cite[Definition 1.1]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. Additionally, note that the Cartan involution $\omega \in \Aut(\g, \h)$ of a given pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$ is in fact a weighted involution by definition, and the notion below is given \textit{relatively} to this choice of an involution on $\g$.
+            The notion of pseudo-involution above coincides with \cite[Definition 1.1]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. Additionally, note that the Cartan involution $\omega \in \Aut(\g, \h)$ of a given triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$ is in fact a weighted involution by definition, and the notion below is given \textit{relatively} to this choice of an involution on $\g$.
         \end{remark}
+        
+        It is worth noting, that in the following sense, one ought to think of the notion of weighted automorphisms as an inherently combinatorial one.
+        \begin{lemma}[Weighted automorphisms permute weights] \label{lemma: weighted_automorphisms_permute_weights}
+            Let $(\g, \h)$ be a weighted Lie algebra, say with weight space decomposition $\g = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\alpha}$, and consider a weighted automorphism $\vartheta \in \Aut(\g, \h)$. Then:
+                $$\vartheta(\g) = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\vartheta^*(\alpha)}$$
+            and hence:
+                $$\vartheta^* \in \Aut_{\Sets}( \weight(\g, \h) )$$
+        \end{lemma}
+            \begin{proof}
+                First of all, for an arbitrary $\alpha \in \weight(\g, \h)$ and $x \in \g_{\alpha}$, let us compute the weight of $\vartheta(x)$. To this end, consider the following, for any $h \in \h$:
+                    $$[h, \vartheta(x)] = \vartheta\left( [\vartheta^{-1}(h), x] \right) = \vartheta\left( \alpha( \vartheta^{-1}(h) ) \cdot x \right) = \alpha( \vartheta^{-1}(h) ) \vartheta(x)$$
+                wherein the last equality holds because we are assuming that $\vartheta|_{\h} \in \Aut_{\Lie\Alg}(\h)$, and hence $\vartheta^{-1}(h) \in \h$ in particular. The above tells us that:
+                    $$\vartheta(x) \in \g_{\alpha \circ \vartheta}$$
+                
+                It remains to show that $\alpha \circ \vartheta \in \h^*$ is a weight. For this, note firstly that:
+                    $$\alpha \circ \vartheta = \vartheta^*(\alpha)$$
+                wherein $\vartheta^*: \h^* \to \h^*$ is the dual of $\vartheta$. From this, we infer that:
+                    $$\vartheta(x) \in \g_{\vartheta^*(\alpha)}$$
+                Now, $\vartheta \in \Aut_{\Lie\Alg}(\g)$ is assumed to satisfy $\vartheta(\h) = \h$, so $\vartheta^*(\h^*) = \h^*$ as well. We now know that $\vartheta^*: \h^* \to \h^*$ is a linear isomorphism, and hence injective in particular. Therefore, $\vartheta^*(\alpha) = 0$ if and only if $\alpha = 0$. Since we know that $\h \subseteq \g_0$, we therefore see that $\g_{\vartheta^*(\alpha)}$ is a weight space for all $\alpha \in \weight(\g, \h)$. We are also assuming that $\g = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\alpha}$, so by applying $\vartheta$ to both sides, we shall yield:
+                    $$\g = \vartheta(\g) = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\vartheta^*(\alpha)}$$
+                This then tells us that there is an automorphism of $\weight(\g, \h)$ given by $\vartheta^*|_{\weight(\g, \h)}$.
+            \end{proof}
+        The result above implies that following corollary, which shall prove to be rather useful (see e.g. proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}).
+        \begin{corollary}[Weighted automorphisms are graded] \label{coro: weighted_automorphisms_are_graded}
+            Let $(\g, \h)$ be a weighted Lie algebra. Then, any weighted automorphism $\vartheta \in \Aut(\g, \h)$ is graded with respect to the canonical $\rootlattice(\g, \h)$-grading on $\g$.
+        \end{corollary}
+            \begin{proof}
+                Let $\g = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\alpha}$ be the weight space decomposition of $\g$ with respect to the $\h$-action thereon; by definition \ref{def: weighted_lie_algebras}, any weighted Lie algebra has such a decomposition. Next, simply consider:
+                    $$\vartheta\left( [\g_{\alpha}, \g_{\beta}] \right) = [\vartheta(\g_{\alpha}), \vartheta(\g_{\beta})] = [\g_{\vartheta^*(\alpha)}, \g_{\vartheta^*(\beta)}] \subseteq \g_{\vartheta^*(\alpha) + \vartheta^*(\beta)} = \g_{\vartheta^*(\alpha + \beta)}$$
+                wherein the second equality holds thanks to lemma \ref{lemma: weighted_automorphisms_permute_weights}, while the last one holds thanks to the fact that $\vartheta^*: \h^* \to \h^*$ is linear.
+            \end{proof}
 
+        \begin{convention}[Generalised eigenspaces]
+            If $V$ is a finite-dimensional vector space and:
+                $$T \in \End(V)$$
+            then let us write $\Spec T$ for the set of eigenvalues of $T$, and for each $\lambda \in \Spec T$, let us write:
+                $$V_{T[\lambda]} \subset V$$
+            for the generalised eigenspace associated to said eigenvalue $\lambda$.
+        \end{convention}
         Now, recall that any involutive endomorphism $\vartheta \in \End(V)$ on a finite-dimensional vector space $V$ has eigenvalues $\pm 1$ (and hence is automatically an automorphism too)\footnote{As long as the characteristic of the ground field is not $2$, but this is not a concern for us.}, and hence induces the following eigenspace decomposition:
             $$V = V_{\vartheta[1]} \oplus V_{\vartheta[-1]}$$
         Through this, we infer that $\a$ is a finite-dimensional Lie algebra, $\vartheta \in \Inv_{\Lie\Alg}(\a)$ , and $V := \a$ is the adjoint $\a$-module, then we can decompose the Lie algebra $\a$ in the following manner:
@@ -75,66 +130,171 @@
             \end{equation}
         This is commonly called the \say{Cartan decomposition} or the \say{symmetric pair decomposition}, and we note that:
             $$\a_{\vartheta[1]} = \a^{\vartheta}$$
-        i.e. the eigenspace of weight $1$ coincides - as a Lie subalgebra of $\a$ - with the fixed-point Lie subalgebra $\a^{\vartheta} := \{x \in \a \mid \vartheta(x) = x\}$.
+        i.e. the eigenspace of weight $1$ coincides - as a Lie subalgebra of $\a$ - with the fixed-point Lie subalgebra $\a^{\vartheta} := \{x \in \a \mid \vartheta(x) = x\}$. Note also that:
+            $$\a_{\vartheta[-1]} = \a^{-\vartheta}$$
+        with $-\vartheta$ being regarded as an anti-automorphism of $\a$.
 
         Non-involutive Lie algebra automorphisms, even pseudo-involutive ones, may have eigenvalues other than $\pm 1$, so a decomposition in the form \eqref{equation: symmetric_space_decomposition} is not generally available for such a Lie algebra automorphism. In order to circumvent this difficulty, the following generalisation of the notion of fixed-point subalgebras was proposed in \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. 
         \begin{definition}[Pseudo-fixed-points subalgebras] \label{def: pseudo_fixed_point_subalgebras}
             Let $(\g, \h)$ be a weighted Lie algebra, in which the weighing subalgebra $\h$ is finite-dimensional, and fix some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. A \textbf{pseudo-fixed-point subalgebra} of $\g$ is then a Lie subalgebra $\k$ such that:
             \begin{itemize}
                 \item $\k \cap \h = \h^{\vartheta}$, and
-                \item $\dim\left( \k \cap ( \g_{\alpha} + \vartheta(\g_{\alpha}) ) \right) = \dim \g_{\alpha}$ for each weight $\alpha \in \weight(\g, \h)$.
+                \item $\dim\left( \k \cap ( \g_{\alpha} + \vartheta(\g_{\alpha}) ) \right) = \dim \g_{\alpha}$ for each non-zero weight $\alpha \in \rootsystem(\g, \h)$.
             \end{itemize}
         \end{definition}
         \begin{remark}
-            To be strict about technicalities, we must point out that our definition \eqref{def: pseudo_fixed_point_subalgebras} and \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} do not coincide in full generality, though they do tend to in practice. For them, $\h$ needs to be maximal amongst the Lie subalgebras of $\g$ that act semi-simply via the adjoint representation. For us, in contrast, $\h$ merely has to act semi-simply via derivations on $\g$, which is a much weaker requirement. We would also like to remark that definition \ref{def: pseudo_fixed_point_subalgebras} (as well as \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}) makes no mention of a possibility of uniqueness for pseudo-fixed-point subalgebras.
+            To be strict about technicalities, we must point out that our definition \eqref{def: pseudo_fixed_point_subalgebras} and \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} do not coincide in full generality, though they do tend to in practice. For them, $\h$ needs to be maximal amongst the Lie subalgebras of $\g$ that act semi-simply via the adjoint representation. For us, at least at the moment, in contrast, $\h$ merely has to act semi-simply via derivations on $\g$, which is a much weaker requirement. Later on, we will explain the need for $\h$ to be maximal in the sense above.
+            
+            We would also like to remark that definition \ref{def: pseudo_fixed_point_subalgebras} (as well as \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}) makes no mention of a possibility of uniqueness for pseudo-fixed-point subalgebras.
         \end{remark}
 
-        Now, given a weighted Lie algebra $(\g, \h)$, a pseudo-involution $(\g, \h) \in \PseudoInv(\g, \h)$ thereon, and a $\vartheta$-pseudo-fixed-point subalgebra $\k \subset \g$, let us attempt to compute the elements in:
-            $$[\k, \k] \quad, \quad [\k, \g]$$
-        At the level of generality described above, we do not believe that much can be said, but if we restrict our attention to the pretriangular-decomposable Lie algebras amongst the weighted ones, then the problem becomes more tractable. As such, let us fix a pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, and to be clear, we recall that by definition, such a Lie algebra admits a weight space decomposition:
-            $$\g = \h \oplus \bigoplus_{\alpha \in \weight(\g, \h) \setminus \{0\}} \g_{\alpha}$$
-        via the semi-simple action via derivations of $\h$ on $\g$ (see definition \ref{def: (pre)triangular_decomposable_lie_algebras}). We recall also that as a part of the definition, $\g$ is generated the weighing subalgebra $\h$ along with weight vectors $e_{\alpha} \in \g_{\alpha}$, which is what shall allow us to compute the elements in $[\k, \k]$ and in $[\k, \g]$ (again, see definition \ref{def: (pre)triangular_decomposable_lie_algebras}).
-        \begin{lemma}[Adjoint actions of pseudo-fixed-point subalgebras] \label{lemma: adjoint_actions_of_pseudo_fixed_point_subalgebras}
-            Consider a pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, generated by $\h \cup \{e_{\alpha}\}_{\alpha \in \rootlattice(\g, \h)}$ wherein $e_{\alpha} \in \g_{\alpha}$ are weight vectors, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$ along with a pseudo-fixed-point subalgebra $\k \subset \g$. Additionally, for each weight $\alpha \in \weight(\g, \h)$, suppose that:
-                $$\dim \g_{\alpha} = |I_{\alpha}|$$
-            for some set $I_{\alpha}$, and let us fix once and for all a basis:
-                $$\{e_{\alpha}[i]\}_{i \in I_{\alpha}} \subset \g_{\alpha}$$
+        We are not aware of how to compute the commutation relations between elements of a pseudo-fixed-point subalgebra of a generated weighted Lie algebra, but in the case of those triangular-decomposable Lie algebras belonging to the following class, more can be said.
+        \begin{definition}[Root-decomposable Lie algebras] \label{def: root_decomposable_lie_algebras}
+            A triangular-decomposable Lie algebra:
+                $$(\g, \h, \n^{\pm}, \omega)$$
+            is said to be \textbf{root-decomposable} if the following conditions are satisfied.
+            \begin{itemize}
+                \item $\h$ is finite-dimensional.
+                \item $\h$ is maximal amongst the abelian Lie subalgebras of $\g$, such that the action $\ad: \h \to \gl(\g)$ is semi-simple (equivalently, $\h \subset \g$ is a maximal toral Lie subalgebra). This is so that $\h = \g_0$.
+                \item $\g$ is contragredient in the sense of \cite[Section 4.1]{moody_pianzola_lie_algebras_with_triangular_decompositions}.
+                \item $\g$ is equipped with a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ that is $\omega$-invariant, i.e.:
+                    \begin{equation} \label{equation: cartan_invariant_pairing_on_root_decomposable_lie_algebras}
+                        (\omega(x), y)_{\g} = (x, \omega(y))_{\g} \quad, \quad x, y \in \g
+                    \end{equation}
+            \end{itemize}
+        \end{definition}
+        \begin{convention}
+            In this context, it is customary to refer to the non-zero weights\footnote{Recall that we only consider elements $\alpha \in \h^*$ such that $\g_{\alpha} \not = 0$ as weights.} $\alpha \in \weight(\g, \h) \setminus \{0\}$ as \textbf{roots}. The triple:
+                $$( \h, \rootsystem(\g, \h), (\cdot, \cdot)_{\g} )$$
+            is known as the \textbf{root system} of $(\g, \h, \n^{\pm}, \omega)$, though it is typical to just refer to the set $\rootsystem(\g, \h) := \weight(\g, \h) \setminus \{0\}$. The elements of the subsets:
+                $$\rootsystem^{\pm}(\g, \h) := \rootsystem(\g, \h) \cap \rootlattice^{\pm}(\g, \h)$$
+            are called \textbf{positive/negative roots}, respectively.
+        \end{convention}
+        \begin{remark}[Isotropic subalgebras of root-decomposable Lie algebras] \label{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}
+            According to \cite[Proposition 4.4.2]{moody_pianzola_lie_algebras_with_triangular_decompositions}, the following are true for a contragredient Lie algebra $(\g, \h, \n^{\pm}, \omega)$ equipped with a symmetric and invariant bilinear form $(\cdot, \cdot)_{\g}$.
             \begin{enumerate}
-                \item For each weight $\alpha \in \weight(\g, \h)$, we have:
-                    \begin{equation}
-                        \k \cap ( \g_{\alpha} + \vartheta(\g_{\alpha}) ) = \sum_{i \in I_{\alpha}} \k \cap \bbC b_{\alpha}[i] \quad, \quad b_{\alpha}[i] := e_{\alpha}[i] + \vartheta( e_{\alpha}[i] )
-                    \end{equation}
-                Consequently, $\k$ is generated by:
-                    \begin{equation} \label{equation: pseudo_fixed_generators}
-                        \h^{\vartheta} \cup \{ b_{\alpha} \}_{\alpha \in \weight(\g, \h) \setminus \{0\}} \quad, \quad b_{\alpha} := e_{\alpha} + \vartheta( e_{\alpha} )
-                    \end{equation}
-                whose elements satisfy the following relations:
-                    \begin{equation} \label{equation: pseudo_fixed_relations}
-                        \begin{gathered}
-                            [h, b_{\alpha}] = \alpha(h) b_{\alpha} \quad, \quad h \in \h^{\vartheta}
-                            \\
-                            [b_{\alpha}, b_{\beta}] = b_{\alpha + \beta} + 
-                        \end{gathered}
-                    \end{equation}
-                \item 
+                \item For all $\alpha, \beta \in \weight(\g, \h)$, one has that:
+                    $$( \g_{\alpha}, \g_{\beta} )_{\g} = 0 \iff \alpha + \beta \not = 0$$
+                \item $(\cdot, \cdot)_{\g}$ is non-degenerate if and only if for all $\alpha \in \weight(\g, \h)$, the restriction $(\cdot, \cdot)_{\g}|_{\g_{-\alpha} \x \g_{\alpha}}$ is non-degenerate.
             \end{enumerate}
+
+            Combining these facts with the conditions for root-decomposable Lie algebras from definition \ref{def: root_decomposable_lie_algebras}, one sees that for such Lie algebras - say $(\g, \h, \n^{\pm}, \omega)$ - one has that:
+            \begin{enumerate}
+                \item $(\n^{\pm}, \n^{\pm})_{\g} = 0$, and
+                \item that the restriction $(\cdot, \cdot)_{\g}|_{\h \x \h}$ is non-degenerate (note that we need $\g_0 = \h$ for this to be true, hence the first condition in definition \ref{def: root_decomposable_lie_algebras}).
+            \end{enumerate}
+            This is a rather important fact, as it allows us to construct Manin triples of the form:
+                $$(\a, \eta^+(\b^+), \eta^-(\b^-))$$
+            that generalise the construction of extended Kac-Moody Manin triples as in subsection \ref{subsection: setup_standard_kac_moody_lie_bialgebras}, with $\b^{\pm} := \h \oplus \n^{\pm}$ being embedded \textit{non-trivially} into $\a := \b^+ \oplus \b^-$ via $\eta^{\pm}$.
+        \end{remark}
+        
+        \begin{example}
+            Symmetrisable Kac-Moody algebras are root-decomposable. The very construction of those Lie algebras guarantees that the first three conditions in definition \ref{def: root_decomposable_lie_algebras} are satisfied automatically, while the last condition depends on the fact that the associated Cartan matrix is symmetrisable, as well as the construction of the Cartan involution for general Kac-Moody algebras.
+            
+            Suppose that $\g$ is the Kac-Moody algebra associated to a symmetrisable $n \x n$ Cartan matrix:
+                $$C = DA$$
+            (cf. equation \eqref{equation: cartan_matrix_entries}), generated by the set:
+                $$\h \cup \{e_i^{\pm}\}_{1\leq i \leq n}$$
+            (cf. equation \ref{equation: kac_moody_generators}) subjected to the relations \eqref{equation: extended_kac_moody_relations} and \eqref{equation: kac_moody_serre_relations}. First of all, it is known that there is a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ given as in equations \eqref{equation: kac_moody_pairing_on_cartan_subalgebras} and \eqref{equation: kac_moody_pairing}. Secondly, it is known (see e.g. \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) that there is a Cartan involution on $\g$ given by:
+                \begin{equation} \label{equation: symmetrisable_kac_moody_cartan_involution}
+                    \begin{gathered}
+                        \omega(e_i^{\pm}) = -e_i^{\mp} \quad, \quad 1 \leq i \leq l
+                        \\
+                        \omega(h) = -h \quad, \quad h \in \h
+                    \end{gathered}
+                \end{equation}
+            We can then make the following computations:
+                \begin{equation} \label{equation: kac_moody_pairing_cartan_equivariance}
+                    \begin{gathered}
+                        \left( \omega(e_i^{\pm}), e_j^{\pm} \right)_{\g} = \left( -e_i^{\mp}, e_j^{\pm} \right)_{\g} = -\delta_{i, j} D_{i, i}^{-1} = \left( e_i^{\pm}, -e_j^{\mp} \right)_{\g} = \left( e_i^{\pm}, \omega(e_j^{\pm}) \right)_{\g} \quad, \quad 1 \leq i, j \leq n
+                        \\
+                        \left( \omega(h), h' \right)_{\g} = \left( -h, h' \right)_{\g} = \left( h, -h' \right)_{\g} = \left( h, \omega(h') \right)_{\g} \quad, \quad h, h' \in \h
+                        \\
+                        \left( \omega(e_i^{\pm}), h \right)_{\g} = \left( -e_i^{\mp}, h \right)_{\g} = 0 = \left( e_i^{\pm}, -h \right)_{\g} = \left( e_i^{\pm}, \omega(h) \right)_{\g} \quad, \quad 1 \leq i \leq n, h \in \h
+                    \end{gathered}
+                \end{equation}
+            The last condition in definition \ref{def: root_decomposable_lie_algebras} is thus verified.
+        \end{example}
+
+        \begin{lemma}[Commutators in root-decomposable Lie algebras] \label{lemma: root_decomposable_lie_algebras_commutators}
+            Consider a root-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, say generated by the following set of weight vectors:
+                $$\h \cup \{e_{\alpha}\}_{\alpha \in \rootsystem(\g, \h)}$$
+            
         \end{lemma}
             \begin{proof}
                 
             \end{proof}
+        \begin{proposition}[Constructing pseudo-fixed-point subalgebras] \label{prop: constructing_pseudo_fixed_point_subalgebras}
+            Consider a root-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, say generated by the following set of weight vectors:
+                $$\h \cup \{e_{\alpha}\}_{\alpha \in \rootsystem(\g, \h)}$$
+            Choose also a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Next, consider the Lie subalgebra:
+                $$\k$$
+            of $\g$ generated by the set:
+                \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_generators}
+                    \h^{\vartheta} \cup \{ e_{\alpha} \}_{\alpha \in \rootsystem(\g, \h)^{\vartheta^*}} \cup \{ b_{\alpha} \}_{\alpha \in (\rootsystem(\g, \h)^+)^{-\vartheta^*}} \quad, \quad b_{\alpha} := \frac12\left( e_{\alpha} + \vartheta(e_{\alpha}) \right)
+                \end{equation}
+                
+            \begin{enumerate}
+                \item The generators of $\k$ satisfy the following commutation relations, aside from the ones inherited from $\g$:
+                    \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_relations}
+                        \begin{gathered}
+                            [h, b_{\alpha}] = b_{\alpha}
+                            \\
+                            [e_{\alpha}, b_{\beta}] = 
+                        \end{gathered}
+                    \end{equation}
+                \item 
+            \end{enumerate}
+        \end{proposition}
+            \begin{proof}
+                \begin{enumerate}
+                    \item This is a straightforward computation.
+                    \item 
+                \end{enumerate}
+            \end{proof}
+        \begin{corollary}[Pseudo-Iwasawa decompositions] \label{coro: pseudo_iwasawa_decompositions}
+            
+        \end{corollary}
+            \begin{proof}
+                
+            \end{proof}
+        \begin{corollary}[Action of pseudo-fixed-point subalgebras] \label{coro: adjoint_actions_of_pseudo_fixed_point_subalgebras}
+            \todo[inline]{Compute $[\k, \g]$ in order to get a $\k$-action $\k \tensor \g \to \g$.}
+        \end{corollary}
+            \begin{proof}
+                
+            \end{proof}
+        \begin{corollary}
+            \todo[inline]{Dualising the action, one obtains a Lie coideal structure on pseudo-fixed point subalgebras.}
+        \end{corollary}
 
-    \subsection{Pro-algebraic groups associated to triangular-decomposable Lie algebras}
+    \subsection{Minimal Kac-Moody groups; orbits of pseudo-involutions}
         \begin{definition}[Integrable modules] \label{def: integrable_modules_over_triangular_decomposable_lie_algebras}
-            Consider a pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. A $\g$-module given by $\pi: \g \to \End(V)$ is said to be \textbf{integrable} if for any $\alpha \in \rootlattice^+(\g, \h)$ and for any corresponding weight vector $e_{\alpha} \in \g_{\alpha}$, the operator $\pi(e_{\alpha}) \in \End(V)$ is locally nilpotent, which is to say that for all $v \in V$, there exists some $N_v > 0$ such that $\pi(e_{\alpha})^n \cdot v = 0$ for all $n \geq N_v$. More succinctly, we say that $V$ is integrable if $\n^+$ acts locally nilpotently on it.
+            Consider a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. A $\g$-module given by $\pi: \g \to \End(V)$ is said to be \textbf{integrable} if for any $\alpha \in \rootlattice^+(\g, \h)$ and for any corresponding weight vector $e_{\alpha} \in \g_{\alpha}$, the operator $\pi(e_{\alpha}) \in \End(V)$ is locally nilpotent, which is to say that for all $v \in V$, there exists some $N_v > 0$ such that $\pi(e_{\alpha})^n \cdot v = 0$ for all $n \geq N_v$. More succinctly, we say that $V$ is integrable if $\n^+$ acts locally nilpotently on it.
         \end{definition}
         In the Kac-Moody case, this notion reduces to the same notion by the same name, as defined in \cite[Chapter 3]{kac_infinite_dimensional_lie_algebras}.
+        \begin{definition}[Integrable Lie algebras] \label{def: integrable_lie_algebras}
+            Consider a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. If the subalgebras $\n^{\pm} \subset \g$ are locally nilpotent, then the aforementioned triangular-decomposable Lie algebra will be called \textbf{integrable}.
+        \end{definition}
+        It is necessarily to make this definition because in general, the \say{upper/lower-triangular} subalgebras:
+            $$\n^{\pm} \subset \g$$
+        of a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$ are \textit{not} necessarily locally nilpotent! In more combinatorial terms, in this general of a setting, it is entirely possible for the so-called \say{root strings} to be infinitely long. This is the reason for singling out the integrable Lie algebras from the larger class of triangular-decomposable ones. Somewhat surprisingly, though, integrability is a rather strong condition.
+        \begin{lemma} \label{lemma: integrable_root_decomposable_lie_algebras_are_symmetrisable_kac_moody_algebras}
+            Let $(\g, \h, \n^{\pm}, \omega)$ be a root-decomposable Lie algebra. This is a symmetrisable Kac-Moody algebra if and only if it is integrable in the sense of definition \ref{def: integrable_lie_algebras}.
+        \end{lemma}
+            \begin{proof}
+                See \cite[Propsition 4.1.11]{moody_pianzola_lie_algebras_with_triangular_decompositions}.
+            \end{proof}
 
-        Given a pretriangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, it is typical to refer to the subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ as the \textbf{positive/negative Borel subalgebras} of $\g$. More generally, Borel subalgebras of an arbitrary Lie algebra are those Lie subalgebras which are maximal amongst the solvable ones.
+        Given a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, it is typical to refer to the subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ as the \textbf{positive/negative Borel subalgebras} of $\g$. More generally, Borel subalgebras of an arbitrary Lie algebra are those Lie subalgebras which are maximal amongst the solvable ones.
 
-        \todo[inline]{Minimal pro-algebraic groups associated to triangular-decomposable Lie algebras}
-        \begin{example}[Kac-Moody groups] \label{example: kac_moody_groups}
-            
-        \end{example}
-        \begin{remark}[Conjugacy of Borel subalgebras of Kac-Moody algebras]
+        \begin{proposition}[Minimal Kac-Moody groups] \label{prop: minimal_kac_moody_groups}
+            \todo[inline]{Minimal pro-algebraic groups associated to symmetrisable Kac-Moody algebras. See \cite{perrin_kac_moody_algebras}.}
+        \end{proposition}
+        \begin{remark}[Conjugacy of Borel subalgebras of Kac-Moody algebras] \label{remark: conjugacy_of_borel_subalgebras_of_kac_moody_algebras}
             By a result of Kac and Peterson from \cite{kac_peterson_infinite_flag_varieties_and_conjugacy_of_cartan_subalgebras} (cf. also \cite{chernousov_egorov_gille_pianzola_cohomological_proof_of_peterson_kac_theorem} and \cite{chernousov_neher_pianzola_conjugacy_of_cartan_subalgebras_in_EALAs_with_non_fgc_centreless_cores}), which builds upon a classical result of Borel, we know that when $\g$ either of finite or affine type, all Borel subalgebras are $\frakG$-conjugate.
         \end{remark}
+
+        \begin{definition}[Weighted automorphisms of types I and II] \label{def: weighted_automorphisms_of_types_I_and_II}
+            Let $(\g, \h, \n^{\pm}, \omega)$ be a symmetrisable Kac-Moody algebra, and let $\frakG$ be the associated minimal pro-algebraic group. Let $\Ad: \frakG \to \Aut_{\Grp}( \Aut(\g, \h) )$ be the action by conjugation. Given a weighted automorphism $\vartheta \in \Aut(\g, \h)$, if $\vartheta \in \Ad(\frakG) \cdot \omega$, then we will say that it is of type II. Otherwise, it is said to be of type I.
+        \end{definition}
