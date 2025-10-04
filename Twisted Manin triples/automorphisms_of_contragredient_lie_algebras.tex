@@ -1,5 +1,5 @@
-\section{Triangular-decomposable Lie algebras and their automorphisms}
-    \subsection{Weighted Lie algebras and triangular-decomposable Lie algebras}
+\section{Automorphisms of contragredient Lie algebras}
+    \subsection{Weighted Lie algebras, triangular-decomposable, and contragredient Lie algebras}
         Ideally, we would like to develop a theory of Manin triples $(\a, \a^+, \a^-)$ that are somehow twisted by general Lie algebra automorphisms $\vartheta \in \Aut_{\Lie\Alg}(\a)$, but at present, we are unfortunately at a loss for how to write down a description of such twisted Manin triples. Guided by the theory of quantum symmetric pairs that arise from so-called \say{pseudo-involutions} on affine Kac-Moody algebras (see e.g. \cite{regelskis_vlaar_reflection_matrices_coideal_subalgebras}, \cite{kolb_kac_moody_QSPs}, and references therein), we have chosen to restrict our consideration down to the class of Lie algebras that admit so-called \say{triangular decompositions}. The structure and representation theory of this class of Lie algebras has been studied extensively, notably in \cite{moody_pianzola_lie_algebras_with_triangular_decompositions}, and thanks to the fact that they admit triangular decompositions, one can speak of Borel subalgebras; the automorphisms that we shall consider shall be the ones that either stabilise or permute pairs of Borel subalgebras.
         
         Let us begin by recalling the construction of triangular-decomposable\footnote{In \textit{loc. cit.}, such Lie algebras are called \say{Lie algebras admitting triangular decompositions}, but we find the terminology somewhat cumbersome.} Lie algebras from \cite[Section 2.1]{moody_pianzola_lie_algebras_with_triangular_decompositions}. Their construction starts with what we shall refer to as their \say{weighing subalgebras}: this is a pair:
@@ -44,21 +44,26 @@
                 \item $\n^{\pm}$ are $\h$-submodules of $\g$, i.e. $[\h, \n^{\pm}] \subseteq \n^{\pm}$. The Lie subalgebras $\n^{\pm}$ thus admit the induced weight space decompositions $\n^{\pm} = \bigoplus_{\alpha \in \weight(\g, \h)} \n^{\pm} \cap \g_{\alpha}$, and let us require furthermore that:
                     $$\rootlattice^{\pm}(\g) := \{ \alpha \in \weight(\g, \h) \setminus \{0\} \mid \n^{\pm} \cap \g_{\alpha} \not = 0 \}$$
                 are free (additive) sub-semigroups of $\rootlattice(\g, \h) := \Z\weight(\g, \h)$.
-                \item Finally, we require that there is a semi-group basis\footnote{... which exists because we are pre-supposing that $\rootlattice^+(\g, \h)$ is free.} $\{\alpha_i\}_{i \in \simpleroots} \subset \rootlattice^+(\g, \h)$.
+                \item Finally, we require that there is a semi-group basis\footnote{... which exists because we are pre-supposing that $\rootlattice^+(\g, \h)$ is free.} $\simpleroots(\g, \h) \subset \rootlattice^+(\g, \h)$ which is also a basis for $\h^*$.
             \end{itemize}
             A triangular-decomposable Lie algebra as above shall be denoted as a quintuple:
                 $$(\g, \h, \n^+, \n^-, \omega)$$
             (though we shall usually abbreviate the signs and write $(\g, \h, \n^{\pm}, \omega)$ instead).
         \end{definition}
-        \begin{convention}
-            It is common to abbreviate:
+        \begin{convention}[Root systems]
+            In this context, it is customary to refer to the non-zero weights\footnote{Recall that we only consider elements $\alpha \in \h^*$ such that $\g_{\alpha} \not = 0$ as weights.} of the set:
                 $$\rootsystem(\g, \h) := \weight(\g, \h) \setminus \{0\}$$
+            as \textbf{roots}. If $\g$ is equipped with a symmetric, non-degenerate, and invariant bilinear form $(\cdot, \cdot)_{\g}$ (cf. definition \ref{def: root_decomposable_lie_algebras}), then the triple:
+                $$( \h, \rootsystem(\g, \h), (\cdot, \cdot)_{\g} )$$
+            is known as the \textbf{root system} of $(\g, \h, \n^{\pm}, \omega)$, though it is typical to just refer to the set $\rootsystem(\g, \h)$. Weight spaces of the adjoint representation are typically called \textbf{root spaces}. The elements of the subsets:
+                $$\rootsystem^{\pm}(\g, \h) := \rootsystem(\g, \h) \cap \rootlattice^{\pm}(\g, \h)$$
+            are called \textbf{positive/negative roots}, respectively, and the elements of a chosen semi-group basis $\simpleroots(\g, \h) \subset \rootlattice^+(\g, \h)$ are called \textbf{simple roots} (in particular, this means that simple roots are positive).
         \end{convention}
         \begin{remark}
             Note that by requiring that $0 \not \in \rootlattice^{\pm}(\g)$, we have that:
                 $$\rootlattice^-(\g, \h) \cap \rootlattice^+(\g, \h) = \varnothing$$
 
-            Also, there is no guarantee in general that the weight spaces $\g_{\alpha} \subset \g$ are finite-dimensional. Triangular-decomposable Lie algebras with this property are said to be \textbf{regular}. Note that this property needs not imply that the Lie subalgebras $\n^{\pm}$ are nilpotent: for instance, extended Kac-Moody algebras (given by \eqref{equation: extended_kac_moody_relations}; cf. also \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) are regular in the above sense, but their generators are not subjected to the Serre relations.
+            Also, there is no guarantee in general that the root spaces $\g_{\alpha} \subset \g$ are finite-dimensional. Triangular-decomposable Lie algebras with this property are said to be \textbf{regular}. Note that this property needs not imply that the Lie subalgebras $\n^{\pm}$ are nilpotent: for instance, extended Kac-Moody algebras (given by \eqref{equation: extended_kac_moody_relations}; cf. also \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) are regular in the above sense, but their generators are not subjected to the Serre relations.
         \end{remark}
         \begin{example}
             By their very construction (e.g. as explained in \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}), Kac-Moody algebras are triangular-decomposable. Via the Serre relations, one sees also that symmetrisable Kac-Moody algebras are actually triangular-decomposable.
@@ -71,7 +76,88 @@
             Weighted Lie algebras need not be triangular-decomposable, even when the weighing algebra acts by inner derivations. For instance, if $(\g, \h, \n^{\pm}, \omega)$ is triangular-decomposable Lie algebra, then by definition \ref{def: triangular_decomposable_lie_algebras} the two Borel subalgebras $\b^{\pm} := \h \oplus \n^{\pm}$ are weighted by the adjoint action of $\h$, but they are not triangular-decomposable with respect to the same $\h$-action.
         \end{example}
 
-    \subsection{Pseudo-involutions}
+        \begin{definition}[Contragredient Lie algebras] \label{def: contragredient_lie_algebras}
+            Let $(\g, \h, \n^{\pm}, \omega)$ be a triangular-decomposable Lie algebra. This is said to be \textbf{contragredient} if the following conditions are satisfied.
+            \begin{itemize}
+                \item Let $\simpleroots(\g, \h)$ be a set of simple roots\footnote{... whose existence is stipulated by definition \ref{def: triangular_decomposable_lie_algebras}.}. Then, for each $\alpha \in \simpleroots(\g, \h)$, the Lie subalgebra $\sl_2^{(\alpha)} \subset \g$ generated by the simple root spaces $\g_{\pm \alpha}$ is isomorphic to $\sl_2$.
+                \item One can choose a a set of root vectors $\{ e_{\alpha} \}_{\alpha \in \rootsystem(\g, \h)}$ such that the set $\h \cup \{ e_{\alpha} \}_{\alpha \in \rootsystem(\g, \h)}$ generates the Lie algebra $\g$.
+                \item The sum $\sum_{\alpha \in \simpleroots(\g, \h)} [\g_{\alpha}, \g_{-\alpha}]$ is direct.
+            \end{itemize}
+        \end{definition}
+        It is rather convenient to have the following fact at our disposal.
+        \begin{lemma}[Simple root spaces are $1$-dimensional] \label{lemma: simple_root_spaces_are_1_dimensional}
+            Let $(\g, \h, \n^{\pm}, \omega)$ be a contragredient Lie algebra, and let $\simpleroots(\g, \h)$ be a choice of simple roots for it. Then, for every $\alpha \in \simpleroots(\g, \h)$, we have that:
+                $$\dim \g_{\pm \alpha} = 1$$
+        \end{lemma}
+            \begin{proof}
+                This has been mentioned on \cite[Section 4.1, p. 311]{moody_pianzola_lie_algebras_with_triangular_decompositions}, but no proof was given, so let us supply one here.
+            \end{proof}
+        \begin{corollary}[$\sl_2$-triples] \label{coro: sl_2_triples}
+            With notations as in lemma \ref{lemma: simple_root_spaces_are_1_dimensional}, it is possible to choose root vectors $e_{\pm \alpha} \in \g_{\pm \alpha}$ for each $\alpha \in \simpleroots(\g, \h)$ so that one has a Lie algebra isomorphism:
+                \begin{equation} \label{equation: sl_2_triples}
+                    \sl_2^{(\alpha)} \xrightarrow[]{\cong} \sl_2
+                \end{equation}
+            given by $e_{\pm \alpha} \mapsto e^{\pm}$ and $\alpha^{\vee} := [e_{\alpha}, e_{-\alpha}] \mapsto h$, with $e^+ := \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, e^- := \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$, and $h := \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ making .
+        \end{corollary}
+            \begin{proof}
+                This merely requires us to choose the root vectors $e_{\pm \alpha} \in \g_{\pm \alpha}$ so that:
+                    $$[\alpha^{\vee}, e_{\pm \alpha}] = \pm 2 e_{\pm \alpha}$$
+            \end{proof}
+        
+        \begin{definition}[Root-decomposable Lie algebras] \label{def: root_decomposable_lie_algebras}
+            A contragredient Lie algebra $(\g, \h, \n^{\pm}, \omega)$ is said to be \textbf{root-decomposable} if it is equipped with a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ that is $\omega$-invariant, i.e.:
+                \begin{equation} \label{equation: cartan_invariant_pairing_on_root_decomposable_lie_algebras}
+                    (\omega(x), y)_{\g} = (x, \omega(y))_{\g} \quad, \quad x, y \in \g
+                \end{equation}
+        \end{definition}
+        \begin{example}
+            From \cite[Theorem 1.2 and Lemma 3.2]{kac_infinite_dimensional_lie_algebras}, we know that general Kac-Moody algebras are contragredient in the sense of definition \ref{def: contragredient_lie_algebras} by construction. Those Kac-Moody algebras whose Cartan matrices are symmetrisable, moreover, are root-decomposable.
+            
+            To see why, suppose firstly that $\g$ is the Kac-Moody algebra associated to a symmetrisable $n \x n$ Cartan matrix:
+                $$C = DA$$
+            (cf. equation \eqref{equation: cartan_matrix_entries}), generated by the set:
+                $$\h \cup \{e_i^{\pm}\}_{1\leq i \leq n}$$
+            (cf. equation \ref{equation: kac_moody_generators}) subjected to the relations \eqref{equation: extended_kac_moody_relations} and \eqref{equation: kac_moody_serre_relations}. First of all, it is known that there is a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ given as in equations \eqref{equation: kac_moody_pairing_on_cartan_subalgebras} and \eqref{equation: kac_moody_pairing}. Secondly, it is known (see e.g. \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) that there is a Cartan involution on $\g$ given by:
+                \begin{equation} \label{equation: symmetrisable_kac_moody_cartan_involution}
+                    \begin{gathered}
+                        \omega(e_i^{\pm}) = -e_i^{\mp} \quad, \quad 1 \leq i \leq l
+                        \\
+                        \omega(h) = -h \quad, \quad h \in \h
+                    \end{gathered}
+                \end{equation}
+            We can then make the following computations:
+                \begin{equation} \label{equation: kac_moody_pairing_cartan_equivariance}
+                    \begin{gathered}
+                        \left( \omega(e_i^{\pm}), e_j^{\pm} \right)_{\g} = \left( -e_i^{\mp}, e_j^{\pm} \right)_{\g} = -\delta_{i, j} D_{i, i}^{-1} = \left( e_i^{\pm}, -e_j^{\mp} \right)_{\g} = \left( e_i^{\pm}, \omega(e_j^{\pm}) \right)_{\g} \quad, \quad 1 \leq i, j \leq n
+                        \\
+                        \left( \omega(h), h' \right)_{\g} = \left( -h, h' \right)_{\g} = \left( h, -h' \right)_{\g} = \left( h, \omega(h') \right)_{\g} \quad, \quad h, h' \in \h
+                        \\
+                        \left( \omega(e_i^{\pm}), h \right)_{\g} = \left( -e_i^{\mp}, h \right)_{\g} = 0 = \left( e_i^{\pm}, -h \right)_{\g} = \left( e_i^{\pm}, \omega(h) \right)_{\g} \quad, \quad 1 \leq i \leq n, h \in \h
+                    \end{gathered}
+                \end{equation}
+            We have thus verified that symmetrisable Kac-Moody algebras are also root-decomposable in the sense of definition \ref{def: root_decomposable_lie_algebras}.
+        \end{example}
+
+        \begin{remark}[Isotropic subalgebras of root-decomposable Lie algebras] \label{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}
+            According to \cite[Proposition 4.4.2]{moody_pianzola_lie_algebras_with_triangular_decompositions}, the following are true for a contragredient Lie algebra $(\g, \h, \n^{\pm}, \omega)$ equipped with a symmetric and invariant bilinear form $(\cdot, \cdot)_{\g}$.
+            \begin{enumerate}
+                \item For all $\alpha, \beta \in \weight(\g, \h)$, one has that:
+                    $$( \g_{\alpha}, \g_{\beta} )_{\g} = 0 \iff \alpha + \beta \not = 0$$
+                i.e. when regarded as a symmetric $2$-tensor, $(\cdot, \cdot)_{\g}$ is of total degree $0$ with respect to the $\rootlattice(\g, \h)$-grading on $\Sym^2(\g)^{\g}$ induced by the one on $\g$.
+                \item $(\cdot, \cdot)_{\g}$ is non-degenerate if and only if for all $\alpha \in \weight(\g, \h)$, the restriction $(\cdot, \cdot)_{\g}|_{\g_{-\alpha} \x \g_{\alpha}}$ is non-degenerate.
+            \end{enumerate}
+
+            Combining these facts with the conditions for root-decomposable Lie algebras from definition \ref{def: root_decomposable_lie_algebras}, one sees that for such Lie algebras - say $(\g, \h, \n^{\pm}, \omega)$ - one has that:
+            \begin{enumerate}
+                \item $(\n^{\pm}, \n^{\pm})_{\g} = 0$, and
+                \item that the restriction $(\cdot, \cdot)_{\g}|_{\h \x \h}$ is non-degenerate (note that we need $\g_0 = \h$ for this to be true, hence the first condition in definition \ref{def: root_decomposable_lie_algebras}).
+            \end{enumerate}
+            This is a rather important fact, as it allows us to construct Manin triples of the form:
+                $$(\a, \eta^+(\b^+), \eta^-(\b^-))$$
+            that generalise the construction of extended Kac-Moody Manin triples as in subsection \ref{subsection: setup_standard_kac_moody_lie_bialgebras}, with $\b^{\pm} := \h \oplus \n^{\pm}$ being embedded \textit{non-trivially} into $\a := \b^+ \oplus \b^-$ via $\eta^{\pm}$.
+        \end{remark}
+
+    \subsection{Pseudo-involutions and pseudo-fixed-point subalgebras}
         \begin{definition}[Weighted automorphisms and pseudo-involutions] \label{def: weighted_automorphisms_of_weighted_lie_algebras}
             Consider a weighted Lie algebra $(\g, \h)$. Next, consider a Lie algebra automorphism $\vartheta \in \Aut_{\Lie\Alg}(\g)$ under which $\h$ is stable, i.e. it is such that $\vartheta|_{\hbar} \in \Aut_{\Lie\Alg}(\h)$. In such a situation, we say that this is an automorphism of $\g$ \textbf{weighted} by $\h$.
             
@@ -105,15 +191,6 @@
                     $$\g = \vartheta(\g) = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\vartheta^*(\alpha)}$$
                 This then tells us that there is an automorphism of $\weight(\g, \h)$ given by $\vartheta^*|_{\weight(\g, \h)}$.
             \end{proof}
-        The result above implies that following corollary, which shall prove to be rather useful (see e.g. proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}).
-        \begin{corollary}[Weighted automorphisms are graded] \label{coro: weighted_automorphisms_are_graded}
-            Let $(\g, \h)$ be a weighted Lie algebra. Then, any weighted automorphism $\vartheta \in \Aut(\g, \h)$ is graded with respect to the canonical $\rootlattice(\g, \h)$-grading on $\g$.
-        \end{corollary}
-            \begin{proof}
-                Let $\g = \bigoplus_{\alpha \in \weight(\g, \h)} \g_{\alpha}$ be the weight space decomposition of $\g$ with respect to the $\h$-action thereon; by definition \ref{def: weighted_lie_algebras}, any weighted Lie algebra has such a decomposition. Next, simply consider:
-                    $$\vartheta\left( [\g_{\alpha}, \g_{\beta}] \right) = [\vartheta(\g_{\alpha}), \vartheta(\g_{\beta})] = [\g_{\vartheta^*(\alpha)}, \g_{\vartheta^*(\beta)}] \subseteq \g_{\vartheta^*(\alpha) + \vartheta^*(\beta)} = \g_{\vartheta^*(\alpha + \beta)}$$
-                wherein the second equality holds thanks to lemma \ref{lemma: weighted_automorphisms_permute_weights}, while the last one holds thanks to the fact that $\vartheta^*: \h^* \to \h^*$ is linear.
-            \end{proof}
 
         \begin{convention}[Generalised eigenspaces]
             If $V$ is a finite-dimensional vector space and:
@@ -134,7 +211,7 @@
             $$\a_{\vartheta[-1]} = \a^{-\vartheta}$$
         with $-\vartheta$ being regarded as an anti-automorphism of $\a$.
 
-        Non-involutive Lie algebra automorphisms, even pseudo-involutive ones, may have eigenvalues other than $\pm 1$, so a decomposition in the form \eqref{equation: symmetric_space_decomposition} is not generally available for such a Lie algebra automorphism. In order to circumvent this difficulty, the following generalisation of the notion of fixed-point subalgebras was proposed in \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. 
+        Non-involutive Lie algebra automorphisms, even pseudo-involutive ones, may have eigenvalues other than $\pm 1$, so a decomposition in the form \eqref{equation: symmetric_space_decomposition} is not generally available for such a Lie algebra automorphism. Moreover, it is not guaranteed that pseudo-involutive automorphisms are even of finite orders, so one cannot simply refer back to the results of say, \cite[Chapter 8]{kac_infinite_dimensional_lie_algebras}, for details on the structure of the generalised eigenspaces of pseudo-involutions. In order to circumvent these difficulties, the following generalisation of the notion of fixed-point subalgebras was proposed in \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. 
         \begin{definition}[Pseudo-fixed-points subalgebras] \label{def: pseudo_fixed_point_subalgebras}
             Let $(\g, \h)$ be a weighted Lie algebra, in which the weighing subalgebra $\h$ is finite-dimensional, and fix some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. A \textbf{pseudo-fixed-point subalgebra} of $\g$ is then a Lie subalgebra $\k$ such that:
             \begin{itemize}
@@ -148,86 +225,15 @@
             We would also like to remark that definition \ref{def: pseudo_fixed_point_subalgebras} (as well as \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}) makes no mention of a possibility of uniqueness for pseudo-fixed-point subalgebras.
         \end{remark}
 
-        We are not aware of how to compute the commutation relations between elements of a pseudo-fixed-point subalgebra of a generated weighted Lie algebra, but in the case of those triangular-decomposable Lie algebras belonging to the following class, more can be said.
-        \begin{definition}[Root-decomposable Lie algebras] \label{def: root_decomposable_lie_algebras}
-            A triangular-decomposable Lie algebra:
-                $$(\g, \h, \n^{\pm}, \omega)$$
-            is said to be \textbf{root-decomposable} if the following conditions are satisfied.
-            \begin{itemize}
-                \item $\h$ is finite-dimensional.
-                \item $\h$ is maximal amongst the abelian Lie subalgebras of $\g$, such that the action $\ad: \h \to \gl(\g)$ is semi-simple (equivalently, $\h \subset \g$ is a maximal toral Lie subalgebra). This is so that $\h = \g_0$.
-                \item $\g$ is contragredient in the sense of \cite[Section 4.1]{moody_pianzola_lie_algebras_with_triangular_decompositions}.
-                \item $\g$ is equipped with a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ that is $\omega$-invariant, i.e.:
-                    \begin{equation} \label{equation: cartan_invariant_pairing_on_root_decomposable_lie_algebras}
-                        (\omega(x), y)_{\g} = (x, \omega(y))_{\g} \quad, \quad x, y \in \g
-                    \end{equation}
-            \end{itemize}
-        \end{definition}
-        \begin{convention}
-            In this context, it is customary to refer to the non-zero weights\footnote{Recall that we only consider elements $\alpha \in \h^*$ such that $\g_{\alpha} \not = 0$ as weights.} $\alpha \in \weight(\g, \h) \setminus \{0\}$ as \textbf{roots}. The triple:
-                $$( \h, \rootsystem(\g, \h), (\cdot, \cdot)_{\g} )$$
-            is known as the \textbf{root system} of $(\g, \h, \n^{\pm}, \omega)$, though it is typical to just refer to the set $\rootsystem(\g, \h) := \weight(\g, \h) \setminus \{0\}$. The elements of the subsets:
-                $$\rootsystem^{\pm}(\g, \h) := \rootsystem(\g, \h) \cap \rootlattice^{\pm}(\g, \h)$$
-            are called \textbf{positive/negative roots}, respectively.
-        \end{convention}
-        \begin{remark}[Isotropic subalgebras of root-decomposable Lie algebras] \label{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}
-            According to \cite[Proposition 4.4.2]{moody_pianzola_lie_algebras_with_triangular_decompositions}, the following are true for a contragredient Lie algebra $(\g, \h, \n^{\pm}, \omega)$ equipped with a symmetric and invariant bilinear form $(\cdot, \cdot)_{\g}$.
-            \begin{enumerate}
-                \item For all $\alpha, \beta \in \weight(\g, \h)$, one has that:
-                    $$( \g_{\alpha}, \g_{\beta} )_{\g} = 0 \iff \alpha + \beta \not = 0$$
-                \item $(\cdot, \cdot)_{\g}$ is non-degenerate if and only if for all $\alpha \in \weight(\g, \h)$, the restriction $(\cdot, \cdot)_{\g}|_{\g_{-\alpha} \x \g_{\alpha}}$ is non-degenerate.
-            \end{enumerate}
-
-            Combining these facts with the conditions for root-decomposable Lie algebras from definition \ref{def: root_decomposable_lie_algebras}, one sees that for such Lie algebras - say $(\g, \h, \n^{\pm}, \omega)$ - one has that:
-            \begin{enumerate}
-                \item $(\n^{\pm}, \n^{\pm})_{\g} = 0$, and
-                \item that the restriction $(\cdot, \cdot)_{\g}|_{\h \x \h}$ is non-degenerate (note that we need $\g_0 = \h$ for this to be true, hence the first condition in definition \ref{def: root_decomposable_lie_algebras}).
-            \end{enumerate}
-            This is a rather important fact, as it allows us to construct Manin triples of the form:
-                $$(\a, \eta^+(\b^+), \eta^-(\b^-))$$
-            that generalise the construction of extended Kac-Moody Manin triples as in subsection \ref{subsection: setup_standard_kac_moody_lie_bialgebras}, with $\b^{\pm} := \h \oplus \n^{\pm}$ being embedded \textit{non-trivially} into $\a := \b^+ \oplus \b^-$ via $\eta^{\pm}$.
-        \end{remark}
-        
-        \begin{example}
-            Symmetrisable Kac-Moody algebras are root-decomposable. The very construction of those Lie algebras guarantees that the first three conditions in definition \ref{def: root_decomposable_lie_algebras} are satisfied automatically, while the last condition depends on the fact that the associated Cartan matrix is symmetrisable, as well as the construction of the Cartan involution for general Kac-Moody algebras.
-            
-            Suppose that $\g$ is the Kac-Moody algebra associated to a symmetrisable $n \x n$ Cartan matrix:
-                $$C = DA$$
-            (cf. equation \eqref{equation: cartan_matrix_entries}), generated by the set:
-                $$\h \cup \{e_i^{\pm}\}_{1\leq i \leq n}$$
-            (cf. equation \ref{equation: kac_moody_generators}) subjected to the relations \eqref{equation: extended_kac_moody_relations} and \eqref{equation: kac_moody_serre_relations}. First of all, it is known that there is a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ given as in equations \eqref{equation: kac_moody_pairing_on_cartan_subalgebras} and \eqref{equation: kac_moody_pairing}. Secondly, it is known (see e.g. \cite[Theorem 1.2]{kac_infinite_dimensional_lie_algebras}) that there is a Cartan involution on $\g$ given by:
-                \begin{equation} \label{equation: symmetrisable_kac_moody_cartan_involution}
-                    \begin{gathered}
-                        \omega(e_i^{\pm}) = -e_i^{\mp} \quad, \quad 1 \leq i \leq l
-                        \\
-                        \omega(h) = -h \quad, \quad h \in \h
-                    \end{gathered}
-                \end{equation}
-            We can then make the following computations:
-                \begin{equation} \label{equation: kac_moody_pairing_cartan_equivariance}
-                    \begin{gathered}
-                        \left( \omega(e_i^{\pm}), e_j^{\pm} \right)_{\g} = \left( -e_i^{\mp}, e_j^{\pm} \right)_{\g} = -\delta_{i, j} D_{i, i}^{-1} = \left( e_i^{\pm}, -e_j^{\mp} \right)_{\g} = \left( e_i^{\pm}, \omega(e_j^{\pm}) \right)_{\g} \quad, \quad 1 \leq i, j \leq n
-                        \\
-                        \left( \omega(h), h' \right)_{\g} = \left( -h, h' \right)_{\g} = \left( h, -h' \right)_{\g} = \left( h, \omega(h') \right)_{\g} \quad, \quad h, h' \in \h
-                        \\
-                        \left( \omega(e_i^{\pm}), h \right)_{\g} = \left( -e_i^{\mp}, h \right)_{\g} = 0 = \left( e_i^{\pm}, -h \right)_{\g} = \left( e_i^{\pm}, \omega(h) \right)_{\g} \quad, \quad 1 \leq i \leq n, h \in \h
-                    \end{gathered}
-                \end{equation}
-            The last condition in definition \ref{def: root_decomposable_lie_algebras} is thus verified.
-        \end{example}
-
-        \begin{lemma}[Commutators in root-decomposable Lie algebras] \label{lemma: root_decomposable_lie_algebras_commutators}
-            Consider a root-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, say generated by the following set of weight vectors:
-                $$\h \cup \{e_{\alpha}\}_{\alpha \in \rootsystem(\g, \h)}$$
-            
-        \end{lemma}
-            \begin{proof}
-                
-            \end{proof}
+    \subsection{Commutation relations for pseudo-fixed-point subalgebras} \label{subsection: commutation_relations_for_pseudo_fixed_point_subalgebras}
+        Fix a contragredient Lie algebra:
+            $$(\g, \h, \n^{\pm}, \omega)$$
+        along with a pseudo-involution:
+            $$\vartheta \in \PseudoInv(\g, \h)$$
+        Most of the results below were worked out by Regelskis and Vlaar in \cite[Section 3]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} in the (affine) Kac-Moody case, i.e. the case of \say{integrable} contragredient Lie algebras (cf. lemma \ref{lemma: integrable_root_decomposable_lie_algebras_are_symmetrisable_kac_moody_algebras}). Given the similarities between the Chevalley-Serre-style presentations for general contragredient Lie algebras and those for Kac-Moody algebras, what is presented below is only a mild generalisation of the results in \textit{loc. cit.}
+    
         \begin{proposition}[Constructing pseudo-fixed-point subalgebras] \label{prop: constructing_pseudo_fixed_point_subalgebras}
-            Consider a root-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$, say generated by the following set of weight vectors:
-                $$\h \cup \{e_{\alpha}\}_{\alpha \in \rootsystem(\g, \h)}$$
-            Choose also a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Next, consider the Lie subalgebra:
+            Consider the Lie subalgebra:
                 $$\k$$
             of $\g$ generated by the set:
                 \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_generators}
@@ -259,16 +265,22 @@
                 
             \end{proof}
         \begin{corollary}[Action of pseudo-fixed-point subalgebras] \label{coro: adjoint_actions_of_pseudo_fixed_point_subalgebras}
-            \todo[inline]{Compute $[\k, \g]$ in order to get a $\k$-action $\k \tensor \g \to \g$.}
+            \todo[inline]{Compute $[\k, \g]$ in order to get a $\k$-action $\k \tensor \g \to \g$. Dualising the action, one obtains a Lie coideal structure on pseudo-fixed point subalgebras.}
         \end{corollary}
             \begin{proof}
                 
             \end{proof}
-        \begin{corollary}
-            \todo[inline]{Dualising the action, one obtains a Lie coideal structure on pseudo-fixed point subalgebras.}
-        \end{corollary}
 
-    \subsection{Minimal Kac-Moody groups; orbits of pseudo-involutions}
+    \subsection{The Regelskis-Vlaar classification of affine Kac-Moody pseudo-involutions}
+        In this subsection, we fix once and for all an affine\footnote{... either untwisted or twisted, in the sense of \cite[Chapter 8]{kac_infinite_dimensional_lie_algebras}.} Kac-Moody algebra:
+            $$(\g, \h, \n^{\pm}, \omega)$$
+        along with a pseudo-involution:
+            $$\vartheta \in \PseudoInv(\g, \h)$$
+    
+        For pseudo-involutions of affine Kac-Moody algebras, as was originally worked out by Regelskis and Vlaar in \cite{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}, the structure of pseudo-fixed-point subalgebras is much more constrained. Namely, there is an interpretation of pseudo-involutions in terms of their actions on Borel subalgebras of affine Kac-Moody algebras, which allows us to classify pseudo-involutions in this setting. Thanks to the existence of such a classification of such pseudo-involutions $\vartheta$, the extra assumption in proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras} can be replaced by a more succinct condition on the Satake diagram arising from $\vartheta$.
+
+        Now, the classification scheme mentioned above is, broadly speaking, a consequence of the conjugacy of Borel subalgebras within affine Kac-Moody algebras. More precisely, Kac and Peterson proved in \cite{kac_peterson_infinite_flag_varieties_and_conjugacy_of_cartan_subalgebras}, by means of the conjugation action of , that when $\g$ either of finite\footnote{The finite-type case is a classical result of Borel.} or affine type, all Borel subalgebras are $\frakG$-conjugate; see also \cite{chernousov_egorov_gille_pianzola_cohomological_proof_of_peterson_kac_theorem} and \cite{chernousov_neher_pianzola_conjugacy_of_cartan_subalgebras_in_EALAs_with_non_fgc_centreless_cores}. 
+    
         \begin{definition}[Integrable modules] \label{def: integrable_modules_over_triangular_decomposable_lie_algebras}
             Consider a triangular-decomposable Lie algebra $(\g, \h, \n^{\pm}, \omega)$. A $\g$-module given by $\pi: \g \to \End(V)$ is said to be \textbf{integrable} if for any $\alpha \in \rootlattice^+(\g, \h)$ and for any corresponding weight vector $e_{\alpha} \in \g_{\alpha}$, the operator $\pi(e_{\alpha}) \in \End(V)$ is locally nilpotent, which is to say that for all $v \in V$, there exists some $N_v > 0$ such that $\pi(e_{\alpha})^n \cdot v = 0$ for all $n \geq N_v$. More succinctly, we say that $V$ is integrable if $\n^+$ acts locally nilpotently on it.
         \end{definition}
@@ -291,9 +303,6 @@
         \begin{proposition}[Minimal Kac-Moody groups] \label{prop: minimal_kac_moody_groups}
             \todo[inline]{Minimal pro-algebraic groups associated to symmetrisable Kac-Moody algebras. See \cite{perrin_kac_moody_algebras}.}
         \end{proposition}
-        \begin{remark}[Conjugacy of Borel subalgebras of Kac-Moody algebras] \label{remark: conjugacy_of_borel_subalgebras_of_kac_moody_algebras}
-            By a result of Kac and Peterson from \cite{kac_peterson_infinite_flag_varieties_and_conjugacy_of_cartan_subalgebras} (cf. also \cite{chernousov_egorov_gille_pianzola_cohomological_proof_of_peterson_kac_theorem} and \cite{chernousov_neher_pianzola_conjugacy_of_cartan_subalgebras_in_EALAs_with_non_fgc_centreless_cores}), which builds upon a classical result of Borel, we know that when $\g$ either of finite or affine type, all Borel subalgebras are $\frakG$-conjugate.
-        \end{remark}
 
         \begin{definition}[Weighted automorphisms of types I and II] \label{def: weighted_automorphisms_of_types_I_and_II}
             Let $(\g, \h, \n^{\pm}, \omega)$ be a symmetrisable Kac-Moody algebra, and let $\frakG$ be the associated minimal pro-algebraic group. Let $\Ad: \frakG \to \Aut_{\Grp}( \Aut(\g, \h) )$ be the action by conjugation. Given a weighted automorphism $\vartheta \in \Aut(\g, \h)$, if $\vartheta \in \Ad(\frakG) \cdot \omega$, then we will say that it is of type II. Otherwise, it is said to be of type I.

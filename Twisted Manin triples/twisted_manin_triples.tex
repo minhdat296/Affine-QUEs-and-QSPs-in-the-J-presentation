@@ -3,34 +3,14 @@
         For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notations therein.
     
         \begin{definition}[Twisted Manin triple] \label{def: twisted_manin_triples}
-            Suppose that $(\g, \h)$ is a weighted Lie algebra, that $(\g, \g^+, \g^-)$ is a Manin triple, and consider some pseudo-involution\footnote{In principle, definition \ref{def: twisted_manin_triples} can be written down without the automorphism $\vartheta$ being pseudo-involutive, but such scenarios are beyond the scope of our purposes.} $\vartheta \in \PseudoInv(\g, \h)$. Also, denote the bilinear form associated to the Manin triple above by $(\cdot, \cdot)_{\g}$.
+            Suppose that $(\a, \t)$ is a weighted Lie algebra, that $(\a, \a^+, \a^-)$ is a Manin triple constructed using a symmetric, non-degenerate, and invariant bilinear form $(\cdot, \cdot)_{\a}$ on $\a$, and consider some pseudo-involution\footnote{In principle, definition \ref{def: twisted_manin_triples} can be written down without the automorphism $\vartheta$ being pseudo-involutive, but such scenarios are beyond the scope of our purposes.} $\vartheta \in \PseudoInv(\a, \t)$.
             \begin{itemize}
-                \item Said pseudo-involution $\vartheta$ is then said to \textbf{twist} the aforementioned Manin triple if either $\vartheta(\g^{\pm}) = \g^{\pm}$ or $\vartheta(\g^{\pm}) = -\g^{\mp}$.
-                \item The $\vartheta$-twisting above is said to be \textbf{invariant} (respectively, \textbf{anti-invariant}) if $( \vartheta(x), y )_{\g} = ( x, \vartheta(y) )_{\g}$ (respectively, if $( \vartheta(x), y )_{\g} = -( x, \vartheta(y) )_{\g}$).
+                \item Said pseudo-involution $\vartheta$ is then said to \textbf{twist} the aforementioned Manin triple if either $\vartheta(\a^{\pm}) = \a^{\pm}$ or $\vartheta(\a^{\pm}) = -\a^{\mp}$.
+                \item The $\vartheta$-twisting above is said to be \textbf{invariant} (respectively, \textbf{anti-invariant}) if $( \vartheta(x), y )_{\a} = ( x, \vartheta(y) )_{\a}$ (respectively, if $( \vartheta(x), y )_{\a} = -( x, \vartheta(y) )_{\a}$).
             \end{itemize}
         \end{definition}
 
-        \begin{theorem}[Lie bialgebras and coideals from invariantly twisted Manin triples] \label{theorem: lie_bialgebras_from_invariantly_twisted_manin_triples}
-            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, that $(\g, \g^+, \g^-)$ is a Manin triple twisted by some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$; also, let us write $\delta^{\pm}$ for the Lie bialgebra structures on $\g^{\pm}$. Next, let:
-                $$\k$$
-            be the $\vartheta$-pseudo-fixed-point subalgebra of $\g$ constructed in proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}, and let:
-                $$\k^{\pm} := \k \cap \g^{\pm}$$
-            \begin{enumerate}
-                \item There is a topological Lie bialgebra structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \k^+$, given by $\delta_{\k^+} := [\cdot, \cdot]_{\k^-}^*$, if and only if the $\vartheta$-twisting is \textit{invariant}. This is \textit{not} a Lie sub-bialgebra of $(\g^+, \delta^+)$.
-                \item The restriction $\delta_{\k^+} := \delta^+|_{\k^+}$ is a Lie right-coideal structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \g^+$ if and only if the $\vartheta$-twisting is \textit{anti-invariant}.
-            \end{enumerate}
-        \end{theorem}
-        \begin{remark}
-            Before we begin the proof, let us remark that we are forced to work with a root-decomposable Lie algebra instead of a general weighted one because so that we can make use of the pseudo-fixed-point subalgebra $\vartheta$ from proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}. It would be interesting to know if this assumption can be relaxed, or indeed, even done away with entirely.
-        \end{remark}
-            \begin{proof}
-                Let $\g^{\pm} := \k^{\pm} \oplus \m^{\pm}$ be a splitting of vector spaces.
-                \begin{enumerate}
-                    \item 
-                    \item 
-                \end{enumerate}
-            \end{proof}
-
+        Before we are able to see what sort of Lie-bialgebraic structures can be constructed using twisted Manin triples, let us make the following preliminary observation. Namely, there is a canonical Lie bialgebra structure associated to any root-decomposable Lie algebra, integrable or not, i.e. we are making note of a (mild) generalisation of the standard Lie bialgebra structure on symmetrisable Kac-Moody algebras (as given by equation \eqref{equation: standard_kac_moody_lie_bialgebra_structure}), instead of merely recovering it. Our claim, later on, shall be that depending on whether the Manin triple in question is being twisted invariantly or anti-invariantly, the resulting Lie-bialgebraic structure shall either be a twisted Lie bialgebra (that is \textit{not} a Lie sub-bialgebra of the original one!) or a Lie coideal.
         \begin{lemma}[Root-decomposable Lie bialgebras] \label{lemma: root_decomposable_lie_bialgebras}
             Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, and consider the Borel subalgebras $\b^{\pm} := \h \oplus \n^{\mp}$. Next, let us form the Lie algebra:
                 $$\a := \b^+ \oplus \b^-$$
@@ -44,13 +24,31 @@
                 \end{equation}
             Then, with respect to the bilinear form above, we have that:
                 \begin{equation} \label{equation: root_decomposable_manin_triples}
-                    (\a, \eta^+(\b^+), \eta^-(\b^-))
+                    (\a, \a^+, \a^-)
                 \end{equation}
-            is a Manin triple.
+            wherein $\a^{\pm} := \eta^{\pm}(\b^{\pm})$, is a Manin triple.
         \end{lemma}
             \begin{proof}
-                First of all, via lemma \ref{lemma: direct_sums_of_weighted_lie_algebras}, we see that $\a$ is weighted by the abelian Lie subalgebra $\eta^+(\h) \oplus \eta^-(\h)$. Next, from remark \ref{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}, it is clear that the Lie subalgebras $\eta^{\pm}(\b^{\pm}) \subset \a$ are isotropic with respect to $(\cdot, \cdot)_{\a}$. The rest follows from the construction of the triple $(\a, \eta^+(\b^+), \eta^-(\b^-))$.
+                First of all, via lemma \ref{lemma: direct_sums_of_weighted_lie_algebras}, we see that $\a$ is weighted by the abelian Lie subalgebra $\eta^+(\h) \oplus \eta^-(\h)$. Next, from remark \ref{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}, it is clear that the Lie subalgebras $\a^{\pm} \subset \a$ are isotropic with respect to $(\cdot, \cdot)_{\a}$. The rest follows from the construction of the triple $(\a, \a^+, \a^-)$.
             \end{proof}
+        \begin{theorem}[Lie bialgebras and coideals from invariantly twisted Manin triples] \label{theorem: lie_bialgebras_from_invariantly_twisted_manin_triples}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Consider also the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples}; denote the topological Lie bialgebra structures on $\a^{\pm}$ by $\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$. Let $\k \subset \g$ be a $\vartheta$-pseudo-fixed-point subalgebra, and abbreviate $\k^{\pm} := \k \cap \a^{\pm}$.
+            \begin{enumerate}
+                \item There is a topological Lie bialgebra structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \k^+$, given by $\delta_{\k^+} := [\cdot, \cdot]_{\k^-}^*$, if and only if the $\vartheta$-twisting is \textit{invariant}. This is \textit{not} a Lie sub-bialgebra of $(\a^+, \delta^+)$.
+                \item The restriction $\delta_{\k^+} := \delta^+|_{\k^+}$ is a topological Lie right-coideal structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \a^+$ if and only if the $\vartheta$-twisting is \textit{anti-invariant}.
+            \end{enumerate}
+        \end{theorem}
+        \begin{remark}
+            Before we begin the proof, let us remark that we are forced to work with a root-decomposable Lie algebra instead of a general weighted one because so that we can make use of the pseudo-fixed-point subalgebra $\vartheta$ from proposition \ref{prop: constructing_pseudo_fixed_point_subalgebras}. It would be interesting to know if this assumption can be relaxed, or indeed, even done away with entirely.
+        \end{remark}
+            \begin{proof}
+                Let $\a^{\pm} := \k^{\pm} \oplus \m^{\pm}$ be a splitting of vector spaces. 
+                \begin{enumerate}
+                    \item 
+                    \item 
+                \end{enumerate}
+            \end{proof}
+
         \begin{proposition}[Twisted Manin triples of types I and II] \label{prop: twisted_manin_triples_of_types_I_and_II}
             Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a symmetrisable Kac-Moody algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Suppose also that the Manin triple \eqref{equation: root_decomposable_manin_triples} is twisted by $\vartheta$, invariantly or anti-invariantly. Then:
             \begin{enumerate}
