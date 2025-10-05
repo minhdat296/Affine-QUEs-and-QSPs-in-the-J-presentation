@@ -90,7 +90,7 @@
                 $$\dim \g_{\pm \alpha} = 1$$
         \end{lemma}
             \begin{proof}
-                This has been mentioned on \cite[Section 4.1, p. 311]{moody_pianzola_lie_algebras_with_triangular_decompositions}, but no proof was given, so let us supply one here.
+                See \cite[Section 4.1, p. 311]{moody_pianzola_lie_algebras_with_triangular_decompositions}.
             \end{proof}
         \begin{corollary}[$\sl_2$-triples] \label{coro: sl_2_triples}
             With notations as in lemma \ref{lemma: simple_root_spaces_are_1_dimensional}, it is possible to choose root vectors $e_{\pm \alpha} \in \g_{\pm \alpha}$ for each $\alpha \in \simpleroots(\g, \h)$ so that one has a Lie algebra isomorphism:
@@ -103,6 +103,8 @@
                 This merely requires us to choose the root vectors $e_{\pm \alpha} \in \g_{\pm \alpha}$ so that:
                     $$[\alpha^{\vee}, e_{\pm \alpha}] = \pm 2 e_{\pm \alpha}$$
             \end{proof}
+
+        \todo[inline]{Chevalley-Serre presentation for contragredient Lie algebras}
         
         \begin{definition}[Root-decomposable Lie algebras] \label{def: root_decomposable_lie_algebras}
             A contragredient Lie algebra $(\g, \h, \n^{\pm}, \omega)$ is said to be \textbf{root-decomposable} if it is equipped with a non-degenerate, symmetric, and invariant bilinear form $(\cdot, \cdot)_{\g}$ that is $\omega$-invariant, i.e.:
@@ -199,9 +201,9 @@
                 $$V_{T[\lambda]} \subset V$$
             for the generalised eigenspace associated to said eigenvalue $\lambda$.
         \end{convention}
-        Now, recall that any involutive endomorphism $\vartheta \in \End(V)$ on a finite-dimensional vector space $V$ has eigenvalues $\pm 1$ (and hence is automatically an automorphism too)\footnote{As long as the characteristic of the ground field is not $2$, but this is not a concern for us.}, and hence induces the following eigenspace decomposition:
+        Now, recall that any involutive endomorphism $\vartheta \in \End(V)$ on a vector space $V$ has eigenvalues $\pm 1$ (and hence is automatically an automorphism too)\footnote{As long as the characteristic of the ground field is not $2$, but this is not a concern for us.}, and hence induces the following eigenspace decomposition:
             $$V = V_{\vartheta[1]} \oplus V_{\vartheta[-1]}$$
-        Through this, we infer that $\a$ is a finite-dimensional Lie algebra, $\vartheta \in \Inv_{\Lie\Alg}(\a)$ , and $V := \a$ is the adjoint $\a$-module, then we can decompose the Lie algebra $\a$ in the following manner:
+        Through this, we infer that $\a$ is a Lie algebra, $\vartheta \in \Inv_{\Lie\Alg}(\a)$ , and $V := \a$ is the adjoint $\a$-module, then we can decompose the Lie algebra $\a$ in the following manner:
             \begin{equation} \label{equation: symmetric_space_decomposition}
                 \a = \a_{\vartheta[1]} \oplus \a_{\vartheta[-1]}
             \end{equation}
@@ -213,7 +215,7 @@
 
         Non-involutive Lie algebra automorphisms, even pseudo-involutive ones, may have eigenvalues other than $\pm 1$, so a decomposition in the form \eqref{equation: symmetric_space_decomposition} is not generally available for such a Lie algebra automorphism. Moreover, it is not guaranteed that pseudo-involutive automorphisms are even of finite orders, so one cannot simply refer back to the results of say, \cite[Chapter 8]{kac_infinite_dimensional_lie_algebras}, for details on the structure of the generalised eigenspaces of pseudo-involutions. In order to circumvent these difficulties, the following generalisation of the notion of fixed-point subalgebras was proposed in \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}. 
         \begin{definition}[Pseudo-fixed-points subalgebras] \label{def: pseudo_fixed_point_subalgebras}
-            Let $(\g, \h)$ be a weighted Lie algebra, in which the weighing subalgebra $\h$ is finite-dimensional, and fix some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. A \textbf{pseudo-fixed-point subalgebra} of $\g$ is then a Lie subalgebra $\k$ such that:
+            Let $(\g, \h)$ be a weighted Lie algebra, and fix some pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. A \textbf{pseudo-fixed-point subalgebra} of $\g$ is then a Lie subalgebra $\k$ such that:
             \begin{itemize}
                 \item $\k \cap \h = \h^{\vartheta}$, and
                 \item $\dim\left( \k \cap ( \g_{\alpha} + \vartheta(\g_{\alpha}) ) \right) = \dim \g_{\alpha}$ for each non-zero weight $\alpha \in \rootsystem(\g, \h)$.
@@ -222,7 +224,7 @@
         \begin{remark}
             To be strict about technicalities, we must point out that our definition \eqref{def: pseudo_fixed_point_subalgebras} and \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} do not coincide in full generality, though they do tend to in practice. For them, $\h$ needs to be maximal amongst the Lie subalgebras of $\g$ that act semi-simply via the adjoint representation. For us, at least at the moment, in contrast, $\h$ merely has to act semi-simply via derivations on $\g$, which is a much weaker requirement. Later on, we will explain the need for $\h$ to be maximal in the sense above.
             
-            We would also like to remark that definition \ref{def: pseudo_fixed_point_subalgebras} (as well as \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}) makes no mention of a possibility of uniqueness for pseudo-fixed-point subalgebras.
+            We would also like to remark that definition \ref{def: pseudo_fixed_point_subalgebras} (as well as \cite[Definition 1.2]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs}) makes \textit{no mention of a possibility of uniqueness for pseudo-fixed-point subalgebras}.
         \end{remark}
 
     \subsection{Commutation relations for pseudo-fixed-point subalgebras} \label{subsection: commutation_relations_for_pseudo_fixed_point_subalgebras}
@@ -230,33 +232,137 @@
             $$(\g, \h, \n^{\pm}, \omega)$$
         along with a pseudo-involution:
             $$\vartheta \in \PseudoInv(\g, \h)$$
+        \begin{remark}[Satake diagram]
+            Because $\vartheta|_{\h} \in \Inv_{\Lie\Alg}(\h)$ by definition \ref{def: weighted_automorphisms_of_weighted_lie_algebras} and because $\vartheta$ induces the set automorphism $\vartheta^* \in \Aut_{\Sets}( \rootsystem(\g, \h) )$ by virtue of being a weighted automorphism (see lemma \ref{lemma: weighted_automorphisms_permute_weights}), we actually have that:
+                $$\vartheta^* \in \Inv_{\Sets}( \rootsystem(\g, \h) )$$
+            Hence, we can partition the root system into those fixed and flipped by $\vartheta^*$, namely by means of:
+                $$\rootsystem(\g, \h)^{-\vartheta^*} =  \setminus \rootsystem(\g, \h)^{\vartheta^*}$$
+            We caution the reader, though, that a similar partition is not available for the subset of simple roots, due to the fact that simple roots are strictly positive by definition.
+        \end{remark}
         Most of the results below were worked out by Regelskis and Vlaar in \cite[Section 3]{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} in the (affine) Kac-Moody case, i.e. the case of \say{integrable} contragredient Lie algebras (cf. lemma \ref{lemma: integrable_root_decomposable_lie_algebras_are_symmetrisable_kac_moody_algebras}). Given the similarities between the Chevalley-Serre-style presentations for general contragredient Lie algebras and those for Kac-Moody algebras, what is presented below is only a mild generalisation of the results in \textit{loc. cit.}
-    
+
+        In what follows, we let $\k$ be the Lie subalgebra of $\g$ generated by the set of \textbf{$\vartheta$-pseudo-fixed root vectors}:
+            \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_generators}
+                \begin{gathered}
+                    \h^{\vartheta} \cup \{ b_{\alpha} \}_{\alpha \in \rootsystem(\g, \h)}
+                    \\
+                    b_{\alpha} := \frac12 \delta_{\alpha > 0} \left( e_{\alpha} + \vartheta(e_{\alpha}) \right) \in \g_{\alpha} + \vartheta(\g_{\alpha}) \quad, \quad \alpha \in \rootsystem(\g, \h)
+                \end{gathered}
+            \end{equation}
+        wherein, for a statement $\mathsf{P}$, we write:
+            $$
+                \delta_P =
+                \begin{cases}
+                    $1$ & \text{if $P$ is true}
+                    \\
+                    $0$ & \text{if $P$ is false}
+                \end{cases}
+            $$
+        Also, for our own convenience, let us set:
+            $$
+                \begin{gathered}
+                    e_{\alpha + \beta} := [e_{\alpha}, e_{\beta}] \in \g_{\alpha + \beta}
+                    \\
+                    b_{\alpha + \beta} := \frac12 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\alpha + \beta} + \vartheta(e_{\alpha + \beta}) \right) \in \g_{\alpha + \beta} + \vartheta(\g_{\alpha + \beta})
+                    \\
+                    e_{\vartheta^*(\alpha)} := \vartheta(e_{\alpha}) \in \vartheta(\g_{\alpha}) = \g_{\vartheta^*(\alpha)}
+                \end{gathered}
+                \quad, \quad \alpha, \beta \in \rootsystem(\g, \h)
+            $$
+        
+        \begin{remark}
+            The generators $b_{\alpha}$ in equation \eqref{equation: pseudo_fixed_point_subalgebra_generators} are not quite the same as the ones that appear in \cite{regelskis_vlaar_finite_QSPs_via_generalised_satake_diagrams}. The difference is not substantial, amounting to a renormalisation whenever $\alpha$ is not fixed by $\vartheta^*$; when a root $\alpha$ is fixed by $\vartheta^*$, this renormalisation yields us:
+                $$b_{\alpha} = \frac12 \delta_{\alpha > 0} \left( e_{\alpha} + \vartheta(e_{\alpha}) \right) = \frac12 \delta_{\alpha > 0} \left( e_{\alpha} + e_{\alpha} \right) = \delta_{\alpha > 0} e_{\alpha}$$
+            Thus, the renormalisation in \eqref{equation: pseudo_fixed_point_subalgebra_generators} saves us from having to perform an excessive amount of case-by-case computation.
+        \end{remark}
+
+        \todo[inline]{IMPORTANT: commutators between pseudo-fixed root vectors.}
+        We seek conditions on $\k$ so that it is a $\vartheta$-pseudo-fixed-point subalgebra inside $\g$. Given the construction of $\k$, it is sufficient to only verify that the second condition in definition \ref{def: pseudo_fixed_point_subalgebras} is satisfied, namely that we have:
+            $$\dim\left( \k \cap \left( \g_{\alpha} + \vartheta(\g_{\alpha}) \right) \right) = \dim \g_{\alpha} \quad, \quad \alpha \in \rootsystem(\g, \h)$$
+        while the first condition is an automatic consequence of the fact that $\h^{\vartheta}$ is a subset of the set of Lie generators for $\k$. To this end, let us recall first of all, from lemma \ref{lemma: weighted_automorphisms_permute_weights}, that:
+            $$\vartheta(\g_{\alpha}) = \g_{\vartheta^*(\alpha)} \quad, \quad \alpha \in \rootsystem(\g, \h)$$
+        and so:
+            $$\g_{\alpha} + \vartheta(\g_{\alpha}) = \g_{\alpha} + \g_{\vartheta^*(\alpha)} \quad, \quad \alpha \in \rootsystem(\g, \h)$$
+        \begin{itemize}
+            \item If $\alpha$ is fixed by $\vartheta^*$, then:
+                $$\g_{\alpha} + \vartheta(\g_{\alpha}) = \g_{\alpha} + \g_{\vartheta^*(\alpha)} = \g_{\alpha} + \g_{\alpha} = \g_{\alpha}$$
+            and so we have that:
+                $$\k \cap \left( \g_{\alpha} + \vartheta(\g_{\alpha}) \right) = \k \cap \g_{\alpha}$$
+            As $b_{\alpha} = e_{\alpha}$ in this case (cf. equation \eqref{equation: pseudo_fixed_point_subalgebra_generators}), we in fact have that:
+                $$\k \cap \g_{\alpha} = \g_{\alpha}$$
+            in this case, and hence:
+                $$\dim\left( \k \cap \left( \g_{\alpha} + \vartheta(\g_{\alpha}) \right) \right) = \dim \g_{\alpha} \quad, \quad \alpha \in \rootsystem(\g, \h)^{\vartheta^*}$$
+            \item If, on the other, $\alpha$ is not fixed by $\vartheta^*$, then $\vartheta^*(\alpha) = -\alpha$, and so:
+                $$\g_{\alpha} + \vartheta(\g_{\alpha}) = \g_{\alpha} + \g_{\vartheta^*(\alpha)} = \g_{\alpha} + \g_{-\alpha}$$
+            \textit{A priori}, root spaces of distinct roots intersect at $\{0\}$ (by virtue of being simultaneous generalised eigenspaces of distinct eigenvalues), so we have:
+                $$\g_{\alpha} + \g_{-\alpha} = \g_{\alpha} \oplus \g_{-\alpha}$$
+            This implies that:
+                $$\k \cap \left( \g_{\alpha} + \vartheta(\g_{\alpha}) \right) = (\k \cap \g_{\alpha}) \oplus (\k \cap \g_{-\alpha})$$
+        \end{itemize}
+        
+        Let us observe that the generators \eqref{equation: pseudo_fixed_point_subalgebra_generators} of $\k$ satisfy the following commutation relations, in addition to the ones inherited from $\g$:
+            \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_relations}
+                \begin{gathered}
+                    [k, b_{\alpha}] = b_{\alpha} \quad, \quad k \in \h^{\vartheta}, \alpha \in \rootsystem(\g, \h)
+                    \\
+                    \begin{aligned}
+                        [b_{\alpha}, b_{\beta}] & = \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left[ e_{\alpha} + \vartheta(e_{\alpha}), e_{\beta} + \vartheta(e_{\beta}) \right]
+                        \\
+                        & = \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\alpha + \beta} + [ \vartheta(e_{\alpha}), e_{\beta} ] + [ e_{\alpha}, \vartheta(e_{\beta}) ] + \vartheta(e_{\alpha + \beta}) \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( [ \vartheta(e_{\alpha}), e_{\beta} ] + [ e_{\alpha}, \vartheta(e_{\beta}) ] \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\vartheta^*(\alpha) + \beta} + e_{\alpha + \vartheta^*(\beta)} \right)
+                    \end{aligned}
+                    \quad, \quad \alpha, \beta \in \rootsystem(\g, \h)
+                \end{gathered}
+            \end{equation}
+        which can be verified through some straightforward computations. Then, consider the following cases.
+        \begin{itemize}
+            \item If both $\alpha$ and $\beta$ are fixed by $\vartheta^*$, then we see via \eqref{equation: pseudo_fixed_point_subalgebra_generators} that:
+                $$
+                    [b_{\alpha}, b_{\beta}] = \delta_{\alpha > 0} \delta_{\beta > 0} [e_{\alpha}, e_{\beta}] = \delta_{\alpha > 0} \delta_{\beta > 0} e_{\alpha + \beta} = b_{\alpha + \beta} \quad \in \quad \g_{\alpha + \beta} + \vartheta(\g_{\alpha + \beta})
+                $$
+            \item If only $\alpha$ is fixed while $\beta$ is not (or \textit{vice versa}), then via \eqref{equation: pseudo_fixed_point_subalgebra_generators} and \eqref{equation: pseudo_fixed_point_subalgebra_relations}, we see that:
+                $$
+                    \begin{aligned}
+                        [b_{\alpha}, b_{\beta}] & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\alpha + \beta} + e_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\alpha + \beta} + e_{\vartheta^*(\alpha + \beta)} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac12 \cdot \frac12 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\alpha + \beta} + e_{\vartheta^*(\alpha + \beta)} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac12 b_{\alpha + \beta}
+                        \\
+                        & = b_{\alpha + \beta}
+                    \end{aligned}
+                    \quad \in \quad \g_{\alpha + \beta} + \vartheta(\g_{\alpha + \beta})
+                $$
+            \item If neither $\alpha$ nor $\beta$ are fixed by $\vartheta^*$, then via \eqref{equation: pseudo_fixed_point_subalgebra_generators} and \eqref{equation: pseudo_fixed_point_subalgebra_relations}, we see that:
+                $$
+                    \begin{aligned}
+                        [b_{\alpha}, b_{\beta}] & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{-\alpha + \beta} + e_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{-(\alpha - \beta)} + e_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac14 \delta_{\alpha > 0} \delta_{\beta > 0} \left( e_{\vartheta^*(\alpha - \beta)} + e_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 b_{\alpha + \beta} + \frac12 \cdot \frac12 \delta_{\alpha > 0} \delta_{\beta > 0} \left( \vartheta( e_{\alpha - \beta} ) + e_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 \left( b_{\alpha + \beta} + \delta_{\alpha > 0} \delta_{\beta > 0} \delta_{\alpha - \beta > 0} b_{\alpha - \beta} \right)
+                        \\
+                        & = \frac12 \left( b_{\alpha + \beta} + \delta_{\alpha > \beta > 0} b_{\alpha - \beta} \right)
+                    \end{aligned}
+                    \quad \in \quad ( \g_{\alpha + \beta} + \g_{\alpha - \beta} ) + \vartheta( \g_{\alpha + \beta} + \g_{\alpha - \beta} )
+                $$
+        \end{itemize}
+        
+        
         \begin{proposition}[Constructing pseudo-fixed-point subalgebras] \label{prop: constructing_pseudo_fixed_point_subalgebras}
-            Consider the Lie subalgebra:
-                $$\k$$
-            of $\g$ generated by the set:
-                \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_generators}
-                    \h^{\vartheta} \cup \{ e_{\alpha} \}_{\alpha \in \rootsystem(\g, \h)^{\vartheta^*}} \cup \{ b_{\alpha} \}_{\alpha \in (\rootsystem(\g, \h)^+)^{-\vartheta^*}} \quad, \quad b_{\alpha} := \frac12\left( e_{\alpha} + \vartheta(e_{\alpha}) \right)
-                \end{equation}
-                
-            \begin{enumerate}
-                \item The generators of $\k$ satisfy the following commutation relations, aside from the ones inherited from $\g$:
-                    \begin{equation} \label{equation: pseudo_fixed_point_subalgebra_relations}
-                        \begin{gathered}
-                            [h, b_{\alpha}] = b_{\alpha}
-                            \\
-                            [e_{\alpha}, b_{\beta}] = 
-                        \end{gathered}
-                    \end{equation}
-                \item 
-            \end{enumerate}
+            
         \end{proposition}
             \begin{proof}
-                \begin{enumerate}
-                    \item This is a straightforward computation.
-                    \item 
-                \end{enumerate}
+                
             \end{proof}
         \begin{corollary}[Pseudo-Iwasawa decompositions] \label{coro: pseudo_iwasawa_decompositions}
             
