@@ -1,14 +1,27 @@
 \section{Twisted Manin triples and quantisation of Lie coideals}
     \subsection{Twisted Manin triples and Lie coideals}
-        For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notations therein.
+        For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notation scheme therein.
     
         \begin{definition}[Twisted Manin triple] \label{def: twisted_manin_triples}
             Suppose that $(\a, \t)$ is a weighted Lie algebra, that $(\a, \a^+, \a^-)$ is a Manin triple constructed using a symmetric, non-degenerate, and invariant bilinear form $(\cdot, \cdot)_{\a}$ on $\a$, and consider some pseudo-involution\footnote{In principle, definition \ref{def: twisted_manin_triples} can be written down without the automorphism $\vartheta$ being pseudo-involutive, but such scenarios are beyond the scope of our purposes.} $\vartheta \in \PseudoInv(\a, \t)$.
             \begin{itemize}
                 \item Said pseudo-involution $\vartheta$ is then said to \textbf{twist} the aforementioned Manin triple if either $\vartheta(\a^{\pm}) = \a^{\pm}$ or $\vartheta(\a^{\pm}) = -\a^{\mp}$.
-                \item The $\vartheta$-twisting above is said to be \textbf{invariant} (respectively, \textbf{anti-invariant}) if $( \vartheta(x), y )_{\a} = ( x, \vartheta(y) )_{\a}$ (respectively, if $( \vartheta(x), y )_{\a} = -( x, \vartheta(y) )_{\a}$).
+                \item The $\vartheta$-twist above is said to be \textbf{invariant} (respectively, \textbf{anti-invariant}) if $( \vartheta(x), y )_{\a} = ( x, \vartheta(y) )_{\a}$ (respectively, if $( \vartheta(x), y )_{\a} = -( x, \vartheta(y) )_{\a}$).
             \end{itemize}
         \end{definition}
+        \begin{definition}[Twisted topological Lie bialgebras] \label{def: twisted_lie_bialgebras}
+            Let $\a$ be a Lie algebra and let $\delta: \a \to \a \hattensor \a$ be a topological Lie bialgebra, and consider a Lie algebra automorphism $\vartheta \in \Aut_{\Lie\Alg}(\a)$ (which may not be a Lie bialgebra automorphism). Let us write:
+                $$\delta^{\vartheta} := \delta \circ \vartheta$$
+            We say that $\delta^{\vartheta}$ is an \textbf{invariant twist} (respectively, \textbf{anti-invariant twist}) of the Lie bialgebra structure $\delta$ if:
+                $$\delta^{\vartheta} = (\vartheta \hattensor \vartheta) \circ \delta$$
+            (respectively, if $\delta^{\vartheta} = -(\vartheta \hattensor \vartheta) \circ \delta$).
+        \end{definition}
+        \begin{remark}
+            We caution the reader that in general, for a topological Lie bialgebra $(\a, \delta)$, twists thereof by Lie algebra automorphisms $\vartheta \in \Aut_{\Lie\Alg}(\a)$ may not be a Lie bialgebra structure on $\vartheta(\a)$ at all. In theorem \ref{theorem: lie_bialgebras_from_twisted_manin_triples}, for instance, we will see that at least for twists by pseudo-involutions on root-decomposable Lie algebras, whether said twists are invariant or anti-invariant shall determined if the resulting structure is a topological Lie bialgebra or not.
+        \end{remark}
+        \begin{example}[Yangian twisted current algebras] \label{example: yangian_twisted_current_algebras}
+            An example of an anti-invariant twist of a topological Lie bialgebra structure that results not in a new topological Lie bialgebra structure, but rather a topological Lie coideal subalgebra structure, can be found in \cite[Subsection 3.5]{guay_regelskis_twisted_yangians_for_symmetric_pairs_of_types_BCD}. There, the authors were concerned with the standard Yangian topological Lie bialgebra structure $(\bar{\g}[t], \delta^+)$ associated to a finite-dimensional simple Lie algebra $\bar{\g}$, and twists given by certain involutions on $\bar{\g}[t]$.
+        \end{example}
 
         Before we are able to see what sort of Lie-bialgebraic structures can be constructed using twisted Manin triples, let us make the following preliminary observation. Namely, there is a canonical Lie bialgebra structure associated to any root-decomposable Lie algebra, integrable or not, i.e. we are making note of a (mild) generalisation of the standard Lie bialgebra structure on symmetrisable Kac-Moody algebras (as given by equation \eqref{equation: standard_kac_moody_lie_bialgebra_structure}), instead of merely recovering it. Our claim, later on, shall be that depending on whether the Manin triple in question is being twisted invariantly or anti-invariantly, the resulting Lie-bialgebraic structure shall either be a twisted Lie bialgebra (that is \textit{not} a Lie sub-bialgebra of the original one!) or a Lie coideal.
         \begin{lemma}[Root-decomposable Lie bialgebras] \label{lemma: root_decomposable_lie_bialgebras}
@@ -18,7 +31,7 @@
                 \begin{equation} \label{equation: root_decomposable_borel_subalgebra_embeddings}
                     \eta^{\pm}(x) := x \oplus ( \pm x_{\h} ) \quad, \quad x \in \b^{\pm}
                 \end{equation}
-            (cf. equation \eqref{equation: borel_lie_sub_bialgebra_embeddings}), wherein $x_{\h}$ is the image of $x \in \b^{\pm}$ under the canonical quotient map $\b^{\pm} \to \b^{\pm}/\n^{\pm} \cong \h$. Moreover, this larger Lie algebra shall be equipped with the symmetric, non-degenerate, and invariant bilinear form given by:
+            (cf. equation \eqref{equation: borel_lie_sub_bialgebra_embeddings}), wherein $x_{\h}$ is the image of $x \in \b^{\pm}$ under the canonical quotient map $\b^{\pm} \to \b^{\pm}/\n^{\pm} \cong \h$. Moreover, this larger Lie algebra shall be equipped with the symmetric, non-degenerate, and invariant bilinear form given by\footnote{We are implicitly identifying $\a \cong \g \oplus \h$ as vector spaces.}:
                 \begin{equation} \label{equation: extended_root_decomposable_pairings}
                     (\cdot, \cdot)_{\a} := (\cdot, \cdot)_{\g} - (\cdot, \cdot)_{\h}
                 \end{equation}
@@ -31,11 +44,35 @@
             \begin{proof}
                 First of all, via lemma \ref{lemma: direct_sums_of_weighted_lie_algebras}, we see that $\a$ is weighted by the abelian Lie subalgebra $\eta^+(\h) \oplus \eta^-(\h)$. Next, from remark \ref{remark: isotropic_subalgebras_of_root_decomopsable_lie_algebras}, it is clear that the Lie subalgebras $\a^{\pm} \subset \a$ are isotropic with respect to $(\cdot, \cdot)_{\a}$. The rest follows from the construction of the triple $(\a, \a^+, \a^-)$.
             \end{proof}
-        \begin{theorem}[Lie bialgebras and coideals from invariantly twisted Manin triples] \label{theorem: lie_bialgebras_from_invariantly_twisted_manin_triples}
+
+        \begin{lemma}[Doubling weighted automorphisms] \label{lemma: doubling_weighted_automorphisms}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Consider also the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples}. Then, $\vartheta$ extends to a pseudo-involution:
+                \begin{equation} \label{equation: doubled_pseudo_involutions}
+                    \Theta \in \PseudoInv(\a, \t)
+                \end{equation}
+            of the weighted Lie algebra $(\a, \t)$ with $\t := \eta^+(\h) \oplus \eta^-(\h)$, given by:
+                $$\Theta( \eta^{\pm}(x) ) := \vartheta(x) \oplus \vartheta( \pm x_{\h} ) \quad, \quad x \in \b^{\pm}$$
+            wherein $x_{\h}$ is the image of $x \in \b^{\pm}$ under the canonical quotient map $\b^{\pm} \to \b^{\pm}/\n^{\pm} \cong \h$.
+        \end{lemma}
+            \begin{proof}
+                First of all, let us check that $\t$ is $\vartheta$-stable. To this end, note that for any $h \in \h$, we have $\Theta( \eta^{\pm}(h) ) = \vartheta(h) \oplus \vartheta(\pm h)$, which is certainly still an element of $\t$, since $\h$ is $\vartheta$-stable. Secondly, to show that $\Theta|_{\t}^2 = \id_{\t}$, simply consider the fact that $\Theta^2( \eta^{\pm}(h) ) = \vartheta^2(h) \oplus \vartheta^2(\pm h) = h \oplus (\pm h) = \eta^{\pm}(h)$, which is true for all $h \in \h$. We have thus shown that $\Theta$ is a pseudo-involution of the weighted Lie algebra $(\a, \t)$.
+            \end{proof}
+        \begin{convention}
+            Often, we shall abuse notations slightly and say that the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples} is twisted by $\vartheta \in \PseudoInv(\g, \h)$, even though strictly speaking, this Manin triple has to be twisted by the \say{doubled} pseudo-involution $\Theta$ \eqref{equation: doubled_pseudo_involutions} instead.
+        \end{convention}
+
+        \begin{lemma}[Chevalley involutions twist anti-invariantly] \label{lemma: chevalley_involutions_twist_anti_invariantly}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra. Consider also the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples}. Then, the Chevalley involution $\omega$ extends - in the manner explained in lemma \ref{lemma: doubling_weighted_automorphisms} - to an \underline{anti-invariant} twist of the Manin triple $(\a, \a^+, \a^-)$. 
+        \end{lemma}
+            \begin{proof}
+                \todo[inline]{There are some typos I need to fix this first before writing this proof.}
+            \end{proof}
+            
+        \begin{theorem}[Lie bialgebras and coideals from twisted Manin triples] \label{theorem: lie_bialgebras_from_twisted_manin_triples}
             Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a root-decomposable Lie algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Consider also the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples}; denote the topological Lie bialgebra structures on $\a^{\pm}$ by $\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$. Let $\k \subset \g$ be a $\vartheta$-pseudo-fixed-point subalgebra, and abbreviate $\k^{\pm} := \k \cap \a^{\pm}$.
             \begin{enumerate}
-                \item There is a topological Lie bialgebra structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \k^+$, given by $\delta_{\k^+} := [\cdot, \cdot]_{\k^-}^*$, if and only if the $\vartheta$-twisting is \textit{invariant}. This is \textit{not} a Lie sub-bialgebra of $(\a^+, \delta^+)$.
-                \item The restriction $\delta_{\k^+} := \delta^+|_{\k^+}$ is a topological Lie right-coideal structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \a^+$ if and only if the $\vartheta$-twisting is \textit{anti-invariant}.
+                \item There is a topological Lie bialgebra structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \k^+$, given by $\delta_{\k^+} := [\cdot, \cdot]_{\k^-}^*$, if and only if the $\vartheta$-twist is \textit{invariant}. This is \textit{not} a Lie sub-bialgebra of $(\a^+, \delta^+)$.
+                \item The restriction $\delta_{\k^+} := \delta^+|_{\k^+}$ is a topological Lie right-coideal structure $\delta_{\k^+}: \k^+ \to \k^+ \hattensor \a^+$ if and only if the $\vartheta$-twist is \textit{anti-invariant}.
             \end{enumerate}
         \end{theorem}
         \begin{remark}
@@ -49,18 +86,38 @@
                 \end{enumerate}
             \end{proof}
 
-        \begin{proposition}[Twisted Manin triples of types I and II] \label{prop: twisted_manin_triples_of_types_I_and_II}
-            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a symmetrisable Kac-Moody algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Suppose also that the Manin triple \eqref{equation: root_decomposable_manin_triples} is twisted by $\vartheta$, invariantly or anti-invariantly. Then:
+        Regarding twists of the standard Kac-Moody Manin triple (that gives rise to the topological Lie bialgebra structure \eqref{equation: standard_kac_moody_lie_bialgebra_structure}), more can be said, especially when the underlying symmetrisable Kac-Moody algebra is either of finite or affine type.
+        \begin{theorem} \label{theorem: twisted_forms_and_coideal_subalgebras_of_kac_moody_lie_bialgebras}
+            Suppose that $(\g, \h, \n^{\pm}, \omega)$ is a symmetrisable Kac-Moody algebra, and consider a pseudo-involution $\vartheta \in \PseudoInv(\g, \h)$. Consider also the standard Manin triple $(\a, \a^+, \a^-)$ \eqref{equation: root_decomposable_manin_triples}.
             \begin{enumerate}
-                \item $\vartheta(\n^{\pm}) = \n^{\pm}$ if and only if $\vartheta$ is of type I.
-                \item $\vartheta(\n^{\pm}) = -\n^{\mp}$ if and only if $\vartheta$ is of type II.
+                \item If $\vartheta$ twists the Manin triple $(\a, \a^+, \a^-)$ invariantly, then it will be of type I\footnote{By remark \ref{remark: finite_type_kac_moody_algebras_only_have_type_II_weighted_automorphisms}, this forces $\g$ to be of an infinite (i.e. affine or indefinite) type in Kac's classification.}.
+                \item $\vartheta$ is of type II, i.e. $\vartheta \in \Ad(\frakG) \cdot \omega$, then it will twist the Manin triple $(\a, \a^+, \a^-)$ anti-invariantly as a result of the Chevalley involution $\omega$ twisting anti-invariantly (lemma \ref{lemma: chevalley_involutions_twist_anti_invariantly}).
             \end{enumerate}
-        \end{proposition}
+            Moreover, the converse to both of the statements above hold when $\g$ is of a finite or an affine type in Kac's classification.
+        \end{theorem}
             \begin{proof}
-                First of all, by definition \ref{def: weighted_automorphisms_of_weighted_lie_algebras}, we know that $\vartheta|_{\h} \in \Inv_{\Lie\Alg}(\h)$. The map $\vartheta|_{\h}$ thus extends to an involution on the weighing subalgebra $\eta^+(\h) \oplus \eta^-(\h) \subset \a$, and hence a pseudo-involution on $\a$, which we denote by the same symbol $\vartheta$.
-            
-                Let $\frakG$ be the minimal pro-algebraic group associated to $(\g, \h, \n^{\pm}, \omega)$, which exists because this Lie algebra is integrable. Since $(\cdot, \cdot)_{\g}$ is $\g$-invariant, it is also $\frakG$-invariant, i.e. $(\Ad(g) \cdot x, y)_{\g} = (x, \Ad(g) \cdot y)$ for all $x, y \in \g$ and all $g \in \frakG$. This means that for all $g \in \frakG$, we have in the $\vartheta$-invariant case that $( \Ad(g) \cdot \vartheta(x), y )_{\g} = ( x, \Ad(g) \cdot \vartheta(y) )_{\g}$ as a result of the fact that $( \vartheta(x), y )_{\g} = ( x, \vartheta(y) )_{\g}$ (cf. definition \ref{def: twisted_manin_triples}), and similarly in the anti-invariant case. By definition, $\vartheta$ is of type II if and only if we can choose $g \in \frakG$ such that $\omega = \Ad(g) \cdot \vartheta$.  As the bilinear form $(\cdot, \cdot)_{\g}$ is $\omega$-invariant by definition \ref{def: root_decomposable_lie_algebras}, and as $\omega(\n^{\pm}) = -\n^{\mp}$ by definition \ref{def: triangular_decomposable_lie_algebras}, we are done.
+                Let $\frakG$ be the minimal pro-algebraic group associated to $(\g, \h, \n^{\pm}, \omega)$, which exists because this Lie algebra is integrable.
+                
+                Since $(\cdot, \cdot)_{\a}$ is $\a$-invariant, it is also $\frakG$-invariant, i.e. $(\Ad(g) \cdot x, y)_{\a} = (x, \Ad(g) \cdot y)_{\a}$ for all $x, y \in \a$ and all $g \in \frakG$. This means that for all $g \in \frakG$, we have in the $\vartheta$-invariant case that $( \Ad(g) \cdot \vartheta(x), y )_{\a} = ( x, \Ad(g) \cdot \vartheta(y) )_{\a}$ as a result of the fact that $( \vartheta(x), y )_{\a} = ( x, \vartheta(y) )_{\a}$ (cf. definition \ref{def: twisted_manin_triples}), and similarly in the anti-invariant case. At the same time, we have seen through lemma \ref{lemma: chevalley_involutions_twist_anti_invariantly} that the Chevalley involution $\omega$ twists the Manin triple $(\a, \a^+, \a^-)$ \textit{anti-invariantly}. By definition \ref{def: weighted_automorphisms_of_types_I_and_II}, $\vartheta$ is of type II if and only if we can choose $g \in \frakG$ such that $\vartheta = \Ad(g) \cdot \omega$. We conclude the proof by combining all of the observations above.
             \end{proof}
+        \begin{corollary}[Twisted forms and coideal subalgebras of Kac-Moody Lie bialgebras] \label{coro: twisted_forms_and_coideal_subalgebras_of_kac_moody_lie_bialgebras}
+            Let $(\g, \h, \n^{\pm}, \omega)$ be a Kac-Moody algebra of either a finite or an affine type, and let $\vartheta \in \PseudoInv(\g, \h)$ be a pseudo-involution. Consider also a $\vartheta$-pseudo-fixed-point subalgebra $\k \subset \g$.
+            \begin{enumerate}
+                \item \todo[inline]{Twisted forms} 
+                \item \todo[inline]{Coideal subalgebras}
+            \end{enumerate}
+        \end{corollary}
+            \begin{proof}
+                Combine the results of theorems \ref{theorem: lie_bialgebras_from_twisted_manin_triples} and \ref{theorem: twisted_forms_and_coideal_subalgebras_of_kac_moody_lie_bialgebras}.
+            \end{proof}
+            
+        \begin{remark}[Type-I anti-invariant twists ?]
+            It is possible that the converse to the two statements in theorem \ref{theorem: twisted_forms_and_coideal_subalgebras_of_kac_moody_lie_bialgebras} can hold when $(\g, \h, \n^{\pm}, \omega)$ is of an indefinite type, or even when it is a general root-decomposable Lie algebra. For instance, in the indefinite case, there may exist pseudo-involutions that twist the Manin triple $(\a, \a^+, \a^-)$ anti-invariantly yet are of type I, or in other words, there may exist pseudo-involutions that twist invariantly yet lie \textit{outside} of the orbit $\Ad(\frakG) \cdot \omega$. We are, however, unable to confirm nor deny this speculation, due to our lack of understanding of the structure of indefinite-type Kac-Moody groups.
+            
+            It is impossible, though, for an invariant twist to be of type II, and this is because by definition, all such pseudo-involutions are defined to be in the orbit $\Ad(\frakG) \cdot \omega$, and $\omega$ itself is already an anti-invariant twist.
+
+            We would also like to remark, that theorem \ref{theorem: twisted_forms_and_coideal_subalgebras_of_kac_moody_lie_bialgebras} does not contradict the result mentioned in example \ref{example: yangian_twisted_current_algebras}, which showcases a topological Lie algebra \textit{anti-invariantly} twisted by a type-I involution. This is because the Manin triples at play are different in the two situations. Ultimately, this is a matter of which non-degenerate and invariant bilinear form we are using: in the former case, the pairing is of degree $0$, while in the latter case, it is of degree $-1$.
+        \end{remark}
 
     \subsection{Deformation quantisation}
 
