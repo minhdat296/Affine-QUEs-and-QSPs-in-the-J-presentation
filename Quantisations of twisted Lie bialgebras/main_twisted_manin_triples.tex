@@ -1,0 +1,61 @@
+\input{article preambles}
+
+\setcounter{section}{-1}
+
+\input{commands}
+
+\begin{document}
+
+	\title{Quantisations of twisted Lie bialgebras}
+	
+	\author{Dat Minh Ha}
+	\maketitle
+	
+	\begin{abstract}
+	    We generalise the results from \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, which dealt with twists of Lie bialgebras by involutions, to encompass cases wherein the twists are by general Lie algebra automorphisms. The cases wherein the twists are anti-invariant (and thus produce Lie coideal subalgebras) have already been studied by Schrader in \cite{schrader_integrable_systems_from_classical_reflection_equations}, so at the classical, we need only focus on invariant twists, which produce \say{twisted forms} of the original Lie bialgebra structures. Afterwards, we discuss quantisations of these twists.
+        
+        This work serves as a first step in formulating quantum symmetric pairs in terms similar to Drinfeld's J-presentation for Yangian, following the work \cite{belliard_regelskis_J_presentation_for_twisted_yangians} which established twisted Yangians (defined by anti-invariant twists by involutions) in such a presentation.
+	\end{abstract}
+	
+	{
+      \hypersetup{} 
+      %\dominitoc
+      \tableofcontents %sort sections alphabetically
+    }
+
+    \listoftodos
+
+    \input{Quantisations of twisted Lie bialgebras/introduction_quantisations_of_twisted_lie_bialgebras}
+
+    \input{Quantisations of twisted Lie bialgebras/twisted_manin_triples}
+
+    \input{Quantisations of twisted Lie bialgebras/twisted_quantisations}
+
+    \input{Quantisations of twisted Lie bialgebras/examples_of_twisted_lie_bialgebras}
+
+    \input{Quantisations of twisted Lie bialgebras/pseudo_twists_of_kac_moody_lie_bialgebras}
+
+    \begin{appendices}
+        \section{Manin triples, (topological) Lie bialgebras, and their quantisations} 
+            \subsection{Manin triples and (topological) Lie bialgebras} \label{subsection: manin_triples}
+                \input{Setup files and appendices/setup_manin_triples}
+
+                \input{Setup files and appendices/setup_coboundary_lie_bialgebras}
+
+            \subsection{Quantisation of (topological) Lie bialgebras}
+                \input{Setup files and appendices/setup_quantisation_of_lie_bialgebras}
+    
+        \section{(Quantum) Kac-Moody Lie (bi)algebras}
+            \subsection{Kac-Moody algebras} \label{subsection: setup_kac_moody_algebras}
+                \input{Setup files and appendices/setup_kac_moody_algebras}
+
+            \subsection{The standard Kac-Moody Lie bialgebra structure and its quantisation} \label{subsection: setup_standard_kac_moody_lie_bialgebras}
+                \input{Setup files and appendices/setup_standard_kac_moody_lie_bialgebras}
+
+                \input{Setup files and appendices/setup_quantum_kac_moody_algebras}
+    \end{appendices}
+	
+    \addcontentsline{toc}{section}{References}
+    \printbibliography
+
+\end{document}

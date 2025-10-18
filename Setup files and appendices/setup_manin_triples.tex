@@ -1,37 +1,67 @@
-Let us recall the following definition from \cite[Subsection 2.6]{appel_laredo_2_categorical_etingof_kazhdan_quantisation} (see also \cite[Subsection 7.4]{etingof_kazhdan_quantisation_1}).
+We begin with the following definition, which is a slight modification of the definition from \cite[Subsection 2.6]{appel_laredo_2_categorical_etingof_kazhdan_quantisation}. See also \cite[Subsection 7.4]{etingof_kazhdan_quantisation_1} and \cite[Subsection 1.3.B]{chari_pressley_quantum_groups}, Definition 1.3.3 on p. 27 and the remark on p. 28 in particular.
 \begin{definition}[Manin triples] \label{def: manin_triples}
-    A \textbf{Manin triple} is a triple of Lie algebras $(\a, \a^+, \a^-)$ such that $\a = \a^- \oplus \a^+$, along with a non-degenerate invariant pairing $(\cdot, \cdot) \in \Hom( \Sym^2(\a)^{\a}, \bbC )$, which are to satisfy the following conditions.
+    A \textbf{Manin triple} is a triple of Lie algebras:
+        $$(\a, \a^+, \a^-)$$
+    together with a non-degenerate invariant pairing:
+        $$(\cdot, \cdot)_{\a} \in \Hom( \Sym^2(\a)^{\a}, \bbC )$$
+    which are to satisfy the following conditions.
     \begin{itemize}
-        \item With respect to $(\cdot, \cdot)$, the Lie subalgebras $\a^{\pm} \subset \a$ are to be isotropic. 
-        \item The non-degenerate pairing $(\cdot, \cdot)$ induces an isomorphism of topological vector spaces $\a^- \xrightarrow[]{\cong} (\a^+)^*$, with $\a^+$ equipped with the discrete topology and $(\a^+)^*$ equipped with the weak topology.
-        \item The commutator on $\a = \a^- \oplus \a^+$ is continuous with respect to the topologies chosen above. 
+        \item $\a^{\pm}$ are Lie subalgebras of $\a$.
+        \item $\a = \a^- \oplus \a^+$ as vector spaces (but not necessarily as Lie algebras).
+        \item $\a^{\pm}$ are isotropic to one another with respect to $(\cdot, \cdot)_{\a}$, i.e. $(\a^{\pm}, \a^{\pm})_{\a} = 0$.
+        \item We endow $\a^{\pm}$ with the discrete topology and their dual spaces $(\a^{\pm})^*$ with the weak topology, and then require that the linear maps $\a^{\mp} \to (\a^{\pm})^*$ given by $y \mapsto (\cdot, y)_{\a}$ are isomorphisms of topological vector spaces\footnote{That is to say, they are continuous linear isomorphisms.}. Moreover, the Lie bracket $[\cdot, \cdot]_{\a}$ is to be continuous with respect to the product topology on $\a = \a^+ \oplus \a^-$.
+        \item By dualising the Lie brackets $[\cdot, \cdot]_{\a^{\mp}}: \a^{\mp} \tensor \a^{\mp} \to \a^{\mp}$, one obtains linear maps $\delta^{\pm} := [\cdot, \cdot]_{\a^{\pm}}^*: (\a^{\mp})^* \to (\a^{\mp} \tensor \a^{\mp})^*$ whose codomain lies in the subspace $(\a^{\mp})^* \hattensor (\a^{\mp})^* \subseteq (\a^{\mp} \tensor \a^{\mp})^*$.
     \end{itemize}
 \end{definition}
-Now, if $(\a, \a^+, \a^-)$ is a Manin triple, then we can construct a Lie bialgebra structure on $\a = \a^+ \oplus \a^-$ in the following manner. Let:
-    $$\calr \in \a^+ \tensor \a^- \subset \a \tensor \a$$
-be the canonical element, corresponding to $\id_{\a}$ via the non-degenerate pairing on $\a$. Then, one can check that the following construction defines a topological Lie cobracket $\delta: \a \to \a \hattensor \a$:
-    \begin{equation}
-        \delta(x) := [\Box(x), \calr] \quad, \quad x \in \a
-    \end{equation}
-wherein $\Box(x) := x \tensor 1 + 1 \tensor x$. This is compatible with the Lie bracket on $\a$ in such a manner that $\a$ is a Lie bialgebra. Also, it can be shown that:
-    $$\pm \delta^{\pm} := \delta|_{\a^{\pm}}: \a^{\pm} \to \a^{\pm} \tensor \a^{\pm}$$
-are well-defined Lie sub-bialgebra structures, which are such that each of the Lie cobrackets $\delta^{\pm}$ is dual to the Lie bracket on $\a^{\pm}$, respectively. Additionally, $(\a, \delta)$ is isomorphic to Drinfeld's classical double of either $(\a^{\pm}, \delta^{\pm})$ (more on this shortly); indeed, these doubles are isomorphic to one another.
-\begin{remark}
-    It can be checked that $\calr$ satisfies the \say{classical Yang-Baxter equation}:
-        \begin{equation} \label{equation: CYBE}
-            [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] = 0
-        \end{equation}
-    and for this reason, Lie bialgebras that arise in this manner are known as being \say{quasi-triangular}.
+\begin{remark}[Finite-dimensional Manin triples]
+    When $\a$ is finite-dimensional (equivalently, when either of $\a^{\pm}$ are finite-dimensional), it is sufficient to only impose the first three conditions in definition \ref{def: manin_triples} in order to ensure that $(\a, \a^+, \a^-)$ is a Manin triple.
 \end{remark}
 
+Manin triples naturally form a category wherein morphisms:
+    $$\phi: (\a, \a^+, \a^+) \to (\b, \b^+, \b^+)$$
+are Lie algebra homomorphisms:
+    $$\phi: \a \to \b$$
+such that:
+    \begin{equation} \label{equation: morphisms_of_manin_triples}
+        \begin{gathered}
+            \phi( \a^{\pm} ) \subseteq \b^{\pm}
+            \\
+            (\cdot, \cdot)_{\a} = (\cdot, \cdot)_{\b} \circ (\phi \tensor \phi)
+        \end{gathered}
+    \end{equation}
+\begin{remark}
+    The last condition in definition \ref{def: manin_triples} is imposed so that even in the infinite-dimensional setting, the equivalence \eqref{equation: manin_triple_lie_bialgebra_correspondence} between the groupoids of Manin triples and topological Lie bialgebras would hold.
+\end{remark}
+
+\todo[inline]{Definition of topological Lie bialgebras}
+
+Next, let us discuss the relationship between Manin triples and topological Lie bialgebras.
+
+If $(\a, \a^+, \a^-)$ is a Manin triple, then we can construct a Lie bialgebra structure on $\a = \a^+ \oplus \a^-$ in the following manner. If we regard the Lie brackets on $\a^{\mp}$ as linear maps:
+    $$[\cdot, \cdot]_{\a^{\mp}}: \a^{\mp} \tensor \a^{\mp} \to \a^{\mp}$$
+then first of all, dualising yields continuous linear maps:
+    \begin{equation} \label{equation: dual_of_lie_brackets}
+        \delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*: (\a^{\mp})^{*} \to (\a^{\mp} \tensor \a^{\mp})^*
+    \end{equation}
+Since $(\a, \a^+, \a^-)$ is a Manin triple, the codomain of $[\cdot, \cdot]_{\a^{\mp}}^*$ lies inside the subspace $(\a^{\mp})^{*} \hattensor (\a^{\mp})^{*} \subseteq (\a^{\mp} \tensor \a^{\mp})^*$ according to definition \ref{def: manin_triples}; by identifying $\a^{\mp} \cong (\a^{\pm})^*$ as topological vector spaces, we then obtain a linear map:
+    $$\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$$
+Then, by extending the bilinear form $(\cdot, \cdot)_{\a}$ factor-wise to $\a \hattensor \a$, one can then compute the values of $\delta^{\pm}$ by means of identifying:
+    \begin{equation} \label{equation: lie_cobrackets_by_duality}
+        \left( \delta^{\pm}(x), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \left( x, [y_1, y_2]_{\a^{\mp}} \right)_{\a} \quad, \quad x \in \a^{\pm}, y_1, y_2 \in \a^{\mp}
+    \end{equation}
+Using the topological Lie bialgebra structures $\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$, we can then construct a topological Lie bialgebra structure on $\a = \a^+ \oplus \a^-$:
+    $$\delta := \delta^+ \oplus (-\delta^-): \a \to \a \hattensor \a$$
+
 Conversely, given a topological Lie bialgebra structure $\delta^+: \a^+ \to \a^+ \hattensor \a^+$, one can construct a Manin triple $(\a, \a^+, \a^-)$ with $\a^- := (\a^+)^*, \a := \a^+ \oplus \a^-$, and the non-degenerate and invariant pairing on $\a$ is the canonical one between $\a^+$ and $\a^-$, given by:
-    $$(x, \varphi) := \varphi(x) \quad, \quad x \in \a^+, \varphi \in \a^-$$
-Moreover, $\a^-$ automatically carries an induced Lie bialgebra structure $\delta^-$ given by dualising the (continuous) Lie bracket on $\a^+$; there is thus also a Lie bialgebra structure on $\a$ given by $\delta := \delta^+ \oplus (-\delta^-)$. As such, the Manin triple constructed above is in fact a triple of Lie bialgebras; the procedure above that outputs the Lie bialgebra $(\a, \delta)$ from the Lie sub-bialgebra $(\a^+, \delta^+)$ is commonly known as Drinfeld's \textbf{classical double} construction, and we write:
+    $$(x, \varphi)_{\a} := \varphi(x) \quad, \quad x \in \a^+, \varphi \in \a^-$$
+Moreover, $\a^-$ automatically carries an induced topological Lie bialgebra structure $\delta^-$ given by dualising the (continuous) Lie bracket on $\a^+$; there is thus also a topological Lie bialgebra structure on $\a$ given by:
+    $$\delta := \delta^+ \oplus (-\delta^-)$$
+As such, the Manin triple constructed above is in fact a triple of topological Lie bialgebras; the procedure above that outputs the topological Lie bialgebra $(\a, \delta)$ from the topological Lie sub-bialgebra $(\a^+, \delta^+)$ is commonly known as Drinfeld's \textbf{classical double} construction, and we write:
     $$\a \cong \Dr(\a^+)$$
 It is also easy to see that $\a \cong \Dr(\a^-)$.
 
 In short, the procedure described above yields us a bijective correspondence:
     \begin{equation} \label{equation: manin_triple_lie_bialgebra_correspondence}
-        \left\{ \text{Manin triples $(\a, \a^+, \a^-)$} \right\} \leftrightarrows \left\{ \text{Lie bialgebra structures $(\a^+, \delta^+)$} \right\}
+        \left\{ \text{Manin triples $(\a, \a^+, \a^-)$} \right\} \leftrightarrows \left\{ \text{Topological Lie bialgebra structures $(\a^+, \delta^+)$} \right\}
     \end{equation}
-wherein the forward map is given by $\delta^+ := [\Box, \calr]|_{\a^+}$ while the backward map sends $(\a^+, \delta^+)$ to $(\Dr(\a^+) := \a^+ \oplus (\a^+)^*, \a^+, (\a^+)^*)$.
+wherein the forward map is given by $\delta^+ := [\cdot, \cdot]^*_{\a^-}$ while the backward map sends $(\a^+, \delta^+)$ to $(\Dr(\a^+) := \a^+ \oplus (\a^+)^*, \a^+, (\a^+)^*)$. This bijection can be enhanced to an equivalence of categories in a straightforward manner.

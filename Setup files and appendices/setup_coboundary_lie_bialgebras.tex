@@ -1,0 +1,20 @@
+\todo[inline]{Coboundary Lie bialgebras}
+
+Suppose that $(\a, \delta)$ is a topological Lie bialgebra whose cobracket is $1$-coboundary when regarded as a $1$-cocycle, which is to say that there exists some:
+    $$r \in \a \hattensor \a$$
+such that:
+    $$\delta = dr$$
+wherein $d$ is the Chevalley-Eilenberg differential. Then, one can check that the topological Lie bialgebra structure above can be given more succinctly by the following formula:
+    \begin{equation}
+        \delta(x) := [\Box(x), \calr] \quad, \quad x \in \a
+    \end{equation}
+wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ and:
+    $$\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$$
+be the canonical element, corresponding to $\id_{\a}$ via the non-degenerate pairing on $\a$.
+\begin{remark}
+    It can be checked that $\calr$ satisfies the \say{classical Yang-Baxter equation}:
+        \begin{equation} \label{equation: CYBE}
+            [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] = 0
+        \end{equation}
+    and for this reason, topological Lie bialgebras that arise in this manner are known as being \say{quasi-triangular}.
+\end{remark}
