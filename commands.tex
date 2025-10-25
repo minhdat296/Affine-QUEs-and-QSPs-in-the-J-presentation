@@ -358,6 +358,7 @@
 %\renewcommand{\lim}{\operatorname{lim}}
 \newcommand{\toto}{\rightrightarrows}
 %\newcommand{\tensor}{\otimes}
+
 \NewDocumentCommand{\tensor}{e{_^}}{%
   \mathbin{\mathop{\otimes}\displaylimits
     \IfValueT{#1}{_{#1}}
@@ -411,9 +412,9 @@
 \newcommand{\bfpt}{\mathbf{pt}}
 \newcommand{\bfloc}{\mathbf{loc}}
 \DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
-\newcommand{\0}{\mymathbb{0}}
-\newcommand{\1}{\mathbbm{1}}
-\newcommand{\2}{\mathbbm{2}}
+\newcommand{\0}{\boldsymbol{ 0 }}
+\newcommand{\1}{\boldsymbol{ 1 }}
+\newcommand{\2}{\boldsymbol{ 2 }}
 \newcommand{\Jet}{\operatorname{Jet}}
 \newcommand{\Split}{\mathrm{Split}}
 \newcommand{\Sq}{\mathrm{Sq}}
@@ -440,6 +441,7 @@
 \newcommand{\bbV}{\mathbb{V}}
 \newcommand{\W}{\mathbb{W}}
 \newcommand{\calU}{\mathcal{U}}
+\newcommand{\calu}{\mathcal{u}}
 \newcommand{\calW}{\mathcal{W}}
 \newcommand{\rmI}{\mathrm{I}} %augmentation ideal
 \newcommand{\bfV}{\mathbf{V}}
