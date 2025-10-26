@@ -17,6 +17,8 @@
         \end{definition}
         \begin{remark}
             Even when $\vartheta$ is a Lie algebra involution, our definition remains more general than \cite[Definition 2.1]{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}. Part of the reason for not insisting that the automorphism $\vartheta$ respects the polarisation of the Manin triple, i.e. not requiring that $\vartheta(\a^{\pm}) = \a^{\pm}$, is because we are interested also in examples of automorphisms such that $\vartheta(\a^{\pm}) = \a^{\mp}$. However, if we insist that $\vartheta$ respects the polarisation, then lemma \ref{lemma: twisted_manin_triples_and_twisted_topological_lie_bialgebras} in particular will only hold in a more restricted sense, which creates unnecessary inflexibility in our opinion.
+
+            Interestingly, we will see in lemma \ref{lemma: manin_triple_twists_and_duality} that twisting a Manin triple anti-invariantly actually \textit{forces} the Lie algebra automorphism $\vartheta$ that one twists by to be involutive. That said, we are able to extend the results from \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples} to the case wherein $\vartheta$ is an \textit{anti-polar} involution that twists anti-invariantly. Note also that there are also involutions that twist \textit{invariantly}; see lemma \ref{lemma: manin_triple_twists_and_duality} for details.
         \end{remark}
 
         Recall that by duality, any Manin triple $(\a, \a^+, \a^-)$ gives rise to a topological Lie bialgebra structure $\delta: \a \to \a \hattensor \a$ by means of:
@@ -136,64 +138,118 @@
         \end{remark}
         
         Our next task is to compute the dual spaces $(\p^{\mp})^*$ and $(\k^{\mp})^*$, and we shall see that this depends on whether the Manin triple being considered is twisted anti-invariantly or invariantly.
+        \begin{remark} \label{remark: manin_triple_twists_via_currying}
+            Let us take a slight detour and discuss a re-interpretation of definition \ref{def: twisted_manin_triples} that will be useful for the proof of lemma \ref{lemma: manin_triple_twists_and_duality}.
+        
+            Recall that the data defining a Manin triple $(\a, \a^+, \a^-)$ (cf. definition \ref{def: manin_triples}) consists in particular of isomorphisms of vector spaces\footnote{Recall from definition \ref{def: manin_triples} that the dual spaces $(\a^{\mp})^*$ are equipped with the weak topology, and $\a = \a^+ \oplus \a^-$ is equipped with the product topology.}:
+                $$\beta^{\pm}: \a^{\pm} \xrightarrow[]{\cong} (\a^{\mp})^*$$
+            given by:
+                $$\beta^{\pm}(x) := (x, \cdot)_{\a} \quad, \quad x \in \a^{\pm}$$
+            (cf. equation \eqref{equation: manin_triple_currying}). Using these isomorphisms, we can rephrase definition \ref{def: twisted_manin_triples} as follows: a polar Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$ is a twist of a Manin triple $(\a, \a^+, \a^-)$ if and only if either of the following diagrams in the category of topological vector spaces commutes:
+                \begin{equation} \label{diagram: manin_triple_twist_currying}
+                    \begin{tikzcd}
+                    	{\a^+} & {\a^+} \\
+                    	{(\a^-)^*} & {(\a^-)^*}
+                    	\arrow["\vartheta|_{\a^+}", from=1-1, to=1-2]
+                    	\arrow["{\beta^+}"', from=1-1, to=2-1]
+                    	\arrow["{\beta^+}", from=1-2, to=2-2]
+                    	\arrow["{\pm \vartheta|_{\a^-}^*}", from=2-1, to=2-2]
+                    \end{tikzcd}
+                \end{equation}
+            with \say{$-\vartheta^*$} corresponding to the anti-invariant case while \say{$\vartheta^*$} corresponding to the invariant case.
+
+            Twisting by an anti-polar automorphism has a completely analogous re-interpretation.
+        \end{remark}
+        \todo[inline]{I was not expecting this, but it seeems that an anti-invariant twist can only be done by an involution. One can get coideal subalgebras from non-involutive automorphisms, as in \cite{schrader_integrable_systems_from_classical_reflection_equations}, but these do not originate from the notion of Manin triple/Lie bialgebra twists by Belliard-Crampé from \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples} (the same notion used in \cite{belliard_regelskis_J_presentation_for_twisted_yangians} and \cite{guay_regelskis_twisted_yangians_for_symmetric_pairs_of_types_BCD}). I'm not yet sure what the correct generalisation of anti-invariant twists to non-involutive automorphisms ought to be. Perhaps, for a finite-order automorphism of order $N$, one can replace the $-1$ factor by an $N^{th}$ root of unity; when $N = 2$, we regard the $-1$ factor as a $2^{nd}$ root of unity.}
         \begin{lemma}[Manin triple twists and duality] \label{lemma: manin_triple_twists_and_duality}
-            Let $(\a, \a^+, \a^-)$ be a Manin triple which is twisted in the sense of definition \ref{def: twisted_manin_triples} by a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$, and let $\k^{\pm}, \p^{\pm}$ be as in \eqref{equation: polarised_symmetric_space_decompositions}.
+            Let $(\a, \a^+, \a^-)$ be a Manin triple which is twisted in the sense of definition \ref{def: twisted_manin_triples} by a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$, and let $\k^{\pm}, \p^{\pm}$ be as in \eqref{equation: polarised_symmetric_space_decompositions}. Then, via the isomorphisms \eqref{equation: manin_triple_currying}, we can make the following identifications of $(\p^{\mp})^*$ and $(\k^{\mp})^*$.
             \begin{enumerate}
-                \item Suppose that $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly.
-                \begin{enumerate}
-                    \item If $\vartheta$ is polar, then:
-                        \begin{equation} \label{equation: anti_invariant_twist_polar_duality}
-                            (\p^{\mp})^* \cong \k^{\pm} \quad, \quad (\k^{\mp})^* \cong \p^{\pm}
-                        \end{equation}
-                    \item If $\vartheta$ is anti-polar, then:
-                        \begin{equation} \label{equation: anti_invariant_twist_anti_polar_duality}
-                            (\p^{\mp})^* \cong \k^{\mp} \quad, \quad (\k^{\mp})^* \cong \p^{\mp}
-                        \end{equation}
-                \end{enumerate}
-                Conversely, $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly if either of the statements above holds.
-                \item Suppose that $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly.
-                \begin{enumerate}
-                    \item If $\vartheta$ is polar, then:
-                        \begin{equation} \label{equation: invariant_twist_polar_duality}
-                            (\p^{\mp})^* \cong \p^{\pm} \quad, \quad (\k^{\mp})^* \cong \k^{\pm}
-                        \end{equation}
-                    \item If $\vartheta$ is anti-polar, then:
-                        \begin{equation} \label{equation: invariant_twist_anti_polar_duality}
-                            (\p^{\mp})^* \cong \p^{\mp} \quad, \quad (\k^{\mp})^* \cong \k^{\mp}
-                        \end{equation}
-                \end{enumerate}
-                Conversely, $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly if either of the statements above holds.
+                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly if and only if:
+                    \begin{equation} \label{equation: anti_invariant_twist_duality}
+                        \begin{cases}
+                            (\p^{\mp})^* \cong \k^{\pm} \quad, \quad (\k^{\mp})^* \cong \p^{\pm} & \text{when $\vartheta$ is polar}
+                            \\
+                            (\p^{\mp})^* \cong \k^{\mp} \quad, \quad (\k^{\mp})^* \cong \p^{\mp} & \text{when $\vartheta$ is anti-polar}
+                        \end{cases}
+                    \end{equation}
+                which itself is the case if and only if $\vartheta$ is an involution.
+                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly if and only if:
+                    \begin{equation} \label{equation: invariant_twist_duality}
+                        \begin{cases}
+                            (\p^{\mp})^* \cong \p^{\pm} \quad, \quad (\k^{\mp})^* \cong \k^{\pm} & \text{when $\vartheta$ is polar}
+                            \\
+                            (\p^{\mp})^* \cong \p^{\mp} \quad, \quad (\k^{\mp})^* \cong \k^{\mp} & \text{when $\vartheta$ is anti-polar}
+                        \end{cases}
+                    \end{equation}
+                In this case, $\vartheta$ needs not be an involution.
             \end{enumerate}
         \end{lemma}
             \begin{proof}
-                Let $\delta^{\pm}: \a^+ \to \a^+ \hattensor \a^+$ be the topological Lie bialgebra structures given by \eqref{equation: lie_cobrackets_by_duality}.
-            
-                The claims result from consideration of the following expression:
-                    $$\left( \delta^{\pm}( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \pm \left( x, \vartheta( [y_1, y_2] ) \right)_{\a} \quad, \quad x \in \a^{\pm}, y_1, y_2 \in \a^{\mp}$$
-                Because we are assuming that $\a$ can be decomposed into a direct sum of eigenspaces of $\vartheta$ (convention \ref{conv: endomorphisms}), we can restrict our attention towards $x, y_1, y_2$ as above which are moreover eigenvectors of $\vartheta$, without any loss of generality. Throughout, let us assume that $x$ is an eigenvector for the eigenvalue $\mu \in \weight(\vartheta)$, while $y_1, y_2$ are eigenvectors for the eigenvalues $\nu_1, \nu_2 \in \weight(\vartheta)$ respectively. Under these assumptions, we have that:
-                    $$\mu \cdot \left( \delta^{\pm}( x ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \left( \delta^{\pm}( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \pm \left( x, \vartheta( [y_1, y_2] ) \right)_{\a} = \pm \nu_1 \nu_2 \left( x, [y_1, y_2] \right)_{\a}$$
-                Since $\left( \delta^{\pm}( x ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \left( x, [y_1, y_2] \right)_{\a}$ (cf. equation \eqref{equation: lie_cobrackets_by_duality}), we have that:
-                    $$\mu = \pm \nu_1 \nu_2$$
-                
-                Note also that because $\a^{\mp} = \k^{\mp} \oplus \p^{\mp}$, we have that $\a^{\pm} \cong (\a^{\mp})^* \cong (\k^{\mp} \oplus \p^{\mp})^* \cong (\k^{\mp})^* \oplus (\p^{\mp})^*$. In particular, this means that it is possible to regard $(\p^{\mp})^*, (\k^{\mp})$ as subspaces of $\a^{\pm}$. 
-                \begin{enumerate}
-                    \item Suppose that $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly, i.e.:
-                        $$\left( \delta^{\pm}( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = -\left( x, \vartheta( [y_1, y_2] ) \right)_{\a} \quad, \quad x \in \a^{\pm}, y_1, y_2 \in \a^{\mp}$$
-                    Since we can regard $(\p^{\mp})^*, (\k^{\mp})$ as subspaces of $\a^{\pm}$ and since $x$ is an eigenvector and hence non-zero, in both the cases wherein $\vartheta$ is polar and anti-polar, it is sufficient to demonstrate that:
-                        $$\mu = 1 \iff x \in (\p^{\mp})^*$$
-                        
-                    Assume first of all that $x \in (\p^{\mp})^*$. As $\vartheta(x) = \mu x$, we have in particular that $\vartheta(x) \in (\p^{\mp})^*$. Now, equation \eqref{equation: coactions_on_unfixed_points} tells us that:
-                        $$\delta^{\pm}( (\p^{\mp})^* ) = [\cdot, \cdot]_{\a^{\mp}}^*( (\p^{\mp})^* ) = (\rho^{\mp})^*((\p^{\mp})^*) \subseteq (\k^{\mp})^* \hattensor (\p^{\mp})^*$$
-                    so because we now have that $\vartheta(x) \in (\p^{\mp})^*$, in order to have $\left( \delta^{\pm}( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} \not = 0$, we must then have that $y_1 \tensor y_2 \in \k^{\mp} \tensor \p^{\mp}$. In turn, this implies that:
-                        $$[y_1, y_2] \in [\k^{\mp}, \p^{\mp}] \subseteq \p^{\mp}$$
-                    and also that $\nu_1 = 1$, and hence $\mu = -\nu_2$, whenever $\left( \delta^{\pm}( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} \not = 0$.
+                The polar and anti-polar cases are completely analogous to one another, so let us discuss only the former.
 
-                    Conversely, assume that $\mu = 1$.
-                    \item Suppose that $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly, i.e.:
-                        $$\left( \delta^+( \vartheta(x) ), y_1 \tensor y_2 \right)_{\a \hattensor \a} = \left( x, \vartheta( [y_1, y_2] ) \right)_{\a} \quad, \quad x \in \a^+, y_1, y_2 \in \a^-$$
-                    Like above, it is enough to show that:
-                        $$\mu = 1 \iff x \in (\k^{\mp})^*$$
-                    and the proof proceeds similarly.
+                Through the fact that $\k^{\pm} = \ker(\vartheta|_{\a^{\pm}} - 1)$ and through diagram \eqref{diagram: manin_triple_twist_currying}, we see that the following diagram commutes:
+                    \begin{equation} \label{diagram: manin_triple_twists_and_duality}
+                        \begin{tikzcd}
+                        	0 & {\k^+} & {\a^+} & {\a^+} & {\p^+} & 0 \\
+                        	0 & {\beta^+(\k^+)} & {(\a^-)^*} & {(\a^-)^*} & {\beta^+(\p^+)} & 0
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow["\ker", from=1-2, to=1-3]
+                        	\arrow["{\beta^+}"', dashed, from=1-2, to=2-2]
+                        	\arrow["{\vartheta|_{\a^+} - 1}", from=1-3, to=1-4]
+                        	\arrow["{\beta^+}"', from=1-3, to=2-3]
+                        	\arrow["\coker", from=1-4, to=1-5]
+                        	\arrow["{\beta^+}", from=1-4, to=2-4]
+                        	\arrow[from=1-5, to=1-6]
+                        	\arrow["{\beta^+}", dashed, from=1-5, to=2-5]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow[from=2-2, to=2-3]
+                        	\arrow["{\pm \vartheta|_{\a^-}^* - 1}", from=2-3, to=2-4]
+                        	\arrow[from=2-4, to=2-5]
+                        	\arrow[from=2-5, to=2-6]
+                        \end{tikzcd}
+                    \end{equation}
+                Since the vertical arrows are isomorphisms (see remark \ref{remark: manin_triple_twists_via_currying} for more details), the bottom row of diagram \eqref{diagram: manin_triple_twists_and_duality} is also an exact sequence, and we see thus that:
+                    $$
+                        \begin{gathered}
+                            \beta^+(\k^+) \cong \ker(\pm \vartheta|_{\a^-}^* - 1)
+                            \\
+                            \beta^+(\p^+) \cong \coker(\pm \vartheta|_{\a^-}^* - 1)
+                        \end{gathered}
+                    $$
+                Using the setup above, let us now prove the stated claims.
+                \begin{enumerate}
+                    \item Assume first of all that $\vartheta$ twists anti-invariantly. In this case, the middle arrow in the bottom row in diagram \eqref{diagram: manin_triple_twists_and_duality} is:
+                        $$-\vartheta|_{\a^-}^* - 1 = -( \vartheta|_{\a^-}^* + 1 )$$
+                    (cf. diagram \eqref{diagram: manin_triple_twist_currying}). From this, we see that:
+                        $$\beta^+(\k^+) \cong \ker(-\vartheta|_{\a^-}^* - 1) = \ker(\vartheta|_{\a^-}^* + 1) = \ker(\vartheta|_{\a^-} + 1)^* = (\p_{-1}^-)^*$$
+                    which in turn implies that:
+                        $$( \k^+, \p_{\mu}^- )_{\a} = 0 \quad, \quad \mu \not = -1$$
+                    and hence:
+                        $$(\k^+, \k^-)_{\a} = 0$$
+                    in particular (since $\k^- = \p_1^-$ in our notations; cf. lemma \ref{lemma: symmetric_space_decompositions}).
+
+                    Conversely, assume that $\beta^+(\k^+) = (\p^-)^*$ and $\beta^+(\p^+) = (\k^-)^*$
+                    \item Now, assume that $\vartheta$ twists invariantly. Then, because $(\vartheta|_{\a^+} - 1)^* = \vartheta|_{\a^+}^* - 1$, the lower row in diagram \eqref{diagram: manin_triple_twists_and_duality} coincides with the following diagram:
+                        \begin{equation}
+                            \begin{tikzcd}
+                            	0 & {(\p^-)^*} & {(\a^-)^*} & {(\a^-)^*} & {(\p^-)^*} & 0
+                            	\arrow[from=1-1, to=1-2]
+                            	\arrow["\ker", from=1-2, to=1-3]
+                            	\arrow["{(\vartheta|_{\a^-} - 1)^*}", from=1-3, to=1-4]
+                            	\arrow["\coker", from=1-4, to=1-5]
+                            	\arrow[from=1-5, to=1-6]
+                            \end{tikzcd}
+                        \end{equation}
+                    This is the exact sequence obtained by dualising the top row in diagram \eqref{diagram: manin_triple_twists_and_duality}, i.e. by applying the functor $(-)^* := \Hom(-, \bbC)$ to it, and then appealing to the fact that this functor is exact. Putting everything together, we see that:
+                        $$
+                            \begin{gathered}
+                                \beta^+(\k^+) \cong \ker(\vartheta|_{\a^-}^* - 1) \cong (\k^-)^*
+                                \\
+                                \beta^+(\p^+) \cong \coker(\vartheta|_{\a^-}^* - 1) \cong (\p^-)^*
+                            \end{gathered}
+                        $$
+                        
+                    Conversely, assume that $\beta^+(\p^+) = (\p^-)^*$ and $\beta^+(\k^+) = (\k^-)^*$. Since $(\k^-)^* = \ker(\vartheta|_{\a^+}^* - 1)^*$, this forces $\vartheta$ to twist the Manin triple $(\a, \a^+, \a^-)$ invariantly.
                 \end{enumerate}
             \end{proof}
         
