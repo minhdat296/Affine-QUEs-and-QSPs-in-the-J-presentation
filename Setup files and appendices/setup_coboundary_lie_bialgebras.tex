@@ -1,20 +1,38 @@
 \todo[inline]{Coboundary Lie bialgebras}
 
-Suppose that $(\a, \delta)$ is a topological Lie bialgebra whose cobracket is $1$-coboundary when regarded as a $1$-cocycle, which is to say that there exists some:
-    $$r \in \a \hattensor \a$$
+Suppose that $(\a, \delta)$ is a topological Lie bialgebra whose cobracket is $1$-coboundary when regarded as a $1$-cocycle, which is to say that there exists some $2$-tensor:
+    $$\calr \in \a \hattensor \a$$
 such that:
-    $$\delta = dr$$
-wherein $d$ is the Chevalley-Eilenberg differential. Then, one can check that the topological Lie bialgebra structure above can be given more succinctly by the following formula:
-    \begin{equation}
+    $$\delta = d\calr$$
+wherein $d$ is the Chevalley-Eilenberg cochain differential. Such a topological Lie bialgebra is said to be \textbf{coboundary}, and $2$-tensors $\calr \in \a \hattensor \a$ such that $\delta = d\calr$ are typically called \textbf{classical r-matrices}.
+\begin{remark}[Non-uniqueness of classical r-matrices] \label{remark: classical_r_matrices_non_uniqueness}
+    
+\end{remark}
+Then, one can check - simply using the construction of the Chevalley-Eilenberg differential - that the topological Lie bialgebra structure above can be given more succinctly by the following formula:
+    \begin{equation} \label{equation: coboundary_lie_cobrackets}
         \delta(x) := [\Box(x), \calr] \quad, \quad x \in \a
     \end{equation}
-wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ and:
-    $$\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$$
-be the canonical element, corresponding to $\id_{\a}$ via the non-degenerate pairing on $\a$.
-\begin{remark}
-    It can be checked that $\calr$ satisfies the \say{classical Yang-Baxter equation}:
-        \begin{equation} \label{equation: CYBE}
-            [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] = 0
+wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ (see \cite[Section 3.2]{etingof_schiffmann_lectures_on_quantum_groups}). From this, we see that $\calr$ must also satisfy the property whereby:
+    \begin{equation} \label{equation: unitary_classical_r_matrices}
+        \calr_{1, 2} = -\calr_{2, 1}
+    \end{equation}
+which is commonly known as \textbf{unitarity}. It is then natural to pose the following question.
+\begin{question}
+    Which alternating $2$-tensor $\calr \in \bigwedge^2 \a$ gives rise to a topological Lie bialgebra structure $\delta: \a \to \a \hattensor \a$ by means of equation \eqref{equation: coboundary_lie_cobrackets} ?
+\end{question}
+Of course, one should not expect that every alternating $2$-tensor $\calr \in \bigwedge^2 \a$ would give 
+\begin{proposition}[Drinfeld] \label{prop: coboundary_lie_bialgebras_and_CYBEs}
+    For any $\calr \in \a \hattensor \a$, let us write:
+        \begin{equation} \label{equation: classical_yang_baxter_tensor}
+            \CYBE(\calr) := [\calr_{1, 2}, \calr_{1, 3}] + [\calr_{1, 2}, \calr_{2, 3}] + [\calr_{1, 3}, \calr_{2, 3}] \in \a \hattensor \a \hattensor \a
         \end{equation}
-    and for this reason, topological Lie bialgebras that arise in this manner are known as being \say{quasi-triangular}.
-\end{remark}
+    to denote the \textbf{classical Yang-Baxter tensor}. 
+
+    An alternating $2$-tensor:
+        $$\calr \in \bigwedge^2 \a$$
+    gives rise to a topological Lie bialgebra structure $\delta: \a \to \hattensor \a$ given by equation \eqref{equation: coboundary_lie_cobrackets} if and only if $\CYBE(\calr)$ is an invariant alternating element of $\a \hattensor \a \hattensor \a$, i.e.:
+        $$\CYBE(\calr) \in \left( \bigwedge^3 \a \right)^{\a}$$
+\end{proposition}
+    \begin{proof}
+        See \cite[Theorem 3.1]{etingof_schiffmann_lectures_on_quantum_groups}.
+    \end{proof}
