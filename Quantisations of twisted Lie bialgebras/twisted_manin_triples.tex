@@ -109,7 +109,7 @@
             which would define a topological Lie bialgebra structure on $(\k^{\mp})^*$ should we have that $(\k^{\mp})^* \hattensor (\k^{\mp})^* \subseteq (\k^{\mp} \tensor \k^{\mp})^*$.
         \end{itemize}
         To those ends, recall from definition \ref{def: manin_triples} that for Manin triples $(\a, \a^+, \a^-)$, we assume that the dual brackets $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*: (\a^{\mp})^* \to (\a^{\mp} \tensor \a^{\mp})^*$ factor through $(\a^{\mp})^* \hattensor (\a^{\mp})^*$. We see thus that equation \eqref{equation: action_of_fixed_point_subalgebras_on_unfixed_points} defines a topological $(\k^{\mp})^*$-comodule structure on $(\p^{\mp})^*$:
-            \begin{equation} \label{equation: coactions_on_unfixed_points}
+            \begin{equation} \label{equation: coactions_on_dual_of_unfixed_points}
                 (\rho^{\mp})^*: (\p^{\mp})^* \to (\k^{\mp})^* \hattensor (\p^{\mp})^*
             \end{equation}
         while equation \eqref{equation: dual_brackets_on_fixed_point_subalgebras} yields us a topological Lie bialgebra structure on $(\k^{\mp})^*$:
@@ -258,7 +258,7 @@
         \end{theorem}
             \begin{proof}
                 \begin{enumerate}
-                    \item Combine lemma \ref{lemma: manin_triple_twists_and_duality} with equation \eqref{equation: coactions_on_unfixed_points}.
+                    \item Combine lemma \ref{lemma: manin_triple_twists_and_duality} with equation \eqref{equation: coactions_on_dual_of_unfixed_points}.
                     \item Combine lemma \ref{lemma: manin_triple_twists_and_duality} with equation \eqref{equation: cobrackets_on_fixed_points}.
                 \end{enumerate}
             \end{proof}
@@ -276,7 +276,7 @@
         Only coboundary topological Lie bialgebras (and in particular, the quasi-triangular ones) are of relevance to questions surrounding quantisation, so henceforth, let us focus on twists of such topological Lie bialgebras.
 
     \subsection{Twists of coboundary topological Lie bialgebras: generalities} \label{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}
-        From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in lemma \ref{lemma: invariance_criteria_for_coboundary_topological_lie_bialgebra_twists}.
+        From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in theorem \ref{theorem: invariance_criteria_for_coboundary_topological_lie_bialgebra_twists}.
 
         Let us fix once and for all a coboundary topological Lie bialgebra:
             $$(\a, \delta, \calr)$$
@@ -286,13 +286,9 @@
             $$\calr_{1, 2} = -\calr_{2, 1}$$
         which implies in particular that $\calr \in \bigwedge^2 \a$.
         
-        The questions that we are concerned with in this subsection are the following.
+        The questions that we will be concerned with in subsections \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}, and \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras} are the following.
         \begin{question} \label{question: twisted_coboundary_topological_lie_bialgebras}
-            Let $\vartheta \in \Aut_{\LA}(\a)$.
-            \begin{enumerate}
-                \item 
-                \item 
-            \end{enumerate}
+            Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_topological_lie_bialgebras}. Can the criteria from theorem \ref{theorem: twisted_lie_bialgebraic_structures} be rephrased more explicitly in terms of $\calr$ ?
         \end{question}
         \begin{question} \label{question: twisted_classical_r_matrices}
             When the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ is \textit{quasi-triangular}, i.e. when:
@@ -301,27 +297,33 @@
         \end{question}
         \begin{question} \label{question: explicit_expressions_for_twisted_cobrackets}
             Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_topological_lie_bialgebras}, and let $\delta^{\vartheta}$ be as in theorem \ref{theorem: twisted_lie_bialgebraic_structures}. How are the expressions:
-                $$\delta^{\vartheta}(x) \quad, \quad x \in \k$$
+                $$\delta^{\vartheta}(x) \quad, \quad x \in \k := \a^{\vartheta}$$
             given, explicitly ?
         \end{question}
-        Partial answers to question \ref{question: twisted_coboundary_topological_lie_bialgebras}\footnote{Actually, the paper \cite{schrader_integrable_systems_from_classical_reflection_equations} addressed a slightly more general version of question \ref{question: twisted_coboundary_topological_lie_bialgebras}. There, the author considered the possibility of Lie coideal structures on the fixed-point subalgebras of general finite-order automorphisms of a (genuine) Lie bialgebra.} and question \ref{question: twisted_classical_r_matrices} had already been obtained previously, particularly in \cite{schrader_integrable_systems_from_classical_reflection_equations}. There, the author came to the conclusion that for \say{genuine} coboundary Lie bialgebras $(\a, \delta, \calr)$ that are twisted anti-invariantly by a Lie algebra involution $\vartheta \in \Aut_{\LA}(\a)$, the resulting Lie-bialgebraic structure on the fixed-point subalgebra $\k := \a^{\vartheta}$ shall be a \textit{Lie coideal subalgebra} of the original Lie bialgebra, which agrees with our theorem \ref{theorem: twisted_lie_bialgebraic_structures}. When $(\a, \delta, \calr)$ is furthermore quasi-triangular, the author also alluded to the fact, that after being anti-invariantly twisted (necessarily by an involution; see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), the classical r-matrix $\calr$ ends up giving rise to solutions:
+        Partial answers to question \ref{question: twisted_coboundary_topological_lie_bialgebras} and question \ref{question: twisted_classical_r_matrices} had already been obtained previously, particularly in \cite{schrader_integrable_systems_from_classical_reflection_equations}. There, the author addressed a slightly generalised version of question \ref{question: twisted_coboundary_topological_lie_bialgebras}. Namely, it was shown that for a coboundary \say{genuine}\footnote{... as opposed to a topological Lie bialgebra.} Lie bialgebra $(\a, \delta, \calr)$ being acted upon by a general \textit{finite-order} Lie algebra automorphism $\vartheta \in \Aut_{\LA}$, the fixed point subalgebra $\k := \a^{\vartheta}$ will gain the structure of a Lie coideal subalgebra of $(\a, \delta)$ if and only if the $2$-tensor:
+            $$(\vartheta - 1)^{\tensor 2}(\calr) \in \a \tensor \a$$
+        is $\k$-invariant. When:
+            $$\ord(\vartheta) = 2$$
+        i.e. when $\vartheta$ is a Lie algebra involution of $\a$, it has also been mentioned in \cite{schrader_integrable_systems_from_classical_reflection_equations} that one recovers the result of \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, which itself is slightly strengthened by the anti-invariant case in our theorem \ref{theorem: twisted_lie_bialgebraic_structures}. While we know that even when $\ord(\vartheta) > 2$, $(\k, \delta)$ is a Lie coideal subalgebra of $(\a, \delta)$, 
+        
+        When $(\a, \delta, \calr)$ is furthermore quasi-triangular, the author also alluded to the fact, that after being anti-invariantly twisted (necessarily by an involution; see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), the classical r-matrix $\calr$ ends up giving rise to solutions:
             $$\calk$$
-        to a\footnote{We would like to remind the reader that, for a given classical r-matrix, there can be many associated bCYBEs.} boundary classical Yang-Baxter equation (bCYBE)\footnote{These are referred to as \say{classical reflection equations} in \cite{schrader_integrable_systems_from_classical_reflection_equations}, though we prefer the term \say{boundary classical Yang-Baxter equations} as it reminds us of the fact that solutions to bCYBEs are analogues of solutions to CYBEs in the presence of boundary conditions (e.g. closed spin chains).}; this solution shall be referred to as a \say{classical k-matrix}. We shall review and extend these results to the topological setting in subsection \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}, and we shall make explicit certain ideas alluded to in \cite{schrader_integrable_systems_from_classical_reflection_equations} that we believe can be elaborated upon, such as the connection between anti-invariant twists and solutions to bCYBEs. Then, in subsection \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}, we shall investigate invariant twists. The analyses of the two cases do share a common starting point, though, which shall be described immediately below in the current subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}.
+        to a\footnote{We would like to remind the reader that, for a given classical r-matrix, there can be many associated bCYBEs.} boundary classical Yang-Baxter equation (bCYBE)\footnote{These are referred to as \say{classical reflection equations} in \cite{schrader_integrable_systems_from_classical_reflection_equations}, though we prefer the term \say{boundary classical Yang-Baxter equations} as it reminds us of the fact that solutions to bCYBEs are analogues of solutions to CYBEs in the presence of boundary conditions (e.g. closed spin chains).}; this solution shall be referred to as a \say{classical k-matrix}.
+        
+        We shall review and extend these results to the topological setting in subsection \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}, and we shall make explicit certain ideas alluded to in \cite{schrader_integrable_systems_from_classical_reflection_equations} that we believe can be elaborated upon, such as the connection between anti-invariant twists and solutions to bCYBEs. Then, in subsection \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}, we shall investigate invariant twists. The analyses of the two cases do share a common starting point, though, which shall be described immediately below in the current subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}.
 
         Additionally, it seems that explicit expressions for:
             $$\delta^{\vartheta}(x) \quad, \quad x \in \k$$
         have never yet been computed in either case (the result from \cite{schrader_integrable_systems_from_classical_reflection_equations} is merely a qualitative one), which is our reason for posing question \ref{question: explicit_expressions_for_twisted_cobrackets}. Such formulae will be of use to us in section \ref{section: examples_of_twisted_lie_bialgebras}, wherein we consider particular examples of twisted Lie bialgebras.
 
-        \begin{lemma}[Invariance criteria for twistability] \label{lemma: invariance_criteria_for_coboundary_topological_lie_bialgebra_twists}
+        \begin{theorem}[Invariance criteria for twistability] \label{theorem: invariance_criteria_for_coboundary_topological_lie_bialgebra_twists}
             
-        \end{lemma}
+        \end{theorem}
             \begin{proof}
                 
             \end{proof}
 
     \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \todo[inline]{Anti-invariant twists. These are Lie coideal subalgebras.}
-        
         \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs.}
 
         \todo[inline]{
@@ -335,8 +337,6 @@
         }
 
     \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \todo[inline]{Invariant twists}
-
         \todo[inline]{Invariant twists of classical r-matrices}
 
     \subsection{Twisting graded Lie bialgebras by graded automorphisms}
