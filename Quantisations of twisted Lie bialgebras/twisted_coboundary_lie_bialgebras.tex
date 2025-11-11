@@ -1,0 +1,72 @@
+\section{Twisting classical r-matrices} \label{section: twisting_classical_r_matrices}
+    Like in subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, let us fix a coboundary topological Lie algebra:
+        $$(\a^+, \delta^+, \calr)$$
+    defined by a Manin triple $(\a, \a^+, \a^-)$ by means of equation \eqref{equation: lie_cobrackets_by_duality}. Let:
+        $$(\Dr(\a^+) \cong \a, \delta, \calr)$$
+    be its classical double.
+
+    \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
+        In this subsection, suppose that $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ \textit{anti-invariantly} in the sense of definition \ref{def: twisted_topological_lie_bialgebras}. We now know via theorem \ref{theorem: twisted_lie_bialgebraic_structures}, that $\vartheta$ is necessarily an involution, and via equation \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}, that the classical r-matrix $\calr$ can now be decomposed into a sum of its projections onto direct summands of $\a \hattensor \a$
+    
+        \begin{theorem}[Invariance criterion for anti-invariant twists] \label{theorem: invariance_criterion_anti_invariant_twists}
+            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if $\vartheta$ is an involution and:
+                $$\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$$
+            with $\calr_{\p, \p}$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}.
+        \end{theorem}
+            \begin{proof}
+                See \cite[Proposition 2]{schrader_integrable_systems_from_classical_reflection_equations}. Note that while Schrader works under the hypothesis that $\vartheta$ is of finite order, we can disregard this assumption, as we are assuming that $\a$ can be decomposed into the direct sum of the eigenspaces of $\vartheta$ (see convention \ref{conv: endomorphisms}).
+            \end{proof}
+    
+        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs.}
+
+        \todo[inline]{
+            On \cite[p. 18]{schrader_integrable_systems_from_classical_reflection_equations}, it was mentioned that the quantity $C_{\vartheta}(\calr) := (\vartheta - 1)^{\tensor 2}(\calr)$ is to be thought of as the classical limit of a certain reflection equation. However, this claim has only been justified when $\a = \Loop \gl_2 := \gl_2 \tensor \bbC[t^{\pm 1}]$ is acted upon by the involution $\vartheta \in \Aut_{\LA}(\Loop \gl_2)$ given by $\vartheta( x \tensor t ) := x \tensor t^{-1}$. From these data, there arises a coideal subalgebra of $\calU_q(\Loop \gl_2)$ that can be realised as the reflection algebra:
+                $$\calB_q(\calK)$$
+            associated to a solution:
+                $$\calK(z)$$
+            of the bQYBE constructed using the quantum R-matrix of $\calU_q(\Loop \gl_2)$. It was then argued (though without much detail) that the classical limit of $\calK(z)$ ought to be related $\vartheta$, thus making the construction of $C_{\vartheta}(\calr)$ somewhat \textit{post hoc}. Therefore, my goal for this subsection is to justify the consideration of $C_{\vartheta}(\calr)$. I do think, though, that it is natural to guess that $\vartheta$ would play the role of the classical limit of $\calK(z)$, since the latter is at least supposed to be an invertible intertwiner of $\calB_q(\calK)$-modules $V$ in the sense that there exist $\calB_q(\calK)$-module isomorphisms:
+                $$\calK(z)_V: V(z) \xrightarrow[]{\cong} V(z^{-1})$$
+            When $V$ is a classical representation, this ought to descend to an automorphism of $V$, and $\vartheta$ therefore is to be thought of as a "universal classical k-matrix".
+        }
+
+    \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
+        \begin{theorem} \label{theorem: invariance_criterion_invariant_twists}
+            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if the following two conditions are satisfied:
+            \begin{itemize}
+                \item Firstly $(\k, \delta^{\vartheta}, \calr_{\k, \k})$ is a coboundary topological Lie bialgebra\footnote{... with $\delta^{\vartheta}$ as in proposition \ref{prop: twisting_classical_doubles}.}, i.e. the $2$-tensor $\calr_{\k, \k} \in \k \hattensor \k$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\CYBE(\calr_{\k, \k}) \in \left(\bigwedge^3 \k\right)^{\k}$ (cf. equation \eqref{equation: classical_yang_baxter_tensor}) whenever $\calr_{\k, \k} \in \bigwedge^2 \k$, and
+                \item Secondly, the $2$-tensor $\calr_{\p, \p} \in \p \hattensor \p$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$.
+            \end{itemize}
+
+            In particular, this means that $\calr_{\k, \k}$ is a classical r-matrix for the Lie bialgebra $(\k, \delta^{\vartheta})$ in this situation.
+        \end{theorem}
+            \begin{proof}
+                As mentioned at the beginning of subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, it is sufficient to only consider classical r-matrices that are anti-symmetric, i.e. we can assume that $\calr \in \bigwedge^2 \a$ without loss of generality. The decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} then reduces to:
+                    $$\calr = \calr_{\k, \k} + \calr_{\p, \p}$$
+                because we now have $\calr_{\p, \k} = (\calr_{\k, \p})_{2, 1} = -\calr_{\k, \p}$, and so the topological cobracket on $\a$ is determined by:
+                    $$
+                        \begin{gathered}
+                            \delta(x) = [\Box(x), \calr_{\k, \k} + \calr_{\p, \p}] \quad, \quad x \in \a
+                            \\
+                            \CYBE(\calr_{\k, \k} + \calr_{\p, \p}) \in \left(\bigwedge^3 \k\right)^{\k}
+                        \end{gathered}
+                    $$
+                according to lemma \ref{lemma: coboundary_lie_bialgebras_and_CYBEs}. Moreover, since $\bigwedge^2 \k \subset \k \hattensor \k$ is a vector subspace, we see also that:
+                    $$\calr_{\k, \k} \in \bigwedge^2 \k$$
+            \end{proof}
+        \begin{corollary}[Quasi-triangularity of invariant twists] \label{coro: quasi_triangularity_of_invariant_twists}
+            Suppose now that $(\a, \delta, \calr)$ is quasi-triangular, which is to say that $\calr$ satisfies $\CYBE(\calr) = 0$ (cf. equation \eqref{equation: CYBEs}).
+        
+            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ then twists $(\a, \delta, \calr)$ invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if the following two conditions are satisfied:
+            \begin{itemize}
+                \item Firstly, $(\k, \delta^{\vartheta}, \calr_{\k, \k})$ is a quasi-triangular topological Lie bialgebra, or in other words, that the $2$-tensor $\calr_{\k, \k} \in \k \hattensor \k$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies the classical Yang-Baxter equation $\CYBE(\calr_{\k, \k}) = 0$ (cf. equation \eqref{equation: CYBEs}).
+                \item Secondly, the $2$-tensor $\calr_{\p, \p} \in \p \hattensor \p$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$.
+            \end{itemize}
+        \end{corollary}
+            \begin{proof}
+                
+            \end{proof}
+
+    \subsection{Composing twists} \label{subsection: composing_twists_of_lie_bialgebras}
+
+    \subsection{Twists with spectral parameters} \label{subsection: twists_with_spectral_parameter}
+        \todo[inline]{Explain the necessary modifications for accommodating spectral parameters.}

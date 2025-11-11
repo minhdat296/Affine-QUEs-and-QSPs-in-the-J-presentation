@@ -97,20 +97,19 @@
                 \begin{equation} \label{equation: action_of_fixed_point_subalgebras_on_unfixed_points}
                     \rho^{\mp}: \k^{\mp} \tensor \p^{\mp} \to \p^{\mp}
                 \end{equation}
-            given by:
-                $$\rho^{\mp}(x \tensor y) := [x, y]_{\a^{\mp}} \quad, \quad x \in \k^{\mp}, y \in \p^{\mp}$$
-            Dualising the map \eqref{equation: action_of_fixed_point_subalgebras_on_unfixed_points} then yields a linear map:
-                $$(\rho^{\mp})^*: (\p^{\mp})^* \to (\k^{\mp} \tensor \p^{\mp})^*$$
-            and should we have that $(\k^{\mp})^* \hattensor (\p^{\mp})^* \subseteq (\k^{\mp} \tensor \p^{\mp})^*$, then $\rho^*$ would be a topological $(\k^{\mp})^*$-comodule structure on $(\p^{\mp})^*$. 
+            given by\footnote{For $\rho^-$, the additional minus sign is necessary for keeping track of the fact that $\a- \cong (\a^+)^{*, \op, \cop}$ as Lie bialgebras.}:
+                $$\rho^{\mp}(x \tensor y) := \mp [x, y]_{\a^{\mp}} \quad, \quad x \in \k^{\mp}, y \in \p^{\mp}$$
+            Dualising the map \eqref{equation: action_of_fixed_point_subalgebras_on_unfixed_points} then yields a linear map $(\rho^{\mp})^*: (\p^{\mp})^* \to (\k^{\mp} \tensor \p^{\mp})^*$. Should we have that $(\k^{\mp})^* \hattensor (\p^{\mp})^* \subseteq (\k^{\mp} \tensor \p^{\mp})^*$, then $\rho^*$ would extend to a topological $(\a^{\mp})^*$-comodule structure on $(\p^{\mp})^*$, which we (abusively) denote by the same symbol:
+                $$(\rho^{\mp})^*: (\p^{\mp})^* \to (\a^{\mp})^* \hattensor (\p^{\mp})^*$$
             \item Likewise, by dualising the Lie bracket on $\k^{\mp}$, one obtains a linear map:
                 \begin{equation} \label{equation: dual_brackets_on_fixed_point_subalgebras}
                     [\cdot, \cdot]_{\k^{\mp}}^*: (\k^{\mp})^* \to (\k^{\mp} \tensor \k^{\mp})^*
                 \end{equation}
             which would define a topological Lie bialgebra structure on $(\k^{\mp})^*$ should we have that $(\k^{\mp})^* \hattensor (\k^{\mp})^* \subseteq (\k^{\mp} \tensor \k^{\mp})^*$.
         \end{itemize}
-        To those ends, recall from definition \ref{def: manin_triples} that for Manin triples $(\a, \a^+, \a^-)$, we assume that the dual brackets $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*: (\a^{\mp})^* \to (\a^{\mp} \tensor \a^{\mp})^*$ factor through $(\a^{\mp})^* \hattensor (\a^{\mp})^*$. We see thus that equation \eqref{equation: action_of_fixed_point_subalgebras_on_unfixed_points} defines a topological $(\k^{\mp})^*$-comodule structure on $(\p^{\mp})^*$:
+        To those ends, recall from definition \ref{def: manin_triples} that for Manin triples $(\a, \a^+, \a^-)$, we assume that the dual brackets $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*: (\a^{\mp})^* \to (\a^{\mp} \tensor \a^{\mp})^*$ factor through $(\a^{\mp})^* \hattensor (\a^{\mp})^*$. We see thus that equation \eqref{equation: action_of_fixed_point_subalgebras_on_unfixed_points} defines a topological $(\a^{\mp})^*$-comodule structure on $(\p^{\mp})^*$:
             \begin{equation} \label{equation: coactions_on_dual_of_unfixed_points}
-                (\rho^{\mp})^*: (\p^{\mp})^* \to (\k^{\mp})^* \hattensor (\p^{\mp})^*
+                (\rho^{\mp})^*: (\p^{\mp})^* \to (\a^{\mp})^* \hattensor (\p^{\mp})^*
             \end{equation}
         while equation \eqref{equation: dual_brackets_on_fixed_point_subalgebras} yields us a topological Lie bialgebra structure on $(\k^{\mp})^*$:
             \begin{equation} \label{equation: cobrackets_on_fixed_points}
@@ -247,21 +246,21 @@
         
         \begin{theorem}[Twisted Lie bialgebraic structures] \label{theorem: twisted_lie_bialgebraic_structures}
             We keep the notations from lemma \ref{lemma: manin_triple_twists_and_duality}, and let:
-                $$\delta^+: \a^+ \to \a^+ \hattensor \a^+$$
-            be the topological Lie algebra structure defined by the Manin triple $(\a, \a^+, \a^-)$ via equation \eqref{equation: lie_cobrackets_by_duality}. Also, for a Lie algebra automorphism:
+                $$\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$$
+            be the topological Lie algebra structures defined by the Manin triple $(\a, \a^+, \a^-)$ via equation \eqref{equation: lie_cobrackets_by_duality}. Also, for a Lie algebra automorphism:
                 $$\vartheta \in \Aut_{\LA}(\a)$$
             let us write:
                 \begin{equation} \label{equation: twisted_lie_cobrackets}
-                    (\delta^+)^{\vartheta} :=
+                    (\delta^{\pm})^{\vartheta} :=
                     \begin{cases}
-                        \delta^+ \circ \vartheta|_{\a^+} & \text{if and only if $\vartheta$ twists $(\a^+, \delta^+)$ anti-invariantly}
+                        \delta^{\pm} \circ \vartheta|_{\a^{\pm}} & \text{if and only if $\vartheta$ twists $(\a^{\pm}, \delta^{\pm})$ anti-invariantly}
                         \\
-                        [\cdot, \cdot]_{\k^-}^* & \text{if and only if $\vartheta$ twists $(\a^+, \delta^+)$ invariantly}
+                        [\cdot, \cdot]_{\k^{\mp}}^* & \text{if and only if $\vartheta$ twists $(\a^{\pm}, \delta^{\pm})$ invariantly}
                     \end{cases}
                 \end{equation}
             \begin{enumerate}
-                \item $(\k^+, (\delta^+)^{\vartheta})$ is a topological Lie coideal subalgebra of $(\a^+, \delta^+)$ if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists the topological Lie bialgebra $(\a^+, \delta^+)$ anti-invariantly.
-                \item $(\k^+, (\delta^+)^{\vartheta})$ is another topological Lie bialgebra if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists the topological Lie bialgebra $(\a^+, \delta^+)$ invariantly. In this case, $\vartheta$ needs not be an involution.
+                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are topological Lie coideal subalgebras of $(\a^{\pm}, \delta^{\pm})$ if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists the topological Lie bialgebras $(\a^{\pm}, \delta^{\pm})$ anti-invariantly.
+                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are new topological Lie bialgebras if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists the topological Lie bialgebras $(\a^{\pm}, \delta^{\pm})$ invariantly. In this case, $\vartheta$ needs not be an involution.
             \end{enumerate}
         \end{theorem}
             \begin{proof}
@@ -270,9 +269,63 @@
                     \item Combine lemma \ref{lemma: manin_triple_twists_and_duality} with equation \eqref{equation: cobrackets_on_fixed_points}.
                 \end{enumerate}
             \end{proof}
+
+        Finally, we note that the operation of twisting is compatible with the construction of classical doubles in the sense of Drinfeld. The precise statement can be phrased as a corollary to theorem \ref{theorem: twisted_lie_bialgebraic_structures} as follows.
+        \begin{proposition}[Compatibility between twists and classical doubles] \label{prop: twisting_classical_doubles}
+            Let us keep the notations from theorem \ref{theorem: twisted_lie_bialgebraic_structures}. Also, let:
+                \begin{equation} \label{equation: twisting_classical_doubles}
+                    \delta^{\vartheta} := (\delta^+)^{\delta} \oplus (-\delta^-)^{\vartheta}
+                \end{equation}
+            \begin{enumerate}
+                \item $(\k, \delta^{\vartheta})$ is a topological Lie coideal subalgebra of $(\a, \delta)$ if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists the topological Lie bialgebra $(\a, \delta)$ anti-invariantly.
+                \item $(\k, \delta^{\vartheta})$ is another topological Lie bialgebra if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists the topological Lie bialgebra $(\a, \delta)$ invariantly. In this case, $\vartheta$ needs not be an involution.
+                
+                Furthermore, we have:
+                    $$\k \cong \Dr(\k^+) \cong \Dr(\k^-)^{\op, \cop}$$
+                which then implies via the correspondence \eqref{equation: manin_triple_lie_bialgebra_correspondence}, that the following is a Manin triple:
+                    $$(\k, \k^+, \k^-)$$
+            \end{enumerate}
+        \end{proposition}
+            \begin{proof}
+                \begin{enumerate}
+                    \item By lemma \ref{lemma: manin_triple_twists_and_duality}, what follows is true if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists $(\a, \delta)$ anti-invariantly.
+                    
+                    Taking the direct sum of the two maps \eqref{equation: coactions_on_dual_of_unfixed_points} yields us a topological $\a^*$-comodule structure:
+                        $$\rho^*: \p^* \to \a^* \hattensor \p^*$$
+                    (topologically dual to the action $\rho: \k \hattensor \p \to \p$ given by $x \tensor y \mapsto [x, y]_{\a}$), and this comodule structure is to fit into the following commutative diagram, in which the unlabelled arrows are the canonical ones:
+                        $$
+                            \begin{tikzcd}
+                            	{\left( (\a^-)^* \hattensor (\p^-)^* \right) \oplus \left( (\a^+)^{*, \op, \cop} \hattensor (\p^+)^* \right)} && {\left( (\a^-)^* \hattensor (\p^-)^* \right) \oplus \left( (\p^+)^* \hattensor (\a^+)^* \right)} \\
+                            	{(\p^-)^* \oplus (\p^+)^*} && {\left( \a^* \hattensor (\p^-)^* \right) \oplus \left( (\p^+)^* \hattensor \a^* \right)} \\
+                            	{(\p^- \oplus \p^+)^*} && {\left( \a^* \hattensor (\p^- \oplus \p^+)^* \right) \oplus \left( (\p^- \oplus \p^+)^* \hattensor \a^* \right)} \\
+                            	{\p^*} && {\left( \a^* \hattensor \p^* \right) \oplus \left( \p^* \hattensor \a^* \right)}
+                            	\arrow["\cong", from=1-1, to=1-3]
+                            	\arrow[hook, from=1-3, to=2-3]
+                            	\arrow["{(\rho^-)^* \oplus (\rho^+)^*}", from=2-1, to=1-1]
+                            	\arrow["\cong"', from=2-1, to=3-1]
+                            	\arrow[hook, from=2-3, to=3-3]
+                            	\arrow["\cong"', from=3-1, to=4-1]
+                            	\arrow["\cong", from=3-3, to=4-3]
+                            	\arrow["{\rho^*}", from=4-1, to=4-3]
+                            \end{tikzcd}
+                        $$
+                    Note also, that we have made use of the fact that there is an isomorphism of topological Lie bialgebras:
+                        $$\a \cong \Dr(\a^+) := \a^+ \oplus ( \a^+ )^{*, \op, \cop} \cong \a^+ \oplus (\a^-)^{\op, \cop}$$
+                    (see remark \ref{remark: embeddings_into_classical_doubles} for more details). Then, by identifying $\a^* \cong \a$ as topological Lie bialgebras and $(\p^{\mp})^* \cong \k^{\pm}$ (using lemma \ref{lemma: manin_triple_twists_and_duality}) and hence $\p^* \cong \k$ (since $\k = \k^+ \oplus \k^-$ and $\p = \p^+ \oplus \p^-$), we will get a topological $\a$-comodule structure:
+                        $$\rho^*: \k \to \a \hattensor \k$$
+                    Lastly, because $\k$ is a Lie subalgebra of $\a$ (cf. equation \eqref{equation: symmetric_space_relations}), $\rho^*$ is actually a coideal subalgebra structure coinciding with $\delta^{\vartheta}$.
+                    \item Reasoning as above, we can show that $(\k, \delta^{\vartheta})$ is a topological Lie bialgebra if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta)$ invariantly.
+                    
+                    Then, to prove that:
+                        $$\k \cong \Dr(\k^+) \cong \Dr(\k^-)^{\op, \cop}$$
+                    we need merely recall that there is an isomorphism of topological Lie bialgebras:
+                        $$\a \cong \Dr(\a^+) := \a^+ \oplus ( \a^+ )^{*, \op, \cop} \cong \a^+ \oplus (\a^-)^{\op, \cop}$$
+                    (again, see remark \ref{remark: embeddings_into_classical_doubles} for more details), and then that $\k^{\pm}$, respectively, are Lie subalgebras of $\a^{\pm}$ (this follows from the relations \eqref{equation: symmetric_space_relations}).
+                \end{enumerate}
+            \end{proof}
             
         \begin{remark}[Pseudo-fixed-point Lie coideal subalgebras ?] \label{remark: notations_for_twisted_lie_bialgebraic_structures}
-            Later on, we would also like to investigate the evaluation of the twisted structure $\delta^{\vartheta}$ on Lie subalgebras of $\a$ which, despite being defined by the automorphism $\vartheta$, are not fixed-point subalgebras. Namely, in subsection \ref{subsection: pseudo_twisted_lie_bialgebras}, we shall be considering the values of $\delta^{\vartheta}$ on the so-called \say{pseudo-fixed-point subalgebras}, which have been studied in \cite{regelskis_vlaar_finite_QSPs_via_generalised_satake_diagrams} and \cite{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} as combinatorially motivated generalisations of the notion of \say{quantum symmetric pairs} (also called \say{$\i$quantum groups}) that had been previously studied by Letzter, Kolb, Stokman, Noumi, Sugitani, and many others (see e.g. \cite{letzter_coideal_subalgebras_and_QSPs} and \cite{kolb_kac_moody_QSPs}). Note also that such generalisations have only been made within the Kac-Moody setting, and to our knowledge, no Yangian or elliptic analogues of the notion of pseudo-fixed-point subalgebras have ever been studied.
+            Later on, we would also like to investigate the evaluation of the twisted structure $\delta^{\vartheta}$ on Lie subalgebras of $\a$ which, despite being defined by the automorphism $\vartheta$, are not fixed-point subalgebras. Instead, we may consider the values of $\delta^{\vartheta}$ on the so-called \say{pseudo-fixed-point subalgebras}, which have been studied in \cite{regelskis_vlaar_finite_QSPs_via_generalised_satake_diagrams} and \cite{regelskis_vlaar_kac_moody_pseudo_symmetric_pairs} as combinatorially motivated generalisations of the notion of \say{quantum symmetric pairs} (also called \say{$\i$quantum groups}) that had been previously studied by Letzter, Kolb, Stokman, Noumi, Sugitani, and many others (see e.g. \cite{letzter_coideal_subalgebras_and_QSPs} and \cite{kolb_kac_moody_QSPs}). Note also that such generalisations have only been made within the Kac-Moody setting, and to our knowledge, no Yangian or elliptic analogues of the notion of pseudo-fixed-point subalgebras have ever been studied.
         \end{remark}
         
         In conclusion, there are two possibilities when a Lie bialgebra $(\a, \delta)$ is twisted in the sense of definition \ref{def: twisted_topological_lie_bialgebras}. Namely, either the fixed-point subalgebra $\k \subseteq \a$ gives rise to a Lie coideal subalgebra:
@@ -284,15 +337,29 @@
         Only coboundary topological Lie bialgebras (and in particular, the quasi-triangular ones) are of relevance to questions surrounding quantisation, so henceforth, let us focus on twists of such topological Lie bialgebras.
 
     \subsection{Twists of coboundary topological Lie bialgebras: generalities} \label{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}
-        From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in theorem \ref{theorem: invariance_criterion_anti_invariant_twists} and theorem \ref{theorem: quasi_triangularity_of_invariant_twists}.
+        From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in theorem \ref{theorem: invariance_criterion_anti_invariant_twists} and theorem \ref{theorem: invariance_criterion_invariant_twists}.
 
         Let us fix once and for all a coboundary topological Lie bialgebra:
-            $$(\a, \delta, \calr)$$
-        defined by a Manin triple $(\a, \a^+, \a^-)$. \textit{A priori}, its Lie cobracket can be given by:
-            $$\delta = [ \Box, \calr ]$$
-        wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{classical r-matrix}) is such that $\delta = d\calr$, with $d$ being the Chevalley-Eilenberg cochain differential. For more details, we refer the reader to subsection \ref{subsection: coboundary_and_(quasi)_triangular_topological_lie_bialgebras}, though we would like to remind the reader of one fact in particular, which is that classical r-matrices are \say{quasi-unitary}, meaning that the symmetric part of the classical r-matrix $\calr$ is $\a$-invariant, i.e.:
-            $$\Sym(\calr) := \frac12( \calr_{1, 2} + \calr_{2, 1} ) \in (\a \hattensor \a)^{\a}$$
-        (cf. equation \eqref{equation: quasi_unitary_classical_r_matrices}).
+            $$(\a^+, \delta^+, \calr)$$
+        defined by a Manin triple $(\a, \a^+, \a^-)$ by means of equation \eqref{equation: lie_cobrackets_by_duality}. \textit{A priori}, the Lie cobracket $\delta^+$ can be given by:
+            $$\delta^+ = [ \Box, \calr ]$$
+        wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a^+$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{classical r-matrix}) is such that:
+            $$\delta^+ = d\calr \quad, \quad \calr \in Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$$
+        with $d$ being the Chevalley-Eilenberg cochain differential. For more details, we refer the reader to subsection \ref{subsection: coboundary_and_(quasi)_triangular_topological_lie_bialgebras}. That said, we would like to remind the reader of the following two facts in particular.
+        \begin{itemize}
+            \item The first is that classical r-matrices are \say{quasi-unitary}, meaning that the symmetric part of the classical r-matrix $\calr$ is $\a$-invariant, i.e.:
+                $$\Sym(\calr) := \frac12( \calr_{1, 2} + \calr_{2, 1} ) \in \Sym^2(\a)^{\a} \cong H^0_{\Lie}\left(\a, \Sym^2(\a)\right)$$
+            (cf. equation \eqref{equation: quasi_unitary_classical_r_matrices}). For all intents and purposes, this means that we can ignore the symmetric component and focus entirely on the anti-symmetric component\footnote{In fact, it can be assumed (and is often assumed) that $\calr \in \bigwedge^2 \a$.}:
+                $$\Alt(\calr) := \calr - \Sym(\calr) \in \bigwedge^2 \a \subset \a \hattensor \a$$
+            which is \say{unitary}; this is to say that it satisfies:
+                $$\Alt(\calr) = -\Alt(\calr)_{2, 1}$$
+            merely by definition.
+            \item The second is that the classical double $\Dr(\a^+) \cong \a$ possesses an induced coboundary structure given by the same classical r-matrix $\calr$. We remind the reader that this classical r-matrix may not coincide with the canonical element $\calr_{\a^+, (\a^+)^*}$ of the pairing $(\cdot, \cdot)_{\a}$ between $\a^+$ and $(\a^+)^* \cong \a^-$ (see remark \ref{remark: classical_r_matrices_non_uniqueness} and example \ref{example: finite_dimensional_classical_doubles_are_quasi_triangular} for more details). Thus in general, even though $\Dr(\a^+)$ is always quasi-triangular via $\calr_{\a^+, (\a^+)^*}$, this quasi-triangularity may not be inherited by the isotropic Lie subalgebra $\a^+ \subset \a$; otherwise, we would always have that $\calr = \calr_{\a^+, (\a^+)^*}$ in $Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$, which is clearly nonsensical. 
+        \end{itemize}
+        Let us denote the cobracket on the classical double $\Dr(\a^+) \cong \a$ by:
+            $$\delta: \a \to \a \hattensor \a$$
+        As mentioned above, this is given by the same formula as $\delta^+$:
+            $$\delta(x) = [\Box(x), \calr] \quad, \quad x \in \a$$
         
         The questions that we will be concerned with in subsections \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}, and \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras} are the following.
         \begin{question} \label{question: twisted_coboundary_topological_lie_bialgebras}
@@ -300,7 +367,7 @@
         \end{question}
         \begin{question} \label{question: twisted_classical_r_matrices}
             When the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ is \textit{quasi-triangular}, i.e. when:
-                $$\calr \in \bigwedge^2 \a$$
+                $$\calr \in \a \hattensor \a$$
             is a solution to the classical Yang-Baxter equation (CYBE) \eqref{equation: CYBEs}, what is the effect of twisting on the classical r-matrix $\calr$ ?
         \end{question}
         \begin{question} \label{question: explicit_expressions_for_twisted_cobrackets}
@@ -324,7 +391,26 @@
 
         If $\vartheta \in \Aut_{\LA}(\a)$ then by lemma \ref{lemma: symmetric_space_decompositions}, we know that there is a direct sum decomposition:
             $$\a = \k \oplus \p \quad, \quad \p := \bigoplus_{\mu \in \weight(\vartheta), \mu \not = -1} \p_{\mu}$$
-        This induces the following direct sum decomposition for $\a^+ \hattensor \a^- \cong \a^+ \hattensor (\a^+)^*$:
+        This induces the following decomposition of $\a \hattensor \a$:
+            $$
+                \begin{aligned}
+                    \a \hattensor \a & \cong (\k \oplus \p) \hattensor (\k \oplus \p)
+                    \\
+                    & = \k \hattensor \k \oplus \p \hattensor \k \oplus \k \hattensor \p \oplus \p \tensor \p
+                \end{aligned}
+            $$
+        Since the classical r-matrix $\calr$ is an element of $Z^0_{\Lie}(\a, \a \hattensor \a) \cong \a \hattensor \a$, it can be written as a sum of its projections onto the direct summands of $\a \hattensor \a$ as above, in the following manner:
+            \begin{equation} \label{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}
+                \calr = \calr_{\k, \k} + \calr_{\p, \k} + \calr_{\k, \p} + \calr_{\p, \p}
+            \end{equation}
+        We will continue our analysis in section \ref{section: twisting_classical_r_matrices}, wherein the cases in which $\vartheta$ twists anti-invariantly and invariantly will be treated separately.
+
+    \subsection{Twisting graded Lie bialgebras by graded automorphisms}
+        \todo[inline]{Explain how things simplify when a graded Lie bialgebra (with finite-dimensional components) is twisted by a graded automorphism. In particular, we can remove the extra assumption that the automorphism must have eigenvalues in this setting.}
+
+        Via the direct sum decomposition:
+            $$\a = \k \oplus \p \quad, \quad \p := \bigoplus_{\mu \in \weight(\vartheta), \mu \not = -1} \p_{\mu}$$
+        from lemma \ref{lemma: symmetric_space_decompositions}, we see that there is a direct sum decomposition for $\a^+ \hattensor \a^- \cong \a^+ \hattensor (\a^+)^*$ as follows:
             $$
                 \begin{aligned}
                     \a^+ \hattensor (\a^-)^* & \cong (\k^+ \oplus \p^+) \hattensor (\k^- \oplus \p)^-
@@ -334,14 +420,12 @@
                     & \cong \k^+ \hattensor (\k^+)^* \oplus \p^+ \hattensor (\k^+)^* \oplus \k^+ \hattensor (\p^+)^* \oplus \p^+ \hattensor (\p^+)^*
                 \end{aligned}
             $$
-        which we care about because we can identify $\a \cong \Dr(\a^+)$, and so the Lie cobracket $\delta: \a \to \a \hattensor \a$ can be alternatively given by:
-            $$\delta = [\Box, \calr_{\a^+, \a^-}]$$
-        wherein $\calr_{\a^+, \a^-}$ is the canonical element associated to the bilinear form $(\cdot, \cdot)_{\a}$ (cf. example \ref{example: classical_doubles_are_quasi_triangular}). Now, lemma \ref{diagram: manin_triple_twists_and_duality} tells us that the cases wherein $\vartheta$ is polar and anti-polar can be treated identically to one another, so it is not necessary to specify whether $\vartheta$ is one or the other. We can then decompose the classical r-matrix:
-            $$\calr_{\a^+, \a^-}$$
-        into a sum of its projections onto the direct summands of $\a^+ \hattensor (\a^-)^*$ (as above) in the following manner, according to lemma \ref{lemma: manin_triple_twists_and_duality} and theorem \ref{theorem: twisted_lie_bialgebraic_structures}:
-            \begin{equation} \label{equation: symmetric_space_decomposition_of_casimir_tensors}
+        Lemma \ref{diagram: manin_triple_twists_and_duality} tells us that the cases wherein $\vartheta$ is polar and anti-polar can be treated identically to one another, so it is not necessary to specify whether $\vartheta$ is one or the other. We can then decompose the \textit{graded} classical r-matrix:
+            $$\calr$$
+        into a sum of its projections onto the direct summands of $\a^+ \hattensor (\a^+)^*$ (as above) in the following manner, according to lemma \ref{lemma: manin_triple_twists_and_duality} and theorem \ref{theorem: twisted_lie_bialgebraic_structures}:
+            \begin{equation} \label{equation: polarised_symmetric_space_decomposition_of_graded_classical_r_matrices}
                 \begin{aligned}
-                    \calr_{\a^+, \a^-} & = \calr_{\k^+, (\k^+)^*} + \calr_{\p^+, (\k^+)^*} + \calr_{\k^+, (\p^+)^*} + \calr_{\p^+, (\p^+)^*}
+                    \calr & = \calr_{\k^+, (\k^+)^*} + \calr_{\p^+, (\k^+)^*} + \calr_{\k^+, (\p^+)^*} + \calr_{\p^+, (\p^+)^*}
                     \\
                     & =
                     \begin{cases}
@@ -351,42 +435,3 @@
                     \end{cases}
                 \end{aligned}
             \end{equation}
-
-    \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \begin{theorem}[Invariance criterion for anti-invariant twists] \label{theorem: invariance_criterion_anti_invariant_twists}
-            Consider a coboundary topological Lie bialgebra $(\a, \delta, \calr)$ along with a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$. Then, $\vartheta$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if $\vartheta$ is an involution and the $2$-tensor:
-                $$\calr_{\p^+, \p^-}$$
-            is $\k$-invariant.
-        \end{theorem}
-            \begin{proof}
-                
-            \end{proof}
-        \begin{corollary}
-            The fixed-point subalgebra $\k := \a^{\vartheta}$ is a Lie coideal subalgebra of $(\a, \delta, \calr)$ if and only if $\vartheta$ is an involution and the $2$-tensor $\calr_{\p^+, \p^-}$ is $\k$-invariant.
-        \end{corollary}
-            \begin{proof}
-                
-            \end{proof}
-    
-        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs.}
-
-        \todo[inline]{
-            On \cite[p. 18]{schrader_integrable_systems_from_classical_reflection_equations}, it was mentioned that the quantity $C_{\vartheta}(\calr) := (\vartheta - 1)^{\tensor 2}(\calr)$ is to be thought of as the classical limit of a certain reflection equation. However, this claim has only been justified when $\a = \Loop \gl_2 := \gl_2 \tensor \bbC[t^{\pm 1}]$ is acted upon by the involution $\vartheta \in \Aut_{\LA}(\Loop \gl_2)$ given by $\vartheta( x \tensor t ) := x \tensor t^{-1}$. From these data, there arises a coideal subalgebra of $\calU_q(\Loop \gl_2)$ that can be realised as the reflection algebra:
-                $$\calB_q(\calK)$$
-            associated to a solution:
-                $$\calK(z)$$
-            of the bQYBE constructed using the quantum R-matrix of $\calU_q(\Loop \gl_2)$. It was then argued (though without much detail) that the classical limit of $\calK(z)$ ought to be related $\vartheta$, thus making the construction of $C_{\vartheta}(\calr)$ somewhat \textit{post hoc}. Therefore, my goal for this subsection is to justify the consideration of $C_{\vartheta}(\calr)$. I do think, though, that it is natural to guess that $\vartheta$ would play the role of the classical limit of $\calK(z)$, since the latter is at least supposed to be an invertible intertwiner of $\calB_q(\calK)$-modules $V$ in the sense that there exist $\calB_q(\calK)$-module isomorphisms:
-                $$\calK(z)_V: V(z) \xrightarrow[]{\cong} V(z^{-1})$$
-            When $V$ is a classical representation, this ought to descend to an automorphism of $V$, and $\vartheta$ therefore is to be thought of as a "universal classical k-matrix".
-        }
-
-    \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \begin{theorem}[Quasi-triangularity of invariant twists] \label{theorem: quasi_triangularity_of_invariant_twists}
-            \todo[inline]{Invariant twists of classical r-matrices}
-        \end{theorem}
-            \begin{proof}
-                
-            \end{proof}
-
-    \subsection{Twisting graded Lie bialgebras by graded automorphisms}
-        \todo[inline]{Explain how things simplify when a graded Lie bialgebra (with finite-dimensional components) is twisted by a graded automorphism. In particular, we can remove the extra assumption that the automorphism must have eigenvalues in this setting.}
