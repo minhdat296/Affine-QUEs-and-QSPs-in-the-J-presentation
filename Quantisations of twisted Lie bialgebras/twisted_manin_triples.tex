@@ -222,7 +222,7 @@
                             	\arrow[from=1-5, to=1-6]
                             \end{tikzcd}
                         \end{equation}
-                    This is the exact sequence obtained by dualising the top row in diagram \eqref{diagram: manin_triple_twists_and_duality}, i.e. by applying the functor $(-)^* := \Hom(-, \bbC)$ to it, and then appealing to the fact that this functor is exact. Putting everything together, we see that:
+                    This is the exact sequence obtained by dualising the top row in diagram \eqref{diagram: manin_triple_twists_and_duality}, i.e. by applying the functor $(-)^* := \Hom(-, \bbk)$ to it, and then appealing to the fact that this functor is exact. Putting everything together, we see that:
                         $$
                             \begin{gathered}
                                 \beta^+(\k^+) \cong \ker(\vartheta|_{\a^-}^* - 1) \cong (\k^-)^*
@@ -271,7 +271,7 @@
             \end{proof}
 
         Finally, we note that the operation of twisting is compatible with the construction of classical doubles in the sense of Drinfeld. The precise statement can be phrased as a corollary to theorem \ref{theorem: twisted_lie_bialgebraic_structures} as follows.
-        \begin{proposition}[Compatibility between twists and classical doubles] \label{prop: twisting_classical_doubles}
+        \begin{corollary}[Compatibility between twists and classical doubles] \label{coro: twisting_classical_doubles}
             Let us keep the notations from theorem \ref{theorem: twisted_lie_bialgebraic_structures}. Also, let:
                 \begin{equation} \label{equation: twisting_classical_doubles}
                     \delta^{\vartheta} := (\delta^+)^{\delta} \oplus (-\delta^-)^{\vartheta}
@@ -285,7 +285,7 @@
                 which then implies via the correspondence \eqref{equation: manin_triple_lie_bialgebra_correspondence}, that the following is a Manin triple:
                     $$(\k, \k^+, \k^-)$$
             \end{enumerate}
-        \end{proposition}
+        \end{corollary}
             \begin{proof}
                 \begin{enumerate}
                     \item By lemma \ref{lemma: manin_triple_twists_and_duality}, what follows is true if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists $(\a, \delta)$ anti-invariantly.
@@ -405,7 +405,7 @@
             \end{equation}
         We will continue our analysis in section \ref{section: twisting_classical_r_matrices}, wherein the cases in which $\vartheta$ twists anti-invariantly and invariantly will be treated separately.
 
-    \subsection{Twisting graded Lie bialgebras by graded automorphisms}
+    \subsection{\textit{Intermission}: Twisting graded Lie bialgebras by graded automorphisms}
         \todo[inline]{Explain how things simplify when a graded Lie bialgebra (with finite-dimensional components) is twisted by a graded automorphism. In particular, we can remove the extra assumption that the automorphism must have eigenvalues in this setting.}
 
         Via the direct sum decomposition:
@@ -413,9 +413,9 @@
         from lemma \ref{lemma: symmetric_space_decompositions}, we see that there is a direct sum decomposition for $\a^+ \hattensor \a^- \cong \a^+ \hattensor (\a^+)^*$ as follows:
             $$
                 \begin{aligned}
-                    \a^+ \hattensor (\a^-)^* & \cong (\k^+ \oplus \p^+) \hattensor (\k^- \oplus \p)^-
+                    \a^+ \hattensor (\a^-)^* & \cong (\k^+ \oplus \p^+) \hattensor (\k^- \oplus \p^-)^*
                     \\
-                    & \cong \k^+ \oplus \p^+) \hattensor ( (\k^-)^* \oplus (\p^-)^* )
+                    & \cong (\k^+ \oplus \p^+) \hattensor ( (\k^-)^* \oplus (\p^-)^* )
                     \\
                     & \cong \k^+ \hattensor (\k^+)^* \oplus \p^+ \hattensor (\k^+)^* \oplus \k^+ \hattensor (\p^+)^* \oplus \p^+ \hattensor (\p^+)^*
                 \end{aligned}
