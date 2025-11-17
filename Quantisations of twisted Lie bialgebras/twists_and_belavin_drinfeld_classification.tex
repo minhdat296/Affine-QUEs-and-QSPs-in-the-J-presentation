@@ -1,11 +1,27 @@
-\section{Invariant twists and the Belavin-Drinfeld classification}
-    In this section, we investigate whether our twisting procedure respects the Belavin-Drinfeld classification. In particular, we would like to make the case, that an elliptic (respectively, trigonometric or rational) Lie bialgebra structure will remain elliptic (respectively, trigonometric or rational) after being \textit{invariantly} twisted. Additionally, as an anti-invariant twist of a Lie-bialgebra is not another Lie bialgebra but instead a Lie coideal subalgebra of the original Lie bialgebra structure (see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), and hence does not give rise to any solution to the CYBE \eqref{equation: CYBEs}, it does not make sense to ask whether or not anti-invariant twists may respect the Belavin-Drinfeld classification.
+\section{Invariant twists and the Belavin-Drinfeld classification} \label{section: invariant_twists_and_belavin_drinfeld_classification}
+    In this section, we investigate whether our twisting procedure respects the Belavin-Drinfeld classification of Lie bialgebra structures on Kac-Moody algebras of finite and affine types.
+    
+    Throughout the section, let us work over $\bbk$ that is an algebraically closed field of characteristic $0$. Let $\g$ be a Kac-Moody algebra of an affine type in Kac's classification from \cite[Chapter 4]{kac_infinite_dimensional_lie_algebras}. Such a Lie algebra has an \say{underlying} finite-type Kac-Moody algebra, which we shall denote by $\bar{\g}$; together with a finite-order Lie algebra automorphism:
+        $$\sigma \in \Aut_{\LA}( \Loop \bar{\g} )$$
+    of the loop algebra $\Loop \bar{\g} := \bar{\g} \tensor \bbk[t^{\pm 1}]$, the finite-type Kac-Moody algebra $\bar{\g}$ determines the affine Kac-Moody algebra $\g$ up to isomorphisms (see \cite[Chapters 7 and 8]{kac_infinite_dimensional_lie_algebras} for more details). 
+    
+    The question that we would like to answer is the following.
+    \begin{question} \label{question: invariant_twists_and_belavin_drinfeld_classification}
+        Is it true, that an elliptic (respectively, trigonometric or rational) topological Lie bialgebra structure on $\Loop \bar{\g}$ will remain elliptic (respectively, trigonometric or rational) after being \textit{invariantly} twisted ?
+    \end{question}
+    
+    \begin{remark}
+        As an anti-invariant twist of a topological Lie-bialgebra is not another topological Lie bialgebra but instead a topological Lie coideal subalgebra of the original topological Lie bialgebra structure (see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), and hence does not give rise to any solution to the CYBE \eqref{equation: CYBEs}, it does not make sense to ask whether or not anti-invariant twists may respect the Belavin-Drinfeld classification.
+    \end{remark}
 
-    \subsection{The Belavin-Drinfeld Trichotomy}
-        \todo[inline]{See \cite{abedin_burban_geometrisation_of_the_belavin_drinfeld_classification_1} and \cite{abedin_geometrisation_of_the_belavin_drinfeld_classification_2}. See also \cite[Theorem 3.2.4]{chari_pressley_quantum_groups} and the contents that follow, and \cite[Chapters 5 and 7]{etingof_schiffmann_lectures_on_quantum_groups}.}
-
-    \subsection{\textit{Intermission}: Twists of classical r-matrices with spectral parameters} \label{subsection: twists_with_spectral_parameter}
-        \todo[inline]{Explain the necessary modifications for accommodating spectral parameters.}
+    \subsection{The Belavin-Drinfeld Classification}
+        First of all, the analogue of question \ref{question: invariant_twists_and_belavin_drinfeld_classification} for Lie bialgebra structures $\delta: \bar{\g} \to \bar{\g} \tensor \bar{\g}$ is trivial. Let us quickly explain why, and afterwards, we will focus entirely on the affine case.
+        \begin{remark}
+            Such structures are certain Lie $1$-cocycles $\delta \in Z^1_{\Lie}(\bar{\g}, \bar{\g} \tensor \bar{\g})$. However, by Whitehead's Lemma, we know that:
+                $$H^i_{\Lie}(\bar{\g}, V) = 0 \quad, \quad i > 0$$
+            for every finite-dimensional module $V$ (such as the coadjoint module $\bar{\g} \tensor \bar{\g}$) over $\bar{\g}$, as a result of this Lie algebra being finite-dimensional and simple. Therefore, any Lie bialgebra structure $\delta: \bar{\g} \to \bar{\g} \tensor \bar{\g}$ is coboundary (in the sense that $\delta \in B^1_{\Lie}(\bar{\g}, \bar{\g} \tensor \bar{\g})$) and is thus is cohomologically equivalent to $\delta + d_{\CE} r$ for any $r \in Z^0_{\Lie}(\bar{\g}, \bar{\g} \tensor \bar{\g}) \cong \Hom(\bbk, \bar{\g} \tensor \bar{\g}) \cong \bar{\g} \tensor \bar{\g}$.
+        \end{remark}
+    
+        \todo[inline]{For the affine case, see \cite{abedin_burban_geometrisation_of_the_belavin_drinfeld_classification_1} and \cite{abedin_geometrisation_of_the_belavin_drinfeld_classification_2}. See also \cite[Theorem 3.2.4]{chari_pressley_quantum_groups} and the contents that follow, and \cite[Chapters 5 and 7]{etingof_schiffmann_lectures_on_quantum_groups}.}
 
     \subsection{Compatibility}
-        \todo[inline]{In the terminologies of \cite{abedin_geometrisation_of_the_belavin_drinfeld_classification_2}, invariant twists are special cases of gauge equivalences. Therefore, one respects the Belavin-Drinfeld classification when twisting invariantly.}
