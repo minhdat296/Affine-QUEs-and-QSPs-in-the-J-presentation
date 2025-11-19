@@ -93,14 +93,14 @@
         }
 
     \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
+        \todo[inline]{I'm rewriting theorem \ref{theorem: invariance_criterion_invariant_twists} and corollary \ref{coro: quasi_triangularity_of_invariant_twists} so that they will be easier to use in section \ref{section: invariant_twists_and_belavin_drinfeld_classification}. I think the stated theorem is equivalent to saying that $\vartheta$ twists invariantly if and only if $(\vartheta \tensor \vartheta)(\calr)$ is another solution to the CYBE. The idea is that $(\vartheta \tensor \vartheta)(\calr)$ should define a Lie bialgebra - which is different from $(\a, \delta, \calr)$ - admitting $(\k, \delta^{\vartheta})$ as a Lie sub-bialgebra.}
+        
         \begin{theorem} \label{theorem: invariance_criterion_invariant_twists}
-            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if the following two conditions are satisfied:
-            \begin{itemize}
-                \item Firstly $(\k, \delta^{\vartheta}, \calr_{\k, \k})$ is a coboundary topological Lie bialgebra\footnote{Here, $\delta^{\vartheta}$ is as in corollary \ref{coro: twisting_classical_doubles}.}, i.e. the $2$-tensor $\calr_{\k, \k} \in \k \hattensor \k$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\CYBE(\calr_{\k, \k}) \in \left(\bigwedge^3 \k\right)^{\k}$ (cf. equation \eqref{equation: classical_yang_baxter_tensor}) whenever $\calr_{\k, \k} \in \bigwedge^2 \k$, and
-                \item Secondly, the $2$-tensor $\calr_{\p, \p} \in \p \hattensor \p$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$. Here, we regard $\p$ as a $\k$-module via the action \ref{equation: action_of_fixed_point_subalgebras_on_unfixed_points}.
-            \end{itemize}
-
-            In particular, this means that $\calr_{\k, \k}$ is a classical r-matrix for the Lie bialgebra $(\k, \delta^{\vartheta})$ in this situation.
+            The following are equivalent.
+            \begin{enumerate}
+                \item 
+                \item 
+            \end{enumerate}
         \end{theorem}
             \begin{proof}
                 As mentioned at the beginning of subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, it is sufficient to only consider classical r-matrices that are anti-symmetric, i.e. we can assume that:
@@ -108,20 +108,12 @@
                 without loss of generality. The decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} then reduces to:
                     $$\calr = \calr_{\k, \k} + \calr_{\p, \p}$$
                 because we now have $\calr_{\p, \k} = (\calr_{\k, \p})_{2, 1} = -\calr_{\k, \p}$.
-
-                \todo[inline]{I'm rewriting this so that it will be easier to use in section \ref{section: invariant_twists_and_belavin_drinfeld_classification}. I think the stated theorem is equivalent to saying that $\vartheta$ twists invariantly if and only if $(\vartheta \tensor \vartheta)(\calr)$ is another solution to the CYBE. I have a proof when $\calr$ is skew-symmetric/unitary, and I'm trying to see if this condition is necessary.}
             \end{proof}
         \begin{corollary}[Quasi-triangularity of invariant twists] \label{coro: quasi_triangularity_of_invariant_twists}
-            Suppose now that $(\a, \delta, \calr)$ is quasi-triangular, which is to say that $\calr$ satisfies $\CYBE(\calr) = 0$ (cf. equation \eqref{equation: CYBEs}).
-        
-            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ then twists $(\a, \delta, \calr)$ invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if the following two conditions are satisfied:
-            \begin{itemize}
-                \item Firstly, $(\k, \delta^{\vartheta}, \calr_{\k, \k})$ is a quasi-triangular topological Lie bialgebra, or in other words, that the $2$-tensor $\calr_{\k, \k} \in \k \hattensor \k$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies the classical Yang-Baxter equation $\CYBE(\calr_{\k, \k}) = 0$ (cf. equation \eqref{equation: CYBEs}).
-                \item Secondly, the $2$-tensor $\calr_{\p, \p} \in \p \hattensor \p$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} satisfies $\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$. Like in theorem \ref{theorem: invariance_criterion_invariant_twists}, we regard $\p$ as a $\k$-module via the action \ref{equation: action_of_fixed_point_subalgebras_on_unfixed_points}.
-            \end{itemize}
+            Suppose now that $(\a, \delta, \calr)$ is quasi-triangular, which is to say that $\calr$ satisfies $\schouten{\calr, \calr} = 0$ (cf. equation \eqref{equation: CYBEs}).
         \end{corollary}
             \begin{proof}
-                Let us keep the notations from the proof of theorem \ref{theorem: invariance_criterion_invariant_twists}. In these notations, the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ is quasi-triangular if and only if $\CYBE(\calr_{\k, \k} + \calr_{\p, \p}) = 0$. We see thus, that $\CYBE(\calr_{\k, \k}) = 0$ if and only if $\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$.
+                
             \end{proof}
 
     \subsection{Compositions of twists} \label{subsection: composing_twists_of_lie_bialgebras}

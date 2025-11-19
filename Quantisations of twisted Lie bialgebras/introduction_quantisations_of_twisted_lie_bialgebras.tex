@@ -5,24 +5,25 @@
         In particular, we are interested in $\bbk = \bbC$ and $\bbk = \bbC(\!(\hbar)\!)$.
     
         \begin{convention}[Endomorphisms] \label{conv: endomorphisms}
-            \begin{itemize}
-                \item Given a vector space $V$ and a linear endomorphism $T \in \End(V)$, the set of eigenvalues of $T$ shall be denoted by $\weight(T)$, and the generalised eigenspace associated to an eigenvalue $\mu \in \weight(T)$ shall be denoted by $V_{T[\mu]}$ or simply $V_{\mu}$ when it is understood that this is supposed to be an eigenspace of $T$.
-                \item Given a Lie algebra $\a$, we consider only automorphism $\vartheta \in \Aut_{\LA}(\a)$ which induce an eigenspace decomposition of $\a$, which shall be denoted by:
-                    $$\a = \k \oplus \bigoplus_{ \mu \in \weight(\vartheta), \mu \not = 1 } \p_{\mu}, \quad, \quad \k := \a_1$$
-                (and note also that $\k$ coincides with the fixed-point subalgebra $\a^{\vartheta}$), so that we would not confuse the $\vartheta$-eigenspaces with the root spaces of $\a$. While this is not true for all automorphisms, all practical examples do in fact fall into this class.
-                \item Given an algebra $A$ and an implicitly given representation $A \to \End(V)$, the operator on $V$ corresponding to an element $x \in A$ will be denoted by $x_V$
-            \end{itemize}
+        \begin{itemize}
+            \item Given a vector space $V$ and a linear endomorphism $T \in \End(V)$, the set of eigenvalues of $T$ shall be denoted by $\weight(T, V)$, or simply $\weight(T)$ when $V$ is understood from context. Sometimes, when the same operator acts on multiple vector spaces, say $V_1, V_2, ...$ then the set of eigenvalues on those spaces will be denoted by $\weight(V_1), \weight(V_2), ...$ instead, omitting any mention of the operator; again, what we mean in the moment shall be clear from context. 
+            \item Generalised eigenspace associated to an eigenvalue $\mu \in \weight(T)$ shall be denoted by $V_{T[\mu]}$ or simply $V_{\mu}$ when it is understood that this is supposed to be a generalised eigenspace of $T$.
+            \item Given a Lie algebra $\a$, we consider only automorphism $\vartheta \in \Aut_{\LA}(\a)$ which induce an eigenspace decomposition of $\a$, which shall be denoted by:
+                $$\a = \k \oplus \bigoplus_{ \mu \in \weight(\vartheta), \mu \not = 1 } \p_{\mu}, \quad, \quad \k := \a_1$$
+            (and note also that $\k$ coincides with the fixed-point subalgebra $\a^{\vartheta}$), so that we would not confuse the $\vartheta$-eigenspaces with the root spaces of $\a$. While this is not true for all automorphisms, all practical examples do in fact fall into this class.
+            \item Given an algebra $A$ and an implicitly given representation $A \to \End(V)$, the operator on $V$ corresponding to an element $x \in A$ will be denoted by $x_V$
+        \end{itemize}
         \end{convention}
 
         \begin{convention}[Tensor notations] \label{conv: tensor_notations}
-            \begin{itemize}
-                \item Given vector spaces $\{V_i\}_{1 \leq i \leq n}$ and an operator with spectral parameters $T(z_1, ..., z_n) \in \End(V_1 \tensor ... \tensor V_n)(\!(z_1^{-1}, ..., z_n^{-1})\!)$ along with an auxiliary space $V_0$, then for $\{i_0\} := \{0, ..., n\} \setminus \{i_1, ..., i_n\}$, we will write:
-                    \begin{equation} \label{equation: tensor_factor_notation}
-                        T(z_1, ..., z_n)_{i_1, ..., i_n} \in \End\left(V_0 \tensor (V_1 \tensor ... \tensor V_n)\right)(\!(z_1^{-1}, ..., z_n^{-1})\!)
-                    \end{equation}
-                for the operator with spectral parameter on $\bigotimes_{i = 0}^n V_i$ which acts as $\id_{V_0}$ on the $i_0^{th}$ tensor factor and as $T(z_1, ..., z_n)$ on the remaining ones.
-                \item If $T \in \End(V \tensor W)$, and if there is a direct sum decomposition $V \tensor W = \bigoplus_{i_1 + i_2 = i} V_{i_1} \tensor W_{i_2}$, then the composition of $T$ with the canonical quotient map $V \tensor W \to V_{i_1} \tensor W_{i_2}$ shall be denoted by $T_{V_{i_1}, W_{i_2}}$.
-            \end{itemize}
+        \begin{itemize}
+            \item Given vector spaces $\{V_i\}_{1 \leq i \leq n}$ and an operator with spectral parameters $T(z_1, ..., z_n) \in \End(V_1 \tensor ... \tensor V_n)(\!(z_1^{-1}, ..., z_n^{-1})\!)$ along with an auxiliary space $V_0$, then for $\{i_0\} := \{0, ..., n\} \setminus \{i_1, ..., i_n\}$, we will write:
+                \begin{equation} \label{equation: tensor_factor_notation}
+                    T(z_1, ..., z_n)_{i_1, ..., i_n} \in \End\left(V_0 \tensor (V_1 \tensor ... \tensor V_n)\right)(\!(z_1^{-1}, ..., z_n^{-1})\!)
+                \end{equation}
+            for the operator with spectral parameter on $\bigotimes_{i = 0}^n V_i$ which acts as $\id_{V_0}$ on the $i_0^{th}$ tensor factor and as $T(z_1, ..., z_n)$ on the remaining ones.
+            \item If $T \in \End(V \tensor W)$, and if there is a direct sum decomposition $V \tensor W = \bigoplus_{i_1 + i_2 = i} V_{i_1} \tensor W_{i_2}$, then the composition of $T$ with the canonical quotient map $V \tensor W \to V_{i_1} \tensor W_{i_2}$ shall be denoted by $T_{V_{i_1}, W_{i_2}}$.
+        \end{itemize}
         \end{convention}
 
         \begin{convention}[(Co-)opposite (co)algebras]

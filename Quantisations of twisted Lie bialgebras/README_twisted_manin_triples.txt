@@ -11,7 +11,17 @@
 - To go into details a bit, in case I cannot manage to type up all that I want to say before we meet again, I realised that I was focusing too much on whether the automorphism we're twisting by comes from a Dykin diagram automorphism. Your question of whether there were many non-involutive yet still pseudo-involutive automorphisms also prompted me to double-check the papers sequel to the "Kac-Moody pseudo-symmetric pair" paper by Regelskis and Vlaar, and it seems that at the moment, not too many examples beyond the (affine) sl_2 case (so variations of the Onsager algebra) are known explicitly. Given that twisted q-Yangians degenerate to twisted Yangians, which are defined by involutions, I don't suppose that the degeneration process can change a pseudo-QSP into a QSP.
 - As for whether the automorphism at play is of type I or II (either meaning that it's conjugate to the Chevalley involution or that it swaps the two subalgebras in a Manin triple), I will keep at the strategy that I was previously pursuing. At least in the trigonometric case, it seems that type-I automorphisms can only twist invariantly while type-II automorphisms can twist anti-invariantly, but I would also like to know how this translates to the rational (and possibly even the elliptic) case.
 
-26/05/2025:
+26/10/2025:
 - I was not expecting this, but it seems that an anti-invariant twist can only be done by an involution. One can get coideal subalgebras from non-involutive automorphisms, as in Schrader's paper, but these do not originate from the notion of Manin triple/Lie bialgebra twists by Belliard-Crampé. I'm not yet sure what the correct generalisation of anti-invariant twists to non-involutive automorphisms ought to be. Perhaps, for a finite-order automorphism of order N, one can replace the "-" sign by an N-th root of unity; when N = 2, we regard the -1 factor as a 2nd root of unity.  
 - Subsection 1.1 is done.
 - Rewriting subsections 1.2, 1.3, 1.4 to fit the rewritten subsection 1.1; the actual mathematics in these 3 sections are essentially done. Subsection 1.5 will depend on how the three above it are written.
+
+18/11/2025:
+- I am now faily certain that invariant twists are special instances of gauge (co-gauge ?) transformation of Lie bialgebras (this is dual to gauge transformations of Poisson structures), otherwise known as "classical twists". In Drinfeld's terminology, this is saying that our invariantly twisted Lie bialgebras are examples of Lie quasi-bialgebras. This has a few implications:
+    1. quantisations of invariant twists are Drinfeld twists;
+    2. invariant twists can be parametrised cohomologically, but the cohomology theory at play is probably nonabelian, though, so I'm not too sure about how to compute the cohomology set parametrising these twists yet;
+    3. for affine Kac-Moody Lie bialgebras, these twists can be classified, following works of Abedin et al.;
+    4. twisting invariantly respects the Belavin-Drinfeld classification.
+- Very roughly speaking, coideal Lie subalgebras are two be thought of as tangent spaces of Poisson homogeneous spaces which are quotients of a (possibly infinite-dimensional) Poisson-Lie (ind-)group by some fixed-point subgroups therein.
+    1. We should therefore be able to twist coideal subalgebras invariantly as well, provided that the Poisson structures on these quotients admit any gauge transformation at all.
+    2. 

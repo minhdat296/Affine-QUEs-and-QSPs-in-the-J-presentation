@@ -116,10 +116,25 @@
                 [\cdot, \cdot]_{\k^{\mp}}^*: (\k^{\mp})^* \to (\k^{\mp})^* \hattensor (\k^{\mp})^*
             \end{equation}
         \begin{remark}
-            \todo[inline]{$[\cdot, \cdot]_{\k^{\mp}}^*$ is usually not a Lie sub-bialgebra structure of $[\cdot, \cdot]_{\a^{\mp}}^*$.}
+            We would like to note that $[\cdot, \cdot]_{\k^{\mp}}^*$ is usually not a Lie sub-bialgebra structure of $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*$, which is a map $(\k^{\mp})^* \to (\k^{\mp})^* \hattensor (\k^{\mp})^* + (\p^{\mp})^* \hattensor (\p^{\mp})^*$ instead.
         \end{remark}
         
         Our next task is to compute the dual spaces $(\p^{\mp})^*$ and $(\k^{\mp})^*$, and we shall see that this depends on whether the Manin triple being considered is twisted anti-invariantly or invariantly.
+        
+        \begin{lemma}[Manin triple twists and duality] \label{lemma: manin_triple_twists_and_duality}
+            Let $(\a, \a^+, \a^-)$ be a Manin triple which is twisted in the sense of definition \ref{def: twisted_manin_triples} by a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$, and let $\k^{\pm}, \p^{\pm}$ be as in \eqref{equation: polarised_symmetric_space_decompositions}. Then, via the isomorphisms \eqref{equation: manin_triple_currying}, we can make the following identifications of $(\p^{\mp})^*$ and $(\k^{\mp})^*$.
+            \begin{enumerate}
+                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly if and only if:
+                    \begin{equation} \label{equation: anti_invariant_twist_duality}
+                        (\p^{\mp})^* \cong \bigoplus_{ \mu \in \weight(\vartheta), \mu \not = -1 } \p_{\mu}^{\pm} \quad, \quad (\k^{\mp})^* \cong \p_{-1}^{\pm}
+                    \end{equation}
+                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly if and only if:
+                    \begin{equation} \label{equation: invariant_twist_duality}
+                        (\p^{\mp})^* \cong \p^{\pm} \quad, \quad (\k^{\mp})^* \cong \k^{\pm}
+                    \end{equation}
+            \end{enumerate}
+            with both cases holding regardless of whether $\vartheta$ is polar or anti-polar.
+        \end{lemma}
         \begin{remark} \label{remark: manin_triple_twists_via_currying}
             Let us take a slight detour and discuss a re-interpretation of definition \ref{def: twisted_manin_triples} that will be useful for the proof of lemma \ref{lemma: manin_triple_twists_and_duality}.
         
@@ -152,22 +167,7 @@
                     \end{tikzcd}
                 \end{equation}
         \end{remark}
-        
-        \begin{lemma}[Manin triple twists and duality] \label{lemma: manin_triple_twists_and_duality}
-            Let $(\a, \a^+, \a^-)$ be a Manin triple which is twisted in the sense of definition \ref{def: twisted_manin_triples} by a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\a)$, and let $\k^{\pm}, \p^{\pm}$ be as in \eqref{equation: polarised_symmetric_space_decompositions}. Then, via the isomorphisms \eqref{equation: manin_triple_currying}, we can make the following identifications of $(\p^{\mp})^*$ and $(\k^{\mp})^*$.
-            \begin{enumerate}
-                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ anti-invariantly if and only if:
-                    \begin{equation} \label{equation: anti_invariant_twist_duality}
-                        (\p^{\mp})^* \cong \bigoplus_{ \mu \in \weight(\vartheta), \mu \not = -1 } \p_{\mu}^{\pm} \quad, \quad (\k^{\mp})^* \cong \p_{-1}^{\pm}
-                    \end{equation}
-                \item $\vartheta$ twists $(\a, \a^+, \a^-)$ invariantly if and only if:
-                    \begin{equation} \label{equation: invariant_twist_duality}
-                        (\p^{\mp})^* \cong \p^{\pm} \quad, \quad (\k^{\mp})^* \cong \k^{\pm}
-                    \end{equation}
-            \end{enumerate}
-            with both cases holding regardless of whether $\vartheta$ is polar or anti-polar.
-        \end{lemma}
-            \begin{proof}
+            \begin{proof}[Proof of lemma \ref{lemma: manin_triple_twists_and_duality}]
                 The polar and anti-polar cases are completely analogous to one another, so let us discuss only the former.
 
                 Through the fact that $\k^{\pm} = \ker(\vartheta|_{\a^{\pm}} - 1)$ and through diagram \eqref{diagram: manin_triple_polar_twist_currying}, we see that the following diagram commutes:
@@ -240,7 +240,7 @@
             Interestingly, the duality patterns for both the polar and anti-polar cases turn out to be the same. Therefore, there are no \textit{abstract} qualitative differences between these two scenarios. However, the fixed-point subalgebras can behave quite differently between the two cases.
         \end{remark}
         
-        Combining lemma \ref{lemma: manin_triple_twists_and_duality} with the observations that precedes it, we obtain the following classification of twists of topological Lie bialgebras in the sense of definition \ref{def: twisted_topological_lie_bialgebras}.
+        Combining lemma \ref{lemma: manin_triple_twists_and_duality} with the observations leading up to it, we obtain the following rough classification of Lie-bialgebraic twists in the sense of definition \ref{def: twisted_topological_lie_bialgebras}.
 
         \todo[inline]{I was not expecting this, but it seems that an anti-invariant twist can only be done by an involution, if we are to obtain a coideal subalgebra structure on the fixed-point subalgebra out of this twisting procedure. One can get coideal subalgebras from non-involutive automorphisms, as in \cite{schrader_integrable_systems_from_classical_reflection_equations}, but these do not originate from the notion of Manin triple/Lie bialgebra twists by Belliard-Crampé from \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples} (the same notion used in \cite{belliard_regelskis_J_presentation_for_twisted_yangians} and \cite{guay_regelskis_twisted_yangians_for_symmetric_pairs_of_types_BCD}). I'm not yet sure what the correct generalisation of anti-invariant twists to non-involutive automorphisms ought to be. Perhaps, for a finite-order automorphism of order $N$, one can replace the $-1$ factor by an $N^{th}$ root of unity; when $N = 2$, we regard the $-1$ factor as a $2^{nd}$ root of unity.}
         
