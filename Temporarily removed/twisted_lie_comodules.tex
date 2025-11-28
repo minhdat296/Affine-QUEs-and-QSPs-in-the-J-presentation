@@ -1,0 +1,58 @@
+\subsection{Twisting topological Lie comodules}
+        Suppose that $(\a, \a^+, \a^-)$ is a Manin triple defining a topological Lie bialgebra structure $\delta^+: \a^+ \to \a^+ \hattensor \a^+$ via \eqref{equation: lie_cobrackets_by_duality}, and that $V$ is a topological left-$\a^+$-comodule\footnote{What follows works identically for right-comodules, so it suffices to only consider left-modules.}, determined by:
+            $$\pi^+: V \to \a^+ \hattensor V$$
+        Suppose also, that there is an automorphism $\sigma \in \Aut_{\LA}(\a)$ that twists the Manin triple $(\a, \a^+, \a^-)$ in the sense of definition \ref{def: twisted_manin_triples}.
+        
+        By theorem \ref{theorem: twisted_lie_bialgebraic_structures}, we know that if $\sigma$ twists anti-invariantly, then the fixed-point subalgebra $(\a^+)^{\sigma} = \a^+ \cap \a^{\sigma}$ will gain the structure of a topological Lie coideal subalgebra of $\a^+$ via the coaction \eqref{equation: coactions_on_dual_of_unfixed_points}. In that case, it would not even make sense to ask if $V$ would be a topological $(\a^+)^{\sigma}$-comodule, so let us focus on $\sigma$ twisting \textit{invariantly}. By theorem \ref{theorem: twisted_lie_bialgebraic_structures} again, we know that $((\a^+)^{\sigma}, (\delta^+)^{\sigma})$ (with notations as in \textit{loc. cit.}) is another topological Lie bialgebra in that case, and thus we can meaningfully inquire into whether or not $V$ will then be a topological $(\a^+)^{\sigma}$-comodule. This is equivalent to the following question.
+        \begin{question} \label{question: invariant_twists_of_topological_lie_comodules}
+            Under which conditions does the following corestriction exist:
+                $$
+                    \begin{tikzcd}
+                    	& {(\a^+)^{\sigma} \hattensor V} \\
+                    	V & {\a^+ \hattensor V}
+                    	\arrow[from=1-2, to=2-2]
+                    	\arrow["{}", dashed, from=2-1, to=1-2]
+                    	\arrow["{\pi^+}", from=2-1, to=2-2]
+                    \end{tikzcd}
+                $$
+            In other words, when do we have $\im \pi^+ \subseteq (\a^+)^{\sigma} \hattensor V$ ?
+        \end{question}
+
+        Assume now that $V$ is also acted on by the cyclic group $\<\sigma\>$ and that the coaction $\pi^+$ is moreover a $\<\sigma\>$-module homomorphism. Assume also, that there is an eigenspace decomposition $V = \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu}$. Group cohomology supplies us with an induced map:
+            $$(\pi^+)^{\sigma} := H^0_{\Grp}( \<\sigma\>, \pi^+ ): H^0_{\Grp}( \<\sigma\>, V ) \to H^0_{\Grp}( \<\sigma\>, \a^+ \hattensor V )$$
+        and let us recall also that the zeroth cohomology functor is nothing but the fixed-point functor, due to the fact that there are natural isomorphisms:
+            $$H^0_{\Grp}( \<\sigma\>, - ) \cong \Hom_{\bbk\<\sigma\>}(\bbk, -) \cong (-)^{\sigma}$$
+        This means that we have a map:
+            $$(\pi^+)^{\sigma}: V^{\sigma} \to (\a^+ \hattensor V)^{\sigma}$$
+        Moreover, because we have eigenspace decompositions $\a^+ = \bigoplus_{\lambda \in \Pi(\sigma, \a^+)} \a^+_{\lambda}$ and $V = \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu}$ wherein the eigenvalue $1$ corresponds to the fixed-point subspace, we have that:
+            $$
+                \begin{aligned}
+                    \a^+ \hattensor V & \cong \left( \bigoplus_{\lambda \in \Pi(\sigma, \a^+)} \a^+_{\lambda} \right) \hattensor \left( \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu} \right)
+                    \\
+                    & \cong (\a^+)^{\sigma} \hattensor V^{\sigma} \oplus \bigoplus_{ \substack{ \lambda \in \Pi(\sigma, \a^+), \mu \in \Pi(\sigma, V) \\ \lambda, \mu \not = 1 } } \a^+_{\lambda} \hattensor V_{\mu}
+                \end{aligned}
+            $$
+        From this, we see that:
+            $$(\a^+ \hattensor V)^{\sigma} \cong (\a^+)^{\sigma} \hattensor V^{\sigma}$$
+        since the $\<\sigma\>$-action on $V$ extends to $\a^+ \hattensor V$ by means of\footnote{This is true more generally for tensor products of representations of any group.}:
+            $$\sigma \cdot (x \tensor v) := (\sigma \cdot x) \tensor (\sigma \cdot v) \quad, \quad x \in \a^+, v \in V$$
+        We see thus, that should the corestriction of $\pi^+$ as in question \ref{question: invariant_twists_of_topological_lie_comodules} exist, then it will fit into the following commutative diagram:
+                $$
+                    \begin{tikzcd}
+                    	{V^{\sigma}} & {(\a^+)^{\sigma} \hattensor V^{\sigma}} \\
+                    	V & {\a^+ \hattensor V}
+                    	\arrow["{(\pi^+)^{\sigma}}", from=1-1, to=1-2]
+                    	\arrow[from=1-1, to=2-1]
+                    	\arrow[from=1-2, to=2-2]
+                    	\arrow[dashed, from=2-1, to=1-2]
+                    	\arrow["{\pi^+}", from=2-1, to=2-2]
+                    \end{tikzcd}
+                $$
+        Therefore, if said corestriction exists, then $V^{\sigma}$ will automatically be an $(\a^+)^{\sigma}$-sub-comodule of $V$.
+        \begin{remark}[Invariant twists of coideal subalgebras]
+            For us, an answer to question \ref{question: invariant_twists_of_topological_lie_comodules} will be applicable to the following problem. Suppose that we have an automorphism $\vartheta \in \Aut_{\LA}(\a)$ twisting the Manin triple $(\a, \a^+, \a^-)$ \textit{anti-invariantly}, and let $\k^+ := \a^+ \cap \a^{\vartheta} = (\a^+)^{\vartheta}$. Theorem \ref{theorem: twisted_lie_bialgebraic_structures} tells us that $\k^+ \subset \a^+$ is a topological Lie coideal subalgebra via the coaction $(\rho^-)^*: \k^+ \to \a^+ \hattensor \k^+$ as in equation \eqref{equation: coactions_on_dual_of_unfixed_points}. Should $(\rho^-)^*$ admit a corestriction $\k^+ \to (\a^+)^{\sigma} \hattensor \k^+$, then $(\k^+)^{\sigma}$ will automatically be an $(\a^+)^{\sigma}$-sub-comodule of $\k^+$.
+
+            This is useful, for instance, for producing examples of (quantum) symmetric pairs inside (quantum) Kac-Moody algebras of twisted affine types (in Kac's classification; see \cite[Chapter 4]{kac_infinite_dimensional_lie_algebras}) as invariant twists of those (quantum) symmetric pairs inside (quantum) Kac-Moody of untwisted affine types. This is because twisted affine Kac-Moody algebras arise as fixed-point subalgebras of untwisted affine Kac-Moody algebras under certain finite-order automorphisms (see \cite[Chapter 8]{kac_infinite_dimensional_lie_algebras}). We will study such examples in details in subsection \ref{subsection: twisted_affine_QSPS}.
+        \end{remark}
+
+        \todo[inline]{I think $V$ being a classical Yetter-Drinfeld module (cf. \cite[Subsection 2.8]{appel_laredo_2_categorical_etingof_kazhdan_quantisation}) is sufficient, since twisting is compatible with classical doubling (corollary \ref{coro: twisting_classical_doubles}). I'm not sure yet what a necessary condition on $V$ may be.}

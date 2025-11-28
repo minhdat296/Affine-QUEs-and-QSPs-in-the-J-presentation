@@ -1,32 +1,31 @@
 \section{Twisting classical r-matrices} \label{section: twisting_classical_r_matrices}
-    From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in theorem \ref{theorem: invariance_criterion_anti_invariant_twists} and theorem \ref{theorem: invariance_criterion_invariant_twists}.
+    From now on, we shall only work with coboundary topological Lie bialgebras. Apart from their relevance to the subject of quantisation, this is also out of necessity, since our techniques make use of classical r-matrices in essential ways. Inspired by the approach taken in \cite{schrader_integrable_systems_from_classical_reflection_equations}, we would like to give criteria for a coboundary topological Lie bialgebra being twisted either anti-invariantly or invariantly in terms of invariance of certain $2$-tensors derived from classical r-matrices. These criteria will be stated in theorem \ref{theorem: invariance_criterion_anti_invariant_twists} and theorem \ref{theorem: quasi_triangularity_of_invariant_twists}.
 
     Let us fix once and for all a coboundary topological Lie bialgebra:
         $$(\a^+, \delta^+, \calr)$$
     defined by a Manin triple $(\a, \a^+, \a^-)$ by means of equation \eqref{equation: lie_cobrackets_by_duality}. \textit{A priori}, the Lie cobracket $\delta^+$ can be given by:
         $$\delta^+ = [ \Box, \calr ]$$
-    wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a^+$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{classical r-matrix}) is such that:
+    wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a^+$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{classical r-matrix} or a \say{coboundary structure}) is such that:
         $$\delta^+ = d_{\CE}\calr \quad, \quad \calr \in Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$$
-    with $d_{\CE}$ being the Chevalley-Eilenberg cochain differential. For more details, we refer the reader to subsection \ref{subsection: coboundary_and_(quasi)_triangular_topological_lie_bialgebras}. That said, we would like to remind the reader of the following two facts in particular.
-    \begin{itemize}
-        \item The first is that classical r-matrices are \say{quasi-unitary}, meaning that the symmetric part of the classical r-matrix $\calr$ is $\a$-invariant, i.e.:
-            $$\Sym(\calr) := \frac12( \calr_{1, 2} + \calr_{2, 1} ) \in \Sym^2(\a)^{\a} \cong H^0_{\Lie}\left(\a, \Sym^2(\a)\right)$$
-        (cf. equation \eqref{equation: quasi_unitary_classical_r_matrices}). For all intents and purposes, this means that we can ignore the symmetric component and focus entirely on the anti-symmetric component\footnote{In fact, it can be assumed (and is often assumed) that $\calr \in \bigwedge^2 \a$.}:
-            $$\Alt(\calr) := \calr - \Sym(\calr) \in \bigwedge^2 \a \subset \a \hattensor \a$$
-        which is \say{unitary}; this is to say that it satisfies:
-            $$\Alt(\calr) = -\Alt(\calr)_{2, 1}$$
-        merely by definition.
-        \item The second is that the classical double $\Dr(\a^+) \cong \a$ possesses an induced coboundary structure given by the same classical r-matrix $\calr$. We remind the reader that this classical r-matrix may not coincide with the canonical element $\calr_{\a^+, (\a^+)^*}$ of the pairing $(\cdot, \cdot)_{\a}$ between $\a^+$ and $(\a^+)^* \cong \a^-$ (see remark \ref{remark: classical_r_matrices_non_uniqueness} and example \ref{example: finite_dimensional_classical_doubles_are_quasi_triangular} for more details). Thus in general, even though $\Dr(\a^+)$ is always quasi-triangular via $\calr_{\a^+, (\a^+)^*}$, this quasi-triangularity may not be inherited by the isotropic Lie subalgebra $\a^+ \subset \a$; otherwise, we would always have that $\calr = \calr_{\a^+, (\a^+)^*}$ in $Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$, which is clearly nonsensical. 
-    \end{itemize}
+    with $d_{\CE}$ being the Chevalley-Eilenberg cochain differential. For more details, we refer the reader to subsection \ref{subsection: coboundary_and_(quasi)_triangular_topological_lie_bialgebras}. 
+    
     Let us denote the cobracket on the classical double $\Dr(\a^+) \cong \a$ by:
         $$\delta: \a \to \a \hattensor \a$$
     As mentioned above, this is given by the same formula as $\delta^+$:
         $$\delta(x) = [\Box(x), \calr] \quad, \quad x \in \a$$
+    (cf. example \ref{example: canonical_quasi_triangular_structures_on_classical_doubles})
 
     \subsection{Twists of coboundary topological Lie bialgebras: generalities} \label{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}
+        Let us begin with the following definition, primarily as disambigution.
+        \begin{definition}[Twisted classical r-matrices] \label{def: twisted_classical_r_matrices}
+            Suppose that we have a topological Lie bialgebra $(\a^+, \delta^+)$, and suppose that this topological Lie bialgebra is equipped with a coboundary structure $\calr \in \Dr(\a^+) \hattensor \Dr(\a^+)$. Then, by a \textbf{twist} of the coboundary topological Lie bialgebra $( \Dr(\a^+), \delta_{\Dr(\a^+)}, \calr )$ by a Lie algebra automorphism $\vartheta \in \Aut_{\LA}(\Dr(\a^+))$, we mean in the sense of definition \ref{def: twisted_topological_lie_bialgebras}.
+            
+            In particular, we would like to emphasise this is \textit{not} the same as a \say{(classical) twist} of the coboundary structure $\calr$.
+        \end{definition}
+    
         The questions that we will be concerned with in subsections \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}, and \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras} are the following.
         \begin{question} \label{question: twisted_coboundary_topological_lie_bialgebras}
-            Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_topological_lie_bialgebras}. Can the criteria from theorem \ref{theorem: twisted_lie_bialgebraic_structures} be rephrased more explicitly in terms of $\calr$ ?
+            Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_classical_r_matrices}. Can the criteria from theorem \ref{theorem: twisted_lie_bialgebraic_structures} be rephrased more explicitly in terms of $\calr$ ?
         \end{question}
         \begin{question} \label{question: twisted_classical_r_matrices}
             When the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ is \textit{quasi-triangular}, i.e. when:
@@ -34,13 +33,13 @@
             is a solution to the classical Yang-Baxter equation (CYBE) \eqref{equation: CYBEs}, what is the effect of twisting on the classical r-matrix $\calr$ ?
         \end{question}
         \begin{question} \label{question: explicit_expressions_for_twisted_cobrackets}
-            Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_topological_lie_bialgebras}, and let $\delta^{\vartheta}$ be as in theorem \ref{theorem: twisted_lie_bialgebraic_structures}. How are the expressions:
+            Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_classical_r_matrices}, and let $\delta^{\vartheta}$ be as in theorem \ref{theorem: twisted_lie_bialgebraic_structures}. How are the expressions:
                 $$\delta^{\vartheta}(x) \quad, \quad x \in \k := \a^{\vartheta}$$
             given, explicitly ?
         \end{question}
         Partial answers to question \ref{question: twisted_coboundary_topological_lie_bialgebras} and question \ref{question: twisted_classical_r_matrices} had already been obtained previously, particularly in \cite{schrader_integrable_systems_from_classical_reflection_equations}. There, the author addressed a slightly generalised version of question \ref{question: twisted_coboundary_topological_lie_bialgebras}. Namely, it was shown that for a coboundary \say{genuine}\footnote{... as opposed to a topological Lie bialgebra.} Lie bialgebra $(\a, \delta, \calr)$ being acted upon by a general \textit{finite-order} Lie algebra automorphism $\vartheta \in \Aut_{\LA}$, the fixed point subalgebra $\k := \a^{\vartheta}$ will gain the structure of a topological Lie coideal subalgebra of $(\a, \delta)$ if and only if the $2$-tensor:
             $$(\vartheta - 1)^{\tensor 2}(\calr) \in \a \tensor \a$$
-        is $\k$-invariant. When $\ord(\vartheta) = 2$, i.e. when $\vartheta$ is a Lie algebra involution of $\a$, it has also been mentioned in \cite{schrader_integrable_systems_from_classical_reflection_equations} that one recovers the result of \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, which itself is slightly strengthened by the anti-invariant case in our theorem \ref{theorem: twisted_lie_bialgebraic_structures}. While we know that even when $\ord(\vartheta) > 2$, $(\k, \delta)$ is a topological Lie coideal subalgebra of $(\a, \delta)$, we will have to modify definition \ref{def: twisted_topological_lie_bialgebras} so that this coideal structure can be thought of as a twist of the Lie cobracket on $\a$.
+        is $\k$-invariant. When $\ord(\vartheta) = 2$, i.e. when $\vartheta$ is a Lie algebra involution of $\a$, it has also been mentioned in \cite{schrader_integrable_systems_from_classical_reflection_equations} that one recovers the result of \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, which itself is slightly strengthened by the anti-invariant case in our theorem \ref{theorem: twisted_lie_bialgebraic_structures}. While we know that even when $\ord(\vartheta) > 2$, $(\k, \delta)$ is a topological Lie coideal subalgebra of $(\a, \delta)$, we will have to modify definition \ref{def: twisted_classical_r_matrices} so that this coideal structure can be thought of as a twist of the Lie cobracket on $\a$.
         
         When $(\a, \delta, \calr)$ is furthermore quasi-triangular, the author also alluded to the fact, that after being anti-invariantly twisted (necessarily by an involution; see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), the classical r-matrix $\calr$ ends up giving rise to solutions:
             $$\calk$$
@@ -69,10 +68,8 @@
         We will continue our analysis in subsections \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras} and \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}, wherein the cases in which $\vartheta$ twists anti-invariantly and invariantly will be treated separately.
 
     \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
-        In this subsection, suppose that $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ \textit{anti-invariantly} in the sense of definition \ref{def: twisted_topological_lie_bialgebras}. We now know via theorem \ref{theorem: twisted_lie_bialgebraic_structures}, that $\vartheta$ is necessarily an involution, and via equation \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}, that the classical r-matrix $\calr$ can now be decomposed into a sum of its projections onto direct summands of $\a \hattensor \a$
-    
         \begin{theorem}[Invariance criterion for anti-invariant twists] \label{theorem: invariance_criterion_anti_invariant_twists}
-            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_topological_lie_bialgebras} if and only if $\vartheta$ is an involution and:
+            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_classical_r_matrices} if and only if $\vartheta$ is an involution and:
                 $$\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$$
             with $\calr_{\p, \p}$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}.
         \end{theorem}
@@ -80,7 +77,7 @@
                 See \cite[Proposition 2]{schrader_integrable_systems_from_classical_reflection_equations}. Note that while Schrader works under the hypothesis that $\vartheta$ is of finite order, we can disregard this assumption, as we are assuming that $\a$ can be decomposed into the direct sum of the eigenspaces of $\vartheta$ (see convention \ref{conv: endomorphisms}).
             \end{proof}
     
-        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs (which still need to be defined). I think one way in which we can think of automorphisms $\vartheta$ that twist anti-invariantly as classical limits of quantum K-matrices is by constructing some kind of boundary monodromy matrix $b_{\vartheta}$. Then, we can check if the boundary transfer matrices $\tau_{\vartheta} := \trace b_{\vartheta}$ are Poisson-commutative. We will probably need to assume that $\a$ is integrable as a Lie algebra for this to work, though this is not terribly restrictive, and we care about such Lie algebras most of all anyway.}
+        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs (which still need to be defined). I think one way in which we can think of automorphisms $\vartheta$ that twist anti-invariantly as classical limits of quantum K-matrices is by constructing some kind of boundary monodromy matrix $b_{\vartheta}$. Then, we can check if the boundary transfer matrices $\tau_{\vartheta} := \trace b_{\vartheta}$ are Poisson-commutative. Previously, I said that we need $\a$ to be integrable for this to work, but now I realise that we can just work with Poisson formal groups.}
 
         \todo[inline]{
             On \cite[p. 18]{schrader_integrable_systems_from_classical_reflection_equations}, it was mentioned that the quantity $C_{\vartheta}(\calr) := (\vartheta - 1)^{\tensor 2}(\calr)$ is to be thought of as the classical limit of a certain reflection equation. However, this claim has only been justified when $\a = \Loop \gl_2 := \gl_2 \tensor \bbk[t^{\pm 1}]$ is acted upon by the involution $\vartheta \in \Aut_{\LA}(\Loop \gl_2)$ given by $\vartheta( x \tensor t ) := x \tensor t^{-1}$. From these data, there arises a coideal subalgebra of $\calU_q(\Loop \gl_2)$ that can be realised as the reflection algebra:
@@ -93,27 +90,31 @@
         }
 
     \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \todo[inline]{I'm rewriting theorem \ref{theorem: invariance_criterion_invariant_twists} and corollary \ref{coro: quasi_triangularity_of_invariant_twists} so that they will be easier to use in section \ref{section: invariant_twists_and_belavin_drinfeld_classification}. I think the stated theorem is equivalent to saying that $\vartheta$ twists invariantly if and only if $(\vartheta \tensor \vartheta)(\calr)$ is another solution to the CYBE. The idea is that $(\vartheta \tensor \vartheta)(\calr)$ should define a Lie bialgebra - which is different from $(\a, \delta, \calr)$ - admitting $(\k, \delta^{\vartheta})$ as a Lie sub-bialgebra.}
-        
-        \begin{theorem} \label{theorem: invariance_criterion_invariant_twists}
-            The following are equivalent.
+        \begin{lemma}
+            Suppose that $(\a^+, \delta^+)$ is topological Lie bialgebra, and that its classical double\footnote{... with $\delta_{\Dr(\a^+)}$ as in equation \eqref{equation: classical_double_cobrackets}.} $( \Dr(\a^+), \delta_{\Dr(\a^+)} )$ is equipped with the canonical quasi-triangular structure:
+                $$\calr := \calr_{\a^+, \a^-}^0$$
+            as in example \ref{example: canonical_quasi_triangular_structures_on_classical_doubles}. Then, the following statements are equivalent.
             \begin{enumerate}
-                \item 
-                \item 
+                \item The quasi-triangular topological Lie bialgebra $(\a, \delta, \calr)$ is twisted invariantly by an automorphism $\vartheta \in \Aut_{\LA}(\a)$ in the sense of definition \ref{def: twisted_classical_r_matrices}.
+                \item The pair $(\k^+, (\delta^+)^{\vartheta})$ with $(\delta^+)^{\vartheta}$ as in theorem \ref{theorem: twisted_lie_bialgebraic_structures} is a topological Lie bialgebra, with $\calr_{\k, \k}$ being the projection of $\calr \in \a \hattensor \a$ onto its direct summand $\k \hattensor \k$ (cf. equation \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}) as a quasi-triangular structure, i.e.:
+                    $$(\delta^+)^{\vartheta} := [ \Box, \calr_{\k, \k} ]$$
+                as maps $\k^+ \to \k^+ \hattensor \k^+$. Moreover, we have:
+                    $$\calr_{\k, \k} = \calr_{\k^+, \k^-}^0$$
+                or in other words, that $\calr_{\k, \k}$ is nothing but the canonical quasi-triangular structure on the classical double $\Dr(\k^+) \cong \k$ (cf. corollary \ref{coro: twisting_classical_doubles}).
             \end{enumerate}
+        \end{lemma}
+            \begin{proof}
+                \begin{enumerate}
+                    \item Suppose first of all that \url{1} is true. Let us begin by noting, that corollary \ref{coro: twisting_classical_doubles} tells us that $(\k, \k^+, \k^-)$ is a Manin triple; let us write $\calr_{\k^+, \k^-}^0 \in \k^+ \hattensor \k^- \subset \k \hattensor \k$ to mean the canonical element of the non-degenerate symmetric bilinear form $(\cdot, \cdot)_{\k} := (\cdot, \cdot)_{\a}|_{\k \hattensor \k}$. Since the Lie cobracket on $\k^+$ is given by $(\delta^+)^{\vartheta} := [\cdot, \cdot]_{\k^-}^*$ (cf. theorem \ref{theorem: twisted_lie_bialgebraic_structures}), we see thus that $\calr_{\k^+, \k^-}^0$ is a quasi-triangular structure on the topological Lie bialgebra $(\k^+, (\delta^+)^{\vartheta})$. This coincides with the projection $\calr_{\k, \k}$ of the canonical quasi-triangular structure $\calr_{\a^+, \a^-}^0 \in \a \hattensor \a$ onto the direct summand $\k \hattensor \k \subset \a \hattensor \a$, so we are done.
+                    \item Conversely, assume \url{2}. Theorem \ref{theorem: twisted_lie_bialgebraic_structures} tells us, that because the pair $(\k^+, (\delta^+)^{\vartheta})$ is a topological Lie bialgebra, the twisting of $\vartheta$ on $(\a, \delta, \calr)$ is necessarily invariant.
+                \end{enumerate}
+            \end{proof}
+    
+        \begin{theorem}[Quasi-triangularity of invariant twists] \label{theorem: quasi_triangularity_of_invariant_twists}
+            
         \end{theorem}
             \begin{proof}
-                As mentioned at the beginning of subsection \ref{subsection: twisted_coboundary_topological_lie_bialgebras_generalities}, it is sufficient to only consider classical r-matrices that are anti-symmetric, i.e. we can assume that:
-                    $$\calr \in \bigwedge^2 \a$$
-                without loss of generality. The decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices} then reduces to:
-                    $$\calr = \calr_{\k, \k} + \calr_{\p, \p}$$
-                because we now have $\calr_{\p, \k} = (\calr_{\k, \p})_{2, 1} = -\calr_{\k, \p}$.
-            \end{proof}
-        \begin{corollary}[Quasi-triangularity of invariant twists] \label{coro: quasi_triangularity_of_invariant_twists}
-            Suppose now that $(\a, \delta, \calr)$ is quasi-triangular, which is to say that $\calr$ satisfies $\schouten{\calr, \calr} = 0$ (cf. equation \eqref{equation: CYBEs}).
-        \end{corollary}
-            \begin{proof}
-                
+                \todo[inline]{Consider the canonical quasi-triangular structure as a point on the moduli space of quasi-triangular Lie bialgebra structures on a fixed underlying Lie algebra. Then, show that }
             \end{proof}
 
     \subsection{Compositions of twists} \label{subsection: composing_twists_of_lie_bialgebras}

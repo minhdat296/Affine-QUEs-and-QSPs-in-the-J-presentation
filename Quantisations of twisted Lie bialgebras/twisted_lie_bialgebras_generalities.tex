@@ -1,6 +1,6 @@
 \section{Twisting Lie-bialgebraic structures}
     \subsection{Twisted Manin triples and twisted topological Lie bialgebras} \label{subsection: twisted_manin_triples}
-        For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notation scheme therein.
+        For a recollection of basic facts about Manin triples, we refer the reader to subsection \ref{subsection: manin_triples}. We freely employ the notation algebraic space therein.
 
         Inspired by the theory of symmetric spaces, and following \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, we begin with the following definition.
         \begin{definition}[Twisted Manin triple] \label{def: twisted_manin_triples}
@@ -115,9 +115,6 @@
             \begin{equation} \label{equation: cobrackets_on_fixed_points}
                 [\cdot, \cdot]_{\k^{\mp}}^*: (\k^{\mp})^* \to (\k^{\mp})^* \hattensor (\k^{\mp})^*
             \end{equation}
-        \begin{remark}
-            We would like to note that $[\cdot, \cdot]_{\k^{\mp}}^*$ is usually not a Lie sub-bialgebra structure of $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*$, which is a map $(\k^{\mp})^* \to (\k^{\mp})^* \hattensor (\k^{\mp})^* + (\p^{\mp})^* \hattensor (\p^{\mp})^*$ instead.
-        \end{remark}
         
         Our next task is to compute the dual spaces $(\p^{\mp})^*$ and $(\k^{\mp})^*$, and we shall see that this depends on whether the Manin triple being considered is twisted anti-invariantly or invariantly.
         
@@ -241,9 +238,6 @@
         \end{remark}
         
         Combining lemma \ref{lemma: manin_triple_twists_and_duality} with the observations leading up to it, we obtain the following rough classification of Lie-bialgebraic twists in the sense of definition \ref{def: twisted_topological_lie_bialgebras}.
-
-        \todo[inline]{I was not expecting this, but it seems that an anti-invariant twist can only be done by an involution, if we are to obtain a coideal subalgebra structure on the fixed-point subalgebra out of this twisting procedure. One can get coideal subalgebras from non-involutive automorphisms, as in \cite{schrader_integrable_systems_from_classical_reflection_equations}, but these do not originate from the notion of Manin triple/Lie bialgebra twists by Belliard-Crampé from \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples} (the same notion used in \cite{belliard_regelskis_J_presentation_for_twisted_yangians} and \cite{guay_regelskis_twisted_yangians_for_symmetric_pairs_of_types_BCD}). I'm not yet sure what the correct generalisation of anti-invariant twists to non-involutive automorphisms ought to be. Perhaps, for a finite-order automorphism of order $N$, one can replace the $-1$ factor by an $N^{th}$ root of unity; when $N = 2$, we regard the $-1$ factor as a $2^{nd}$ root of unity.}
-        
         \begin{theorem}[Twisted Lie bialgebraic structures] \label{theorem: twisted_lie_bialgebraic_structures}
             We keep the notations from lemma \ref{lemma: manin_triple_twists_and_duality}, and let:
                 $$\delta^{\pm}: \a^{\pm} \to \a^{\pm} \hattensor \a^{\pm}$$
@@ -253,14 +247,14 @@
                 \begin{equation} \label{equation: twisted_lie_cobrackets}
                     (\delta^{\pm})^{\vartheta} :=
                     \begin{cases}
-                        \delta^{\pm} \circ \vartheta|_{\a^{\pm}} & \text{if and only if $\vartheta$ twists $(\a^{\pm}, \delta^{\pm})$ anti-invariantly}
+                        \delta^{\pm} \circ \vartheta|_{\a^{\pm}} & \text{if and only if $\vartheta$ twists $(\a, \delta)$ anti-invariantly}
                         \\
-                        [\cdot, \cdot]_{\k^{\mp}}^* & \text{if and only if $\vartheta$ twists $(\a^{\pm}, \delta^{\pm})$ invariantly}
+                        [\cdot, \cdot]_{\k^{\mp}}^* & \text{if and only if $\vartheta$ twists $(\a, \delta)$ invariantly}
                     \end{cases}
                 \end{equation}
             \begin{enumerate}
-                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are topological Lie coideal subalgebras of $(\a^{\pm}, \delta^{\pm})$ if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists the topological Lie bialgebras $(\a^{\pm}, \delta^{\pm})$ anti-invariantly.
-                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are new topological Lie bialgebras if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists the topological Lie bialgebras $(\a^{\pm}, \delta^{\pm})$ invariantly. In this case, $\vartheta$ needs not be an involution.
+                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are topological Lie coideal subalgebras of $(\a^{\pm}, \delta^{\pm})$ if and only if $\vartheta \in \Aut_{\LA}(\a)$ is an involution that twists the topological Lie bialgebras $(\a, \delta)$ anti-invariantly.
+                \item $(\k^{\pm}, (\delta^{\pm})^{\vartheta})$ are new topological Lie bialgebras if and only if $\vartheta \in \Aut_{\LA}(\a)$ twists the topological Lie bialgebras $(\a, \delta)$ invariantly. In this case, $\vartheta$ needs not be an involution.
             \end{enumerate}
         \end{theorem}
             \begin{proof}
@@ -269,6 +263,35 @@
                     \item Combine lemma \ref{lemma: manin_triple_twists_and_duality} with equation \eqref{equation: cobrackets_on_fixed_points}.
                 \end{enumerate}
             \end{proof}
+        We would like to note that $(\delta^{\pm})^{\vartheta} := [\cdot, \cdot]_{\k^{\mp}}^*$ is usually not a Lie sub-bialgebra structure of $\delta^{\pm} := [\cdot, \cdot]_{\a^{\mp}}^*$, which is a map $(\k^{\mp})^* \to (\k^{\mp})^* \hattensor (\k^{\mp})^* + (\p^{\mp})^* \hattensor (\p^{\mp})^*$ instead. In fact, the following criterion prohibits $(\k^{\pm}, \delta^{\pm})$ from being a topological Lie sub-bialgebra of $(\a^{\pm}, \delta^{\pm})$.
+        \begin{lemma}[Lie sub-bialgebra criterion] \label{lemma: lie_sub_bialgebra_criterion}
+            Suppose that $(\a^+, \delta^+)$ is a topological Lie bialgebra defined by a Manin triple $(\a, \a^+, \a^-)$, and that $\k^+ \subset \a^+$ is a Lie subalgebra. Then, the following statements are equivalent.
+            \begin{enumerate}
+                \item $(\k^+, \delta^+)$ is a topological Lie sub-bialgebra.
+                \item $(\k^+)^{\perp} := \{ \phi \in (\k^+)^* \subset (\a^+)^* \mid \forall x \in \k^+: \phi(x) = ( x, \phi )_{\a} = 0 \}$ is a Lie ideal of $(\a^+)^*$.
+            \end{enumerate}
+        \end{lemma}
+            \begin{proof}
+                We will freely employ the identification $\a^- \cong (\a^+)^*$, as stipulated by definition \ref{def: manin_triples}. Let us also recall equation \ref{equation: lie_cobrackets_by_duality}, which tells us that the Lie cobracket $\delta^+$ is determined by:
+                    \begin{equation} \label{equation: lie_sub_bialgebra_criterion}
+                        ( \delta^+(x), \phi \tensor \psi )_{\a \hattensor \a} = ( x, [\phi, \psi]_{\a^-} )_{\a} \quad, \quad x \in \a^+, \phi, \psi \in \a^-
+                    \end{equation}
+                \begin{enumerate}
+                    \item Suppose first of all that \url{1} holds true, i.e. that $\delta^+(\k^+) \subseteq \k^+ \hattensor \k^+$. If we now take $x \in \k^+$ and suppose that the LHS is zero, then $\phi \tensor \psi \in (\k^+ \hattensor \k^+)^{\perp}$. As such, let us consider the following:
+                        \begin{equation} \label{equation: orthogonal_complement_of_tensor_square}
+                            \begin{aligned}
+                                (\k^+ \hattensor \k^+)^{\perp} & := \{ \Phi \in (\k^+ \hattensor \k^+)^* \mid \forall x \tensor y \in \k^+ \hattensor \k^+: \Phi(x \tensor y) = (x \tensor y, \Phi)_{\a \hattensor \a} = 0 \}
+                                \\
+                                & = \span \{ \phi \tensor \psi \in (\k^+ \hattensor \k^+)^* \mid \forall x \tensor y \in \k^+ \hattensor \k^+: (\phi \tensor \psi)(x \tensor y) = (x \tensor y, \phi \tensor \psi)_{\a \hattensor \a} = 0 \}
+                                \\
+                                & = (\k^+)^{\perp} \hattensor \a^- + \a^- \hattensor (\k^+)^{\perp}
+                            \end{aligned}
+                        \end{equation}
+                    with the last equality holding because $(x \tensor y, \phi \tensor \psi)_{\a \hattensor \a} = (x, \phi)_{\a} (y, \psi)_{\a}$, so the term vanishes if either factor does. Now, the LHS of equation \eqref{equation: lie_sub_bialgebra_criterion} is zero means that the RHS is also zero. Thus, we must simultaneously have that $[\phi, \psi]_{\a^-} \in (\k^+)^{\perp}$ whenever $x \in \k^+$, if we are to have $(x, [\phi, \psi]_{\a^-})_{\a} = 0$. But since $\phi \tensor \psi \in (\k^+)^{\perp} \hattensor \a^- + \a^- \hattensor (\k^+)^{\perp}$, we see thus that $(\k^+)^{\perp}$ must be a Lie ideal of $\a^-$, as claimed. 
+                    \item Conversely, assume that \url{2} is true. If the two sids of equation \ref{equation: lie_sub_bialgebra_criterion} vanish, then $[\phi, \psi]_{\a^-} \in (\k^+)^{\perp}$ whenever $x \in \k^+$. Since $(\k^+)^{\perp} \subset \a^-$ is a Lie ideal, we see thus that $\phi \tensor \psi \in (\k^+)^{\perp} \hattensor \a^- + \a^- \hattensor (\k^+)^{\perp}$. Equation \eqref{equation: orthogonal_complement_of_tensor_square} tells us that $(\k^+)^{\perp} \hattensor \a^- + \a^- \hattensor (\k^+)^{\perp} = (\k^+ \hattensor \k^+)^{\perp}$, so indeed, we must have $\delta^+(x) \in \k^+ \hattensor \k^+$ if the LHS of equation \eqref{equation: lie_sub_bialgebra_criterion} is to bee zero as well. Thus, $(\k^+, \delta^+)$ is a topological Lie sub-bialgebra of $(\a^+, \delta^+)$.
+                \end{enumerate}
+            \end{proof}
+        In our setting, if $(\a, \delta)$ is twisted invariantly by some automorphism $\vartheta \in \Aut_{\LA}(\a)$, then through lemma \ref{lemma: manin_triple_twists_and_duality}, we see that $(\k^+)^{\perp} = \p^-$. However, through the relations \ref{equation: symmetric_space_relations}, which implies in particular that $[\p^-, \p^-] \not \subseteq \p^-$ (when $\vartheta$ is an involution, we even have that $[\p, \p] \subseteq \k$), we see that $\p^-$ is not a Lie ideal of $\a^-$. Therefore, $(\k^+, \delta^+)$ fails the criterion to be a topological Lie sub-bialgebra of $(\a^+, \delta^+)$ given in lemma \ref{lemma: lie_sub_bialgebra_criterion}.
 
         Finally, we note that the operation of twisting is compatible with the construction of classical doubles in the sense of Drinfeld. The precise statement can be phrased as a corollary to theorem \ref{theorem: twisted_lie_bialgebraic_structures} as follows.
         \begin{corollary}[Compatibility between twists and classical doubles] \label{coro: twisting_classical_doubles}
@@ -336,61 +359,31 @@
             $$\delta^{\vartheta}(x) \quad, \quad x \in \k$$
         Only coboundary topological Lie bialgebras (and in particular, the quasi-triangular ones) are of relevance to questions surrounding quantisation, so henceforth, let us focus on twists of such topological Lie bialgebras.
 
-    \subsection{Twisting topological Lie comodules}
-        Suppose that $(\a, \a^+, \a^-)$ is a Manin triple defining a topological Lie bialgebra structure $\delta^+: \a^+ \to \a^+ \hattensor \a^+$ via \eqref{equation: lie_cobrackets_by_duality}, and that $V$ is a topological left-$\a^+$-comodule\footnote{What follows works identically for right-comodules, so it suffices to only consider left-modules.}, determined by:
-            $$\pi^+: V \to \a^+ \hattensor V$$
-        Suppose also, that there is an automorphism $\sigma \in \Aut_{\LA}(\a)$ that twists the Manin triple $(\a, \a^+, \a^-)$ in the sense of definition \ref{def: twisted_manin_triples}.
+    \subsection{Associated Poisson formal groups and homogeneous spaces} \label{subsection: poisson_formal_groups_and_homogeneous_spaces}
+        In this subsection, we discuss the relationship between topological Lie bialgebras and Poisson (formal) groups, as well as that between topological Lie coideal subalgebras and Poisson (formal) homogeneous spaces. Namely, we would like to adapt and mildly extend certain results from \cite{schrader_integrable_systems_from_classical_reflection_equations} and \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces} so as to be able to keep track of the topological nature of the Lie-bialgebraic structures at play. This amounts to making sure that the Poisson brackets being used are all continuous as bilinear maps. 
         
-        By theorem \ref{theorem: twisted_lie_bialgebraic_structures}, we know that if $\sigma$ twists anti-invariantly, then the fixed-point subalgebra $(\a^+)^{\sigma} = \a^+ \cap \a^{\sigma}$ will gain the structure of a topological Lie coideal subalgebra of $\a^+$ via the coaction \eqref{equation: coactions_on_dual_of_unfixed_points}. In that case, it would not even make sense to ask if $V$ would be a topological $(\a^+)^{\sigma}$-comodule, so let us focus on $\sigma$ twisting \textit{invariantly}. By theorem \ref{theorem: twisted_lie_bialgebraic_structures} again, we know that $((\a^+)^{\sigma}, (\delta^+)^{\sigma})$ (with notations as in \textit{loc. cit.}) is another topological Lie bialgebra in that case, and thus we can meaningfully inquire into whether or not $V$ will then be a topological $(\a^+)^{\sigma}$-comodule. This is equivalent to the following question.
-        \begin{question} \label{question: invariant_twists_of_topological_lie_comodules}
-            Under which conditions does the following corestriction exist:
-                $$
-                    \begin{tikzcd}
-                    	& {(\a^+)^{\sigma} \hattensor V} \\
-                    	V & {\a^+ \hattensor V}
-                    	\arrow[from=1-2, to=2-2]
-                    	\arrow["{}", dashed, from=2-1, to=1-2]
-                    	\arrow["{\pi^+}", from=2-1, to=2-2]
-                    \end{tikzcd}
-                $$
-            In other words, when do we have $\im \pi^+ \subseteq (\a^+)^{\sigma} \hattensor V$ ?
-        \end{question}
+        To be able to say why these connections are important, however, we must first recall some features of the theory of Poisson (formal) groups, to which end we will need to recall some more features of the more general theory of Poisson geometry. Results about these connections are useful for relating the algebraic theory of topological Lie bialgebras and topological coideal subalgebra thereof to the theory of integrable systems, without and with (reflection) boundary conditions, respectively. In particular, for the latter case, one sees that the topological Lie coideal subalgebras mentioned above are determined by solutions to so-called \say{boundary classical Yang-Baxter equations} (bCYBEs) because those equations are to be imposed precisely when the Poisson structure that certain Poisson (formal) homogeneous spaces inherit from Poisson (formal) groups are integrable. In turn, this is somehow equivalent to the act of imposing certain boundary conditions on said Poisson (formal) groups.
+        
+        Moreover, these relationships are useful for the discussion of whether or not Lie coideal subalgebras are quantisable, as was pointed out in \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces}. More on this in subsection \ref{subsection: existence_of_quantisations_of_lie_bialgebraic_twists}.
 
-        Assume now that $V$ is also acted on by the cyclic group $\<\sigma\>$ and that the coaction $\pi^+$ is moreover a $\<\sigma\>$-module homomorphism. Assume also, that there is an eigenspace decomposition $V = \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu}$. Group cohomology supplies us with an induced map:
-            $$(\pi^+)^{\sigma} := H^0_{\Grp}( \<\sigma\>, \pi^+ ): H^0_{\Grp}( \<\sigma\>, V ) \to H^0_{\Grp}( \<\sigma\>, \a^+ \hattensor V )$$
-        and let us recall also that the zeroth cohomology functor is nothing but the fixed-point functor, due to the fact that there are natural isomorphisms:
-            $$H^0_{\Grp}( \<\sigma\>, - ) \cong \Hom_{\bbk\<\sigma\>}(\bbk, -) \cong (-)^{\sigma}$$
-        This means that we have a map:
-            $$(\pi^+)^{\sigma}: V^{\sigma} \to (\a^+ \hattensor V)^{\sigma}$$
-        Moreover, because we have eigenspace decompositions $\a^+ = \bigoplus_{\lambda \in \Pi(\sigma, \a^+)} \a^+_{\lambda}$ and $V = \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu}$ wherein the eigenvalue $1$ corresponds to the fixed-point subspace, we have that:
-            $$
-                \begin{aligned}
-                    \a^+ \hattensor V & \cong \left( \bigoplus_{\lambda \in \Pi(\sigma, \a^+)} \a^+_{\lambda} \right) \hattensor \left( \bigoplus_{\mu \in \Pi(\sigma, V)} V_{\mu} \right)
-                    \\
-                    & \cong (\a^+)^{\sigma} \hattensor V^{\sigma} \oplus \bigoplus_{ \substack{ \lambda \in \Pi(\sigma, \a^+), \mu \in \Pi(\sigma, V) \\ \lambda, \mu \not = 1 } } \a^+_{\lambda} \hattensor V_{\mu}
-                \end{aligned}
-            $$
-        From this, we see that:
-            $$(\a^+ \hattensor V)^{\sigma} \cong (\a^+)^{\sigma} \hattensor V^{\sigma}$$
-        since the $\<\sigma\>$-action on $V$ extends to $\a^+ \hattensor V$ by means of\footnote{This is true more generally for tensor products of representations of any group.}:
-            $$\sigma \cdot (x \tensor v) := (\sigma \cdot x) \tensor (\sigma \cdot v) \quad, \quad x \in \a^+, v \in V$$
-        We see thus, that should the corestriction of $\pi^+$ as in question \ref{question: invariant_twists_of_topological_lie_comodules} exist, then it will fit into the following commutative diagram:
-                $$
-                    \begin{tikzcd}
-                    	{V^{\sigma}} & {(\a^+)^{\sigma} \hattensor V^{\sigma}} \\
-                    	V & {\a^+ \hattensor V}
-                    	\arrow["{(\pi^+)^{\sigma}}", from=1-1, to=1-2]
-                    	\arrow[from=1-1, to=2-1]
-                    	\arrow[from=1-2, to=2-2]
-                    	\arrow[dashed, from=2-1, to=1-2]
-                    	\arrow["{\pi^+}", from=2-1, to=2-2]
-                    \end{tikzcd}
-                $$
-        Therefore, if said corestriction exists, then $V^{\sigma}$ will automatically be an $(\a^+)^{\sigma}$-sub-comodule of $V$.
-        \begin{remark}[Invariant twists of coideal subalgebras]
-            For us, an answer to question \ref{question: invariant_twists_of_topological_lie_comodules} will be applicable to the following problem. Suppose that we have an automorphism $\vartheta \in \Aut_{\LA}(\a)$ twisting the Manin triple $(\a, \a^+, \a^-)$ \textit{anti-invariantly}, and let $\k^+ := \a^+ \cap \a^{\vartheta} = (\a^+)^{\vartheta}$. Theorem \ref{theorem: twisted_lie_bialgebraic_structures} tells us that $\k^+ \subset \a^+$ is a topological Lie coideal subalgebra via the coaction $(\rho^-)^*: \k^+ \to \a^+ \hattensor \k^+$ as in equation \eqref{equation: coactions_on_dual_of_unfixed_points}. Should $(\rho^-)^*$ admit a corestriction $\k^+ \to (\a^+)^{\sigma} \hattensor \k^+$, then $(\k^+)^{\sigma}$ will automatically be an $(\a^+)^{\sigma}$-sub-comodule of $\k^+$.
+        \begin{convention}
+            All algebro-geometric constructions are over $\bbk$ by default. 
+        \end{convention}
 
-            This is useful, for instance, for producing examples of (quantum) symmetric pairs inside (quantum) Kac-Moody algebras of twisted affine types (in Kac's classification; see \cite[Chapter 4]{kac_infinite_dimensional_lie_algebras}) as invariant twists of those (quantum) symmetric pairs inside (quantum) Kac-Moody of untwisted affine types. This is because twisted affine Kac-Moody algebras arise as fixed-point subalgebras of untwisted affine Kac-Moody algebras under certain finite-order automorphisms (see \cite[Chapter 8]{kac_infinite_dimensional_lie_algebras}). We will study such examples in details in subsection \ref{subsection: twisted_affine_QSPS}.
-        \end{remark}
+        For our purposes, we find the language of so-called \say{ind-algebraic spaces} and \say{pro-algebraic spaces} to be the most convenient. We refer the reader to subsections \ref{subsection: formal_and_ind_algebraic_spaces} and \ref{subsection: pro_algebraic_spaces} for a recollection. The two classes of examples which are the most important to us are the following.
+        \begin{example}[Loop groups and affine Grassmannians]
+            Given a finite-type scheme $X$, let us write:
+                $$\Loop X \quad, \quad \Loop^+ X$$
+            for the (full) formal loop space of $X$ and its positive half, respectively. Their functors of points are given by:
+                $$(\Loop X)(\Spec R) := X( \Spec R(\!(t)\!) ) \quad, \quad (\Loop^+ X)(\Spec R) := X( \Spec R[\![t]\!] )$$
+            and in general, these are ind-pro-schemes.
+            
+            In particular, we are interested in the case wherein $X = \bar{G}$ for some affine algebraic group whose Lie algebra is a finite-type Kac-Moody algebra $\bar{\g}$. The Lie algebra of the loop group $\Loop \bar{G}$ is then the loop algebra $\Loop \bar{\g} := \bar{\g}(\!(t)\!)$ and likewise, the Lie algebra of $\Loop^+ \bar{G}$ is $\Loop^+ \bar{\g} := \bar{\g}[\![t]\!]$. Tangent spaces of the following homogeneous space, commonly called the \textbf{(thin) affine Grassmannian of $\bar{G}$}:
+                $$\Gr_{\bar{G}} := \Loop \bar{G} / \Loop^+ \bar{G}$$
+            are then isomorphic to $\Loop \bar{\g} / \Loop^+ \bar{\g} \cong t^{-1}\bar{\g}[t^{-1}]$.
+        \end{example}
+        \begin{example}[Kac-Moody groups and their flag varieties]
+            
+        \end{example}
 
-        \todo[inline]{I think $V$ being a classical Yetter-Drinfeld module (cf. \cite[Subsection 2.8]{appel_laredo_2_categorical_etingof_kazhdan_quantisation}) is sufficient, since twisting is compatible with classical doubling (corollary \ref{coro: twisting_classical_doubles}). I'm not sure yet what a necessary condition on $V$ may be.}
+    \subsection{Existence of quantisations} \label{subsection: existence_of_quantisations_of_lie_bialgebraic_twists}

@@ -4,6 +4,8 @@
 
 06/10/2025: The example section is more or less done, but I'll type it up later, so as to avoid any notational clash.
 
+---//--- BELOW ARE UPDATES ON THE RE-WRITTEN VERSION
+
 13/10/2025: I found a more compact way to express what I wanted to say (and a bit more) in the section on twisted Manin triples, so I rewriting the section from scratch.
 
 14/10/2025:
@@ -24,4 +26,13 @@
     4. twisting invariantly respects the Belavin-Drinfeld classification.
 - Very roughly speaking, coideal Lie subalgebras are two be thought of as tangent spaces of Poisson homogeneous spaces which are quotients of a (possibly infinite-dimensional) Poisson-Lie (ind-)group by some fixed-point subgroups therein.
     1. We should therefore be able to twist coideal subalgebras invariantly as well, provided that the Poisson structures on these quotients admit any gauge transformation at all.
-    2. 
+    2. [...]
+
+23/11/2025:
+- I wonder if everything on the quantum side should make up a separate paper of their own, seeing that even in its current very incomplete state, what has been written is already quite long. Namely, I am proposing that the present paper include the following sections:
+    1. Generalities about Lie-bialgebraic twists, including connections to Poisson formal groups and Poisson formal homogeneous spaces.
+    2. More details about twists of coboundary Lie bialgebras. In particular, I would like to address how boundary classical Yang-Baxter equations/classical reflection equations are derived from anti-invariant twists. I believe that Poisson formal homogeneous spaces are necessary for this.
+    3. Compatibility of invariant twists of the standard Kac-Moody algebra Lie bialgebra structure with the Belavin-Drinfeld classification.
+Along with technical recollections about Manin triples and Lie bialgebras, I am guessing that the final length of the paper will be no less than 40 pages.
+- I am also still somewhat unsure about what a cohomological criterion for the uniqueness of a quantisation of an anti-invariant twist should be. I suspect that this would either be a Hochschild-type cohomology theory for comodules over a topological Hopf algebra, or even just ordinary Ext computation over quantum doubles, but right now I am not sure if these ideas would be equivalent in any rigorous way. This is partly why I think it would be prudent to deal with the quantum side separately, since I suspect that the computations involved will have to be quite meticulous.
+- As Dr. Wendlandt suggested, it would be very nice if we can give a cohomological criterion for the uniqueness of twisted Yangians as quantisations of anti-invariantly twisted current algebras, and then deriving a J-presentation for them consequently. This is to be in contrast with the method of Belliard and Regelskis, who "guessed" a J-presentation beforehand (I don't mean to downplay the importance of their work, since I suspect that there aren't that many possibilities for such a guess in the first place) and then proved that - with respect to the Yangian Hopf structure - such a presentation uniquely specifies the twisted Yangians.

@@ -1,0 +1,43 @@
+\begin{convention}
+    Given a base scheme $S$, the categories of $S$-schemes\footnote{This is to say, schemes with a morphism to $S$.} and the full subcategory consisting of affine $S$-schemes are respectively denoted by:
+        $$\Sch_{/S} \quad, \quad \Sch_{/S}^{\aff}$$
+    If $\tau$ is a topology on the category $\Sch_{/S}$ (e.g. \'etale, fppf, etc.), then we will write:
+        $$\Sh(S_{\tau})$$
+    for the category (indeed, a topos) of sheaves of sets on the $\tau$-site whose underlying category of $\Sch_{/S}$. 
+\end{convention}
+
+Formal algebraic spaces in the sense of \cite[\href{https://stacks.math.columbia.edu/tag/0AHW}{Tag 0AHW}]{stacks-project} are built up by gluing together \say{affine formal algebraic spaces}, which in turn, are \say{formal spectra} of \say{weakly pre-admissible rings}, which is where we will begin our recollection of the theory.
+\begin{definition}[Weakly pre-admissible rings] \label{def: weakly_pre_admissible_rings}
+    Following \cite[\href{https://stacks.math.columbia.edu/tag/0AMV}{Tag 0AMV}]{stacks-project}, a \textbf{weakly pre-admissible} ring is a pair:
+        $$(A, I)$$
+    consisting of:
+    \begin{itemize}
+        \item a linearly topologised ring\footnote{According to \cite[\href{https://stacks.math.columbia.edu/tag/07E8}{Tag 07E8}]{stacks-project}, a \textbf{linearly topologised ring} is a ring equipped with a topology admitting a base consisting of open ideals. In particular, this means that these basic open subsets are open neighbourhoods of $0$.} $A$, and
+        \item an open ideal $I \subset A$, called the \textbf{ideal of definition} of $A$, consisting entirely of \textbf{topologically nilpotent} elements, i.e. every elements $f \in I$ are such that $\lim_{n \to +\infty} f^n = 0$.
+    \end{itemize}
+    A \textbf{weakly admissible} ring is a weakly pre-admissible ring that is topologically complete.
+\end{definition}
+\begin{lemma}[Basic properties of weakly pre-admissible rings] \label{lemma: basic_properties_of_weakly_pre_admissible_rings}
+    
+\end{lemma}
+    \begin{proof}
+        
+    \end{proof}
+
+In order to be able to give a definition of formal algebraic spaces, let us also recall from \cite[\href{https://stacks.math.columbia.edu/tag/04EX}{Tag 04EX}]{stacks-project} that a \textbf{thickening} of a scheme $X$ is a closed embedding $j: X \hookrightarrow X'$ which is the identity at the level of underlying topological spaces. Since the datum of a closed embedding as above is the same as the datum of a quasi-coherent $\scrO_{X'}$-ideal $\scrI \subseteq \scrO_{X'}$, we can equivalently say that $j$ is a thickening (of order $n \geq 1$) if $\scrI$ is nilpotent (of the same order $n$, i.e. $\scrI^{n + 1} = 0$). It can be shown (see \cite[\href{https://stacks.math.columbia.edu/tag/06AD}{Tag 06AD}]{stacks-project}), in particular, that thickenings of affine schemes remain affine. Thus, one has the following dual notion\footnote{Also called \say{nilpotent extensions}.}: a thickening of a ring $R$ is a surjective ring homomorphism $\pi: R' \to R$ such that $\ker \pi \subset R'$ is a nilpotent ideal.
+\begin{example}
+    Suppose that $(A, I)$ is a weakly pre-admissible ring. Then, any $A/I^n$, the formal completion $\projlim_{n \geq 1} A/I^n$, as well as $A$ itself, are all examples of thickenings of the ring $A/I$.
+\end{example}
+
+\begin{definition}[Formal algebraic spaces] \label{def: formal_algebraic_spaces}
+    The category:
+        $$\Formal\Alg\Spc_{/S}$$
+    of \textbf{formal algebraic spaces} over $S$ is the ind-completion inside $\Sh(S_{\fppf})$ of the full subcategory wherein objects are $S$-schemes and morphisms between them are thickenings.
+\end{definition}
+In other words, objects of $\Formal\Alg\Spc_{/S}$ are colimits:
+    $$X := \indlim_{\lambda \in \Lambda} X_{\lambda}$$
+of filtered diagrams of $S$-schemes $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ in which the arrows are thickenings; such a colimit is called a \textbf{presentation} of the formal algebraic space $X$, and there may be many presentations for the same formal algebraic spaces in general.  
+
+\begin{definition}[Formal spectra] \label{def: formal_spectra_of_weakly_pre_admissible_rings}
+    
+\end{definition}

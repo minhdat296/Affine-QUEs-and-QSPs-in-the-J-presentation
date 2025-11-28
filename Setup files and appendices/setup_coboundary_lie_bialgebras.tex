@@ -59,17 +59,28 @@ Of course, one should not expect that every alternating $2$-tensor $\calr \in \b
         \end{equation}
     then the (coboundary) topological bialgebra $(\a, \delta, \calr)$ will be called \textbf{triangular}.
 \end{definition}
-\begin{example} \label{example: finite_dimensional_classical_doubles_are_quasi_triangular}
-    Consider a \textit{finite-dimensional} Lie bialgebra $(\a^+, \delta^+)$ along with its classical double $(\Dr(\a^+), \delta_{\Dr(\a^+)})$; recall also that there is a canonically induced Manin triple:
+\begin{example}[Canonical quasi-triangular structures on classical doubles] \label{example: canonical_quasi_triangular_structures_on_classical_doubles}
+    Consider a topological Lie bialgebra $(\a^+, \delta^+)$ defined by a Manin triple $(\a, \a^+, \a^-)$, along with its classical double $(\Dr(\a^+), \delta_{\Dr(\a^+)})$. Recall also, that there is a canonically induced Manin triple:
         $$( \Dr(\a^+), \a^+, \a^- )$$
     whose bilinear form we shall denote by:
         $$(\cdot, \cdot)_{\Dr(\a^+)}$$
-    Then, its classical double $(\Dr(\a^+), \delta_{\Dr(\a^+)})$ (cf. remark \ref{remark: embeddings_into_classical_doubles}) will always carry a quasi-triangular structure. In particular, it can be shown that:
+    Then, its classical double $(\Dr(\a^+), \delta_{\Dr(\a^+)})$ (cf. remark \ref{remark: embeddings_into_classical_doubles}) will always carry a canonical quasi-triangular structure. In particular, it can be shown that:
         \begin{equation} \label{equation: quasi_triangularity_of_finite_dimensional_classical_doubles}
-            \delta_{\Dr(\a^+)} = [\Box, \calr_{\a^+, \a^-}]
+            \delta_{\Dr(\a^+)} = [\Box, \calr_{\a^+, \a^-}^0]
         \end{equation}
-    wherein $\calr_{\a^+, \a^-}$ is the canonical element of the pairing $(\cdot, \cdot)_{\Dr(\a^+)}$, i.e. the pullback of $\id_{\a}$ along the following composition:
+    wherein $\calr_{\a^+, \a^-}^0$ is the canonical element of the pairing $(\cdot, \cdot)_{\Dr(\a^+)}$, i.e. the pullback of $\id_{\a}$ along the following composition:
         $$\a^+ \hattensor \a^- \hookrightarrow \a \hattensor \a \hookrightarrow \End(\a)$$
 \end{example}
+\begin{remark}[Non-canonical coboundary structures]
+    Suppose that $(\a^+, \delta^+, \calr)$ is a coboundary Lie bialgebra. Then, the classical double $\Dr(\a^+) \cong \a$ possesses an induced coboundary structure given by the same classical r-matrix $\calr$, since:
+        $$\delta_{\Dr(\a^+)} = [\Box, \calr]$$
+    as maps $\Dr(\a^+) \to \Dr(\a^+) \hattensor \Dr(\a^+)$, per equation \ref{equation: classical_double_cobrackets}.
+    
+    We would like to note, that in general, the classical r-matrix $\calr$ on the classical double $\Dr(\a^+)$ may not coincide with the canonical quasi-triangular structure $\calr_{\a^+, \a^-}^0$ from example \ref{example: canonical_quasi_triangular_structures_on_classical_doubles}. Thus in general, even though $\Dr(\a^+)$ is always quasi-triangular via $\calr_{\a^+, \a^-}^0$, this quasi-triangularity may not be inherited by the isotropic Lie subalgebra $\a^+ \subset \a$. Otherwise, we would always have that $\calr = \calr_{\a^+, \a^-}^0$ inside $Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$, which is clearly nonsensical. 
+\end{remark}
+
+\begin{definition}[Gauge equivalences] \label{def: gauge_equivalences}
+
+\end{definition}
 
 \todo[inline]{Classical r-matrices with spectral parameters}
