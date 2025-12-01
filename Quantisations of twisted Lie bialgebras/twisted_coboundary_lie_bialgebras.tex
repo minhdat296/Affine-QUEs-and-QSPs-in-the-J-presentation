@@ -5,7 +5,7 @@
         $$(\a^+, \delta^+, \calr)$$
     defined by a Manin triple $(\a, \a^+, \a^-)$ by means of equation \eqref{equation: lie_cobrackets_by_duality}. \textit{A priori}, the Lie cobracket $\delta^+$ can be given by:
         $$\delta^+ = [ \Box, \calr ]$$
-    wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a^+$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{classical r-matrix} or a \say{coboundary structure}) is such that:
+    wherein $\Box(x) := x \tensor 1 + 1 \tensor x$ for all $x \in \a^+$, and $\calr \in \a^+ \hattensor \a^- \subset \a \hattensor \a$ (commonly called a \say{coboundary structure}) is such that:
         $$\delta^+ = d_{\CE}\calr \quad, \quad \calr \in Z^0_{\Lie}\left(\a, \a \hattensor \a\right) \cong \a \hattensor \a$$
     with $d_{\CE}$ being the Chevalley-Eilenberg cochain differential. For more details, we refer the reader to subsection \ref{subsection: coboundary_and_(quasi)_triangular_topological_lie_bialgebras}. 
     
@@ -30,7 +30,7 @@
         \begin{question} \label{question: twisted_classical_r_matrices}
             When the coboundary topological Lie bialgebra $(\a, \delta, \calr)$ is \textit{quasi-triangular}, i.e. when:
                 $$\calr \in \a \hattensor \a$$
-            is a solution to the classical Yang-Baxter equation (CYBE) \eqref{equation: CYBEs}, what is the effect of twisting on the classical r-matrix $\calr$ ?
+            is a solution to the classical Yang-Baxter equation (CYBE) \eqref{equation: CYBEs}, what is the effect of twisting on the coboundary structure $\calr$ ?
         \end{question}
         \begin{question} \label{question: explicit_expressions_for_twisted_cobrackets}
             Let $\vartheta \in \Aut_{\LA}(\a)$ twist $(\a, \delta, \calr)$ in the sense of definition \ref{def: twisted_classical_r_matrices}, and let $\delta^{\vartheta}$ be as in theorem \ref{theorem: twisted_lie_bialgebraic_structures}. How are the expressions:
@@ -41,7 +41,7 @@
             $$(\vartheta - 1)^{\tensor 2}(\calr) \in \a \tensor \a$$
         is $\k$-invariant. When $\ord(\vartheta) = 2$, i.e. when $\vartheta$ is a Lie algebra involution of $\a$, it has also been mentioned in \cite{schrader_integrable_systems_from_classical_reflection_equations} that one recovers the result of \cite{belliard_crampe_coideal_subalgebras_from_twisted_manin_triples}, which itself is slightly strengthened by the anti-invariant case in our theorem \ref{theorem: twisted_lie_bialgebraic_structures}. While we know that even when $\ord(\vartheta) > 2$, $(\k, \delta)$ is a topological Lie coideal subalgebra of $(\a, \delta)$, we will have to modify definition \ref{def: twisted_classical_r_matrices} so that this coideal structure can be thought of as a twist of the Lie cobracket on $\a$.
         
-        When $(\a, \delta, \calr)$ is furthermore quasi-triangular, the author also alluded to the fact, that after being anti-invariantly twisted (necessarily by an involution; see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), the classical r-matrix $\calr$ ends up giving rise to solutions:
+        When $(\a, \delta, \calr)$ is furthermore quasi-triangular, the author also alluded to the fact, that after being anti-invariantly twisted (necessarily by an involution; see theorem \ref{theorem: twisted_lie_bialgebraic_structures}), the quasi-triangular structure/classical r-matrix $\calr$ ends up giving rise to solutions:
             $$\calk$$
         to a\footnote{We would like to remind the reader that, for a given classical r-matrix, there can be many associated bCYBEs.} boundary classical Yang-Baxter equation (bCYBE)\footnote{These are referred to as \say{classical reflection equations} in \cite{schrader_integrable_systems_from_classical_reflection_equations}, though we prefer the term \say{boundary classical Yang-Baxter equations} as it reminds us of the fact that solutions to bCYBEs are analogues of solutions to CYBEs in the presence of boundary conditions (e.g. closed spin chains).}. This solution shall be referred to as a \say{classical k-matrix}.
         
@@ -61,36 +61,43 @@
                     & = \k \hattensor \k \oplus \p \hattensor \k \oplus \k \hattensor \p \oplus \p \tensor \p
                 \end{aligned}
             $$
-        Since the classical r-matrix $\calr$ is an element of $Z^0_{\Lie}(\a, \a \hattensor \a) \cong \a \hattensor \a$, it can be written as a sum of its projections onto the direct summands of $\a \hattensor \a$ as above, in the following manner:
+        Since the coboundary structure $\calr$ is an element of $Z^0_{\Lie}(\a, \a \hattensor \a) \cong \a \hattensor \a$, it can be written as a sum of its projections onto the direct summands of $\a \hattensor \a$ as above, in the following manner:
             \begin{equation} \label{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}
                 \calr = \calr_{\k, \k} + \calr_{\p, \k} + \calr_{\k, \p} + \calr_{\p, \p}
             \end{equation}
-        We will continue our analysis in subsections \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras} and \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}, wherein the cases in which $\vartheta$ twists anti-invariantly and invariantly will be treated separately.
+        We will continue our analysis in subsections \ref{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras} and \ref{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras} below, wherein the cases in which $\vartheta$ twists invariantly and anti-invariantly will be treated separately.
 
-    \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \begin{theorem}[Invariance criterion for anti-invariant twists] \label{theorem: invariance_criterion_anti_invariant_twists}
-            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_classical_r_matrices} if and only if $\vartheta$ is an involution and:
-                $$\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$$
-            with $\calr_{\p, \p}$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}.
-        \end{theorem}
-            \begin{proof}
-                See \cite[Proposition 2]{schrader_integrable_systems_from_classical_reflection_equations}. Note that while Schrader works under the hypothesis that $\vartheta$ is of finite order, we can disregard this assumption, as we are assuming that $\a$ can be decomposed into the direct sum of the eigenspaces of $\vartheta$ (see convention \ref{conv: endomorphisms}).
-            \end{proof}
-    
-        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs (which still need to be defined). I think one way in which we can think of automorphisms $\vartheta$ that twist anti-invariantly as classical limits of quantum K-matrices is by constructing some kind of boundary monodromy matrix $b_{\vartheta}$. Then, we can check if the boundary transfer matrices $\tau_{\vartheta} := \trace b_{\vartheta}$ are Poisson-commutative. Previously, I said that we need $\a$ to be integrable for this to work, but now I realise that we can just work with Poisson formal groups.}
+    \subsection{Associated Poisson formal groups and homogeneous spaces} \label{subsection: poisson_formal_groups_and_homogeneous_spaces}
+        In this subsection, we discuss the relationship between topological Lie bialgebras and Poisson (formal) groups, as well as that between topological Lie coideal subalgebras and Poisson (formal) homogeneous spaces. Namely, we would like to adapt and mildly extend certain results from \cite{schrader_integrable_systems_from_classical_reflection_equations} and \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces} so as to be able to keep track of the topological nature of the Lie-bialgebraic structures at play. This amounts to making sure that the Poisson brackets being used are all continuous as bilinear maps. 
+        
+        To be able to say why these connections are important, however, we must first recall some features of the theory of Poisson (formal) groups, to which end we will need to recall some more features of the more general theory of Poisson geometry. Results about these connections are useful for relating the algebraic theory of topological Lie bialgebras and topological coideal subalgebra thereof to the theory of integrable systems, without and with (reflection) boundary conditions, respectively. In particular, for the latter case, one sees that the topological Lie coideal subalgebras mentioned above are determined by solutions to so-called \say{boundary classical Yang-Baxter equations} (bCYBEs) because those equations are to be imposed precisely when the Poisson structure that certain Poisson (formal) homogeneous spaces inherit from Poisson (formal) groups are integrable. In turn, this is somehow equivalent to the act of imposing certain boundary conditions on said Poisson (formal) groups.
+        
+        Moreover, these relationships are useful for the discussion of whether or not Lie coideal subalgebras are quantisable, as was pointed out in \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces}. More on this in subsection \ref{subsection: existence_of_quantisations_of_lie_bialgebraic_twists}.
 
-        \todo[inline]{
-            On \cite[p. 18]{schrader_integrable_systems_from_classical_reflection_equations}, it was mentioned that the quantity $C_{\vartheta}(\calr) := (\vartheta - 1)^{\tensor 2}(\calr)$ is to be thought of as the classical limit of a certain reflection equation. However, this claim has only been justified when $\a = \Loop \gl_2 := \gl_2 \tensor \bbk[t^{\pm 1}]$ is acted upon by the involution $\vartheta \in \Aut_{\LA}(\Loop \gl_2)$ given by $\vartheta( x \tensor t ) := x \tensor t^{-1}$. From these data, there arises a coideal subalgebra of $\calU_q(\Loop \gl_2)$ that can be realised as the reflection algebra:
-                $$\calB_q(\calK)$$
-            associated to a solution:
-                $$\calK(z)$$
-            of the bQYBE constructed using the quantum R-matrix of $\calU_q(\Loop \gl_2)$. It was then argued (though without much detail) that the classical limit of $\calK(z)$ ought to be related $\vartheta$, thus making the construction of $C_{\vartheta}(\calr)$ somewhat \textit{post hoc}. Therefore, my goal for this subsection is to justify the consideration of $C_{\vartheta}(\calr)$. I do think, though, that it is natural to guess that $\vartheta$ would play the role of the classical limit of $\calK(z)$, since the latter is at least supposed to be an invertible intertwiner of $\calB_q(\calK)$-modules $V$ in the sense that there exist $\calB_q(\calK)$-module isomorphisms:
-                $$\calK(z)_V: V(z) \xrightarrow[]{\cong} V(z^{-1})$$
-            When $V$ is a classical representation, this ought to descend to an automorphism of $V$, and $\vartheta$ therefore is to be thought of as a "universal classical k-matrix".
-        }
+        \begin{convention}
+            All algebro-geometric constructions are over $\bbk$ by default. 
+        \end{convention}
+
+        For our purposes, we find the language of so-called \say{ind-algebraic spaces} and \say{pro-algebraic spaces} to be the most convenient. We refer the reader to subsections \ref{subsection: formal_and_ind_algebraic_spaces} and \ref{subsection: pro_algebraic_spaces} for a recollection. The two classes of examples which are the most important to us are the following.
+        \begin{example}[Loop groups and affine Grassmannians]
+            Given a finite-type scheme $X$, let us write:
+                $$\Loop X \quad, \quad \Loop^+ X$$
+            for the (full) formal loop space of $X$ and its positive half, respectively. Their functors of points are given by:
+                $$(\Loop X)(\Spec R) := X( \Spec R(\!(t)\!) ) \quad, \quad (\Loop^+ X)(\Spec R) := X( \Spec R[\![t]\!] )$$
+            and in general, these are ind-pro-schemes.
+            
+            In particular, we are interested in the case wherein $X = \bar{G}$ for some affine algebraic group whose Lie algebra is a finite-type Kac-Moody algebra $\bar{\g}$. The Lie algebra of the loop group $\Loop \bar{G}$ is then the loop algebra $\Loop \bar{\g} := \bar{\g}(\!(t)\!)$ and likewise, the Lie algebra of $\Loop^+ \bar{G}$ is $\Loop^+ \bar{\g} := \bar{\g}[\![t]\!]$. Tangent spaces of the following homogeneous space, commonly called the \textbf{(thin) affine Grassmannian of $\bar{G}$}:
+                $$\Gr_{\bar{G}} := \Loop \bar{G} / \Loop^+ \bar{G}$$
+            are then isomorphic to $\Loop \bar{\g} / \Loop^+ \bar{\g} \cong t^{-1}\bar{\g}[t^{-1}]$.
+        \end{example}
+        \begin{example}[Kac-Moody groups and their flag varieties]
+            
+        \end{example}
 
     \subsection{Invariant twists and solutions to CYBEs} \label{subsection: invariantly_twisted_coboundary_topological_lie_bialgebras}
-        \begin{lemma}
+        In this subsection, we study the preservation of quasi-triangularity by invariant twists.
+
+        \begin{lemma}[Invariant twists of the canonical quasi-triangular structure] \label{lemma: invariant_twists_of_the_canonical_quasi_triangular_structure}
             Suppose that $(\a^+, \delta^+)$ is topological Lie bialgebra, and that its classical double\footnote{... with $\delta_{\Dr(\a^+)}$ as in equation \eqref{equation: classical_double_cobrackets}.} $( \Dr(\a^+), \delta_{\Dr(\a^+)} )$ is equipped with the canonical quasi-triangular structure:
                 $$\calr := \calr_{\a^+, \a^-}^0$$
             as in example \ref{example: canonical_quasi_triangular_structures_on_classical_doubles}. Then, the following statements are equivalent.
@@ -114,7 +121,29 @@
             
         \end{theorem}
             \begin{proof}
-                \todo[inline]{Consider the canonical quasi-triangular structure as a point on the moduli space of quasi-triangular Lie bialgebra structures on a fixed underlying Lie algebra. Then, show that }
+                \todo[inline]{Consider the canonical quasi-triangular structure $\calr_{\k^+, \k^-}^0$ as a point on the moduli space of quasi-triangular Lie bialgebra structures on a fixed underlying Lie algebra. Then, show that coboundary structures can be obtained as deformations around the point $\calr_{\k^+, \k^-}^0$.}
             \end{proof}
+
+    \subsection{Anti-invariant twists and solutions to bCYBEs} \label{subsection: anti_invariantly_twisted_coboundary_topological_lie_bialgebras}
+        \begin{theorem}[Invariance criterion for anti-invariant twists] \label{theorem: invariance_criterion_anti_invariant_twists}
+            The automorphism $\vartheta \in \Aut_{\LA}(\a)$ twists $(\a, \delta, \calr)$ anti-invariantly in the sense of definition \ref{def: twisted_classical_r_matrices} if and only if $\vartheta$ is an involution and:
+                $$\calr_{\p, \p} \in (\p \hattensor \p)^{\k}$$
+            with $\calr_{\p, \p}$ as in the decomposition \eqref{equation: unpolarised_symmetric_space_decomposition_of_classical_r_matrices}.
+        \end{theorem}
+            \begin{proof}
+                See \cite[Proposition 2]{schrader_integrable_systems_from_classical_reflection_equations}. Note that while Schrader works under the hypothesis that $\vartheta$ is of finite order, we can disregard this assumption, as we are assuming that $\a$ can be decomposed into the direct sum of the eigenspaces of $\vartheta$ (see convention \ref{conv: endomorphisms}).
+            \end{proof}
+    
+        \todo[inline]{Anti-invariant twists of classical r-matrices. These are solutions to bCYBEs (which still need to be defined). I think one way in which we can think of automorphisms $\vartheta$ that twist anti-invariantly as classical limits of quantum K-matrices is by constructing some kind of boundary monodromy matrix $b_{\vartheta}$. Then, we can check if the boundary transfer matrices $\tau_{\vartheta} := \trace b_{\vartheta}$ are Poisson-commutative. Previously, I said that we need $\a$ to be integrable for this to work, but now I realise that we can just work with Poisson formal groups.}
+
+        \todo[inline]{
+            On \cite[p. 18]{schrader_integrable_systems_from_classical_reflection_equations}, it was mentioned that the quantity $C_{\vartheta}(\calr) := (\vartheta - 1)^{\tensor 2}(\calr)$ is to be thought of as the classical limit of a certain reflection equation. However, this claim has only been justified when $\a = \Loop \gl_2 := \gl_2 \tensor \bbk[t^{\pm 1}]$ is acted upon by the involution $\vartheta \in \Aut_{\LA}(\Loop \gl_2)$ given by $\vartheta( x \tensor t ) := x \tensor t^{-1}$. From these data, there arises a coideal subalgebra of $\calU_q(\Loop \gl_2)$ that can be realised as the reflection algebra:
+                $$\calB_q(\calK)$$
+            associated to a solution:
+                $$\calK(z)$$
+            of the bQYBE constructed using the quantum R-matrix of $\calU_q(\Loop \gl_2)$. It was then argued (though without much detail) that the classical limit of $\calK(z)$ ought to be related $\vartheta$, thus making the construction of $C_{\vartheta}(\calr)$ somewhat \textit{post hoc}. Therefore, my goal for this subsection is to justify the consideration of $C_{\vartheta}(\calr)$. I do think, though, that it is natural to guess that $\vartheta$ would play the role of the classical limit of $\calK(z)$, since the latter is at least supposed to be an invertible intertwiner of $\calB_q(\calK)$-modules $V$ in the sense that there exist $\calB_q(\calK)$-module isomorphisms:
+                $$\calK(z)_V: V(z) \xrightarrow[]{\cong} V(z^{-1})$$
+            When $V$ is a classical representation, this ought to descend to an automorphism of $V$, and $\vartheta$ therefore is to be thought of as a "universal classical k-matrix".
+        }
 
     \subsection{Compositions of twists} \label{subsection: composing_twists_of_lie_bialgebras}

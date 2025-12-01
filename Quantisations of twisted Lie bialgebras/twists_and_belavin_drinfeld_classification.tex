@@ -25,3 +25,12 @@
         \todo[inline]{For the affine case, see \cite{abedin_burban_geometrisation_of_the_belavin_drinfeld_classification_1} and \cite{abedin_geometrisation_of_the_belavin_drinfeld_classification_2}. See also \cite[Theorem 3.2.4]{chari_pressley_quantum_groups} and the contents that follow, and \cite[Chapters 5 and 7]{etingof_schiffmann_lectures_on_quantum_groups}.}
 
     \subsection{Compatibility}
+        \todo[inline]{
+            The contents of \cite{alsaody_pianzola_classification_of_lie_bialgebras_by_nonabelian_galois_cohomology_preprint_version} tells us that invariant twists preserves the Belavin-Drinfeld classification of \textit{constant} solutions of the CYBE for finite-dimensional (split ?) simple Lie algebras over an arbitrary field of characteristic $0$. More specifically, the classification says that the constant solutions are either $\calr = 0$ (i.e. there exists no non-zero constant solution that is simultaneously non-degenerate and unitary), or $\calr$ is a scalar multiple of the standard (finite-type) Kac-Moody quasi-triangular structure:
+                $$\calr_{\g, \g^*} + \sum_{\alpha, \beta \in \rootsystem(\g)^+, \alpha < \beta} e_{-\alpha} \wedge e_{\beta}$$
+            wherein $\calr_{\g, \g^*}$ is the Casimir $2$-tensor (cf. \cite[Theorem 5.3]{etingof_schiffmann_lectures_on_quantum_groups}).
+            \\
+            This applies in particular to the formal loop algebra $\g(\!(t)\!)$ (with $\g$ a finite-dimensional simple Lie algebra over $\bbC$) regarded as a Lie algebra over $\bbC(\!(t)\!)$. Since the standard Lie bialgebra structure on $\g(\!(t)\!)$ coincides with that on the full untwisted Kac-Moody algebra associated to $\g$, the results of \cite{alsaody_pianzola_classification_of_lie_bialgebras_by_nonabelian_galois_cohomology_preprint_version} implies that invariant twists preserve trigonometric-ness.
+        }
+
+        \todo[inline]{I believe that the preservation of rationality by invariant twists is equivalent to the lack of twisted forms over $\bbC$. This can be proven by hand, but it would be nice to know if there is a qualitative difference between $\bbC(\!(t)\!)$ and $\bbC$ that prevents the existence of twisted forms over the latter. The fact that the former is 1-dimensional while the latter is 0-dimensional must be relevant somehow.}

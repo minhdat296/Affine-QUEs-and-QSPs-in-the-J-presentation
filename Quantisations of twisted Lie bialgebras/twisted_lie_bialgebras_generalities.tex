@@ -35,16 +35,16 @@
             \end{equation}
         This prompts the following definition.
         \begin{definition}[Twisted topological Lie bialgebras] \label{def: twisted_topological_lie_bialgebras}
-            Let $(\a, \delta)$ be a topological Lie bialgebra, and consider a Lie algebra automorphism\footnote{... which may not be a Lie bialgebra automorphism!}:
+            Let $(\a, \delta)$ be a topological Lie bialgebra, and consider a Lie algebra automorphism:
                 $$\vartheta \in \Aut_{\LA}(\a)$$
             This is an \textbf{(anti-)invariant twist} of the Lie bialgebra structure $\delta$ if:
                 $$\delta \circ \vartheta = \pm \vartheta^{\tensor 2} \circ \delta$$
             and like in definition \ref{def: twisted_manin_triples}, the \say{$+$} sign corresponding to the invariant case, while the \say{$-$} sign corresponds to the anti-invariant case.
         \end{definition}
         \begin{remark}
-            An (anti-)invariant twist of a topological Lie bialgebra $(\a, \delta)$ by $\vartheta \in \Aut_{\LA}(\a)$ is the same as a topological Lie bialgebra (anti-)automorphism. However, it is more convenient to work with twists, especially in the anti-invariant case. This is because the codomain of an anti-automorphism of $\a$ is $\a^{\op}$, while the codomain of an automorphism of $\a$ is $\a$, so we are of the opinion that in order to avoid notational clutter, it is better to work with the notion of twists as in definition \ref{def: twisted_topological_lie_bialgebras}.
+            An (anti-)invariant twist of a topological Lie bialgebra $(\a, \delta)$ by $\vartheta \in \Aut_{\LA}(\a)$ is the same as a topological Lie bialgebra (anti-)automorphism. However, it is more convenient to work with twists, especially in the anti-invariant case. This is because the codomain of an anti-automorphism of $\a$ is $\a^{\op}$, while the codomain of an automorphism of $\a$ is $\a$, so we are of the opinion, that in order to avoid notational clutter, it is better to work with the notion of twists as in definition \ref{def: twisted_topological_lie_bialgebras}.
         \end{remark}
-        For book-keeping purposes, let us record the following technical lemma.
+        For book-keeping purposes, let us record the following technical lemma. See also remark \ref{remark: manin_triple_twists_via_currying} below.
         \begin{lemma}[Twisted Manin triples and twisted topological Lie bialgebras] \label{lemma: twisted_manin_triples_and_twisted_topological_lie_bialgebras}
             Let $(\a, \a^+, \a^-)$ be a Manin triple and let $\delta: \a \to \a \hattensor \a$ be the Lie bialgebra structure that it defines. Let $\vartheta \in \Aut_{\LA}(\a)$ be a Lie algebra automorphism. Then, $\vartheta$ twists the Manin triple $(\a, \a^+, \a^-)$ invariantly (respectively, anti-invariantly) if and only if it twists $\delta$ invariantly (respectively, anti-invariantly).
         \end{lemma}
@@ -359,31 +359,41 @@
             $$\delta^{\vartheta}(x) \quad, \quad x \in \k$$
         Only coboundary topological Lie bialgebras (and in particular, the quasi-triangular ones) are of relevance to questions surrounding quantisation, so henceforth, let us focus on twists of such topological Lie bialgebras.
 
-    \subsection{Associated Poisson formal groups and homogeneous spaces} \label{subsection: poisson_formal_groups_and_homogeneous_spaces}
-        In this subsection, we discuss the relationship between topological Lie bialgebras and Poisson (formal) groups, as well as that between topological Lie coideal subalgebras and Poisson (formal) homogeneous spaces. Namely, we would like to adapt and mildly extend certain results from \cite{schrader_integrable_systems_from_classical_reflection_equations} and \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces} so as to be able to keep track of the topological nature of the Lie-bialgebraic structures at play. This amounts to making sure that the Poisson brackets being used are all continuous as bilinear maps. 
-        
-        To be able to say why these connections are important, however, we must first recall some features of the theory of Poisson (formal) groups, to which end we will need to recall some more features of the more general theory of Poisson geometry. Results about these connections are useful for relating the algebraic theory of topological Lie bialgebras and topological coideal subalgebra thereof to the theory of integrable systems, without and with (reflection) boundary conditions, respectively. In particular, for the latter case, one sees that the topological Lie coideal subalgebras mentioned above are determined by solutions to so-called \say{boundary classical Yang-Baxter equations} (bCYBEs) because those equations are to be imposed precisely when the Poisson structure that certain Poisson (formal) homogeneous spaces inherit from Poisson (formal) groups are integrable. In turn, this is somehow equivalent to the act of imposing certain boundary conditions on said Poisson (formal) groups.
-        
-        Moreover, these relationships are useful for the discussion of whether or not Lie coideal subalgebras are quantisable, as was pointed out in \cite{etingof_kazhdan_quantisations_of_poisson_groups_and_homogeneous_spaces}. More on this in subsection \ref{subsection: existence_of_quantisations_of_lie_bialgebraic_twists}.
+    \subsection{Cohomological interpretation of invariant twists}
+        Now, let us shift perspective slightly. Namely, in this subsection, invariant twists are to be regarded instead as Lie bialgebra automorphisms. While this is true simply by definition, what this allows for is a possibility for interpreting invariant twists as nonabelian cocycles, as demonstrated through \cite[Proposition 2.4 and Corollary 2.5]{alsaody_pianzola_classification_of_lie_bialgebras_by_nonabelian_galois_cohomology_preprint_version}. In section \ref{section: invariant_twists_and_belavin_drinfeld_classification}, these results will help us make the case, that the procedure of invariant twisting respects the Belavin-Drinfeld classification of solutions to CYBEs.
 
-        \begin{convention}
-            All algebro-geometric constructions are over $\bbk$ by default. 
-        \end{convention}
+        First, let us recall the following idea about sheaf cohomology with coefficients in objects of a potentially nonabelian category, e.g. the category $\Grp$ of groups, which goes back to \cite[Exposé XIII]{sga1}; for a comprehensive and detailed treatment of nonabelian cohomology, we refer the reader to the eponymous \cite{giraud_cohomologie_nonabelienne}. For our purposes, the following shall suffice. If $S := \Spec A$ is a base scheme, then let us write:
+            $$S_{\fppf}$$
+        for the fppf site of $S$, i.e. the category $\Sch_{/S}$ of schemes over $S$ equipped with the fppf Grothendieck topology. Then, for a sheaf of groups $\scrG$, let us write:
+            $$H^1_{\fppf}(S, \scrG)$$
+        for the first nonabelian sheaf cohomology with coefficients in $\scrG$. In particular we are interested $\scrG := \Aut_{\LBA}(\a, \delta)$ being the group of topological Lie bialgebra automorphism of a topological Lie bialgebra $(\a, \delta)$, which is \textit{a priori} is an affine formal group scheme.\todo{Motivation for the use of nonabelian cohomology.}
 
-        For our purposes, we find the language of so-called \say{ind-algebraic spaces} and \say{pro-algebraic spaces} to be the most convenient. We refer the reader to subsections \ref{subsection: formal_and_ind_algebraic_spaces} and \ref{subsection: pro_algebraic_spaces} for a recollection. The two classes of examples which are the most important to us are the following.
-        \begin{example}[Loop groups and affine Grassmannians]
-            Given a finite-type scheme $X$, let us write:
-                $$\Loop X \quad, \quad \Loop^+ X$$
-            for the (full) formal loop space of $X$ and its positive half, respectively. Their functors of points are given by:
-                $$(\Loop X)(\Spec R) := X( \Spec R(\!(t)\!) ) \quad, \quad (\Loop^+ X)(\Spec R) := X( \Spec R[\![t]\!] )$$
-            and in general, these are ind-pro-schemes.
+        \begin{definition}[Fibred categories] \label{def: fibred_categories}
             
-            In particular, we are interested in the case wherein $X = \bar{G}$ for some affine algebraic group whose Lie algebra is a finite-type Kac-Moody algebra $\bar{\g}$. The Lie algebra of the loop group $\Loop \bar{G}$ is then the loop algebra $\Loop \bar{\g} := \bar{\g}(\!(t)\!)$ and likewise, the Lie algebra of $\Loop^+ \bar{G}$ is $\Loop^+ \bar{\g} := \bar{\g}[\![t]\!]$. Tangent spaces of the following homogeneous space, commonly called the \textbf{(thin) affine Grassmannian of $\bar{G}$}:
-                $$\Gr_{\bar{G}} := \Loop \bar{G} / \Loop^+ \bar{G}$$
-            are then isomorphic to $\Loop \bar{\g} / \Loop^+ \bar{\g} \cong t^{-1}\bar{\g}[t^{-1}]$.
-        \end{example}
-        \begin{example}[Kac-Moody groups and their flag varieties]
-            
-        \end{example}
+        \end{definition}
 
-    \subsection{Existence of quantisations} \label{subsection: existence_of_quantisations_of_lie_bialgebraic_twists}
+        \begin{definition}[Descent data] \label{def: descent_data}
+            
+        \end{definition}
+
+        \begin{definition}[Twisted forms of algebraic structures] \label{def: twisted_forms_of_algebraic_structures}
+            
+        \end{definition}
+
+        \begin{lemma}[Descent data and twisted forms for topological Lie bialgebras] \label{lemma: descent_data_and_twisted_forms_for_topological_lie_bialgebras}
+            
+        \end{lemma}
+            \begin{proof}
+                
+            \end{proof}
+        \begin{proposition}[Nonabelian $H^1_{\fppf}$ and twisted forms of topological Lie bialgebras] \label{prop: nonabelian_H^1_and_twisted_forms_of_topological_lie_bialgebras}
+            
+        \end{proposition}
+            \begin{proof}
+                
+            \end{proof}
+        \begin{remark}
+            
+        \end{remark}
+
+    \subsection{Cohomological interpretation of anti-invariant twists}
